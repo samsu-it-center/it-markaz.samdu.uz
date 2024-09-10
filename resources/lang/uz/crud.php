@@ -37,8 +37,9 @@
         ],
 
         "software"  => [
-            "name"  => "Dasturiy mahsulotlar",
-            "about" => "Dastur haqida"
+            "name"  => "Dasturiy maxsulotlar",
+            "about" => "Dastur haqida",
+            "views" => "Batafsil"
         ],
 
         "course"    => [
@@ -48,6 +49,7 @@
         ],
 
         "document"  => [
+            "document" => "IT Markaz meyoriy hujatlari",
             "rules" => "IT markazining umumiy qoidalar",
             "tasks" => "IT markaz ekspert kengashining vazifalari"
         ],
@@ -56,5 +58,7 @@
 
         "news_arr" => [
             "more" => "Ko'proq Yangiliklar"
-        ]
+        ],
+
+        "faq"       => "Ko'p beriladigan savollar",
     ];

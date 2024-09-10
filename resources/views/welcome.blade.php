@@ -270,4 +270,39 @@
             </div>
         </div>
     </div>
+
+    <div class="rts-scholarship">
+        <div class="container">
+            <div class="rts-scholarship-description">
+                <div class="row justify-content-md-center justify-content-start">
+                    <div class="col-lg-8 col-md-11">
+                        <div class="program-description-area">
+                            <!-- faq -->
+                            <div class="program-credit-area faq mt--50">
+                                <h4 class="title">@lang('crud.faq')</h4>
+                                <div class="program-accordion">
+                                    <div class="accordion" id="rts-accordion">
+                                        @foreach($faqs as $faq)
+                                        <div class="accordion-item">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                {{ $faq->question }}
+                                            </button>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        {{ $faq->answer }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

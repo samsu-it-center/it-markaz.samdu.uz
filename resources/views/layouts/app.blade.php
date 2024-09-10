@@ -40,18 +40,12 @@
 <x-gallery></x-gallery>
 <!-- footer end -->
 <x-footer></x-footer>
-<!-- offcanvase menu -->
-<!-- header style two -->
 
-<!-- header style two End -->
-
-<!-- rts backto top start -->
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
     </svg>
 </div>
-<!-- rts back to top end -->
 
 <div id="anywhere-home" class="">
 </div>
