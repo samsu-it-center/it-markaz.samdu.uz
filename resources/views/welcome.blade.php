@@ -299,6 +299,25 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+
+                    </div>
+                    <div class="blog-comment mb-5 mb-lg-0">
+                        <div class="blog-comment__template">
+                            <h4>@lang('crud.contact')</h4>
+
+                            <form action="{{ route('contact.apply') }}" class="comment-template" method="POST">
+                                @csrf
+                                <div class="input-area">
+                                    <input type="text" placeholder="@lang('crud.course.form.first_name')" name="name" required="">
+                                    <input type="text" placeholder="@lang('crud.course.form.email')" name="email" required="">
+                                </div>
+
+                                <textarea name="message" class="input-area-full w-full" placeholder="@lang('crud.course.form.msg')"></textarea>
+                                <button class="rts-theme-btn with-arrow" type="submit">@lang('crud.send')
+                                    <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -33,9 +35,16 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, Course $course, Lesson $lesson)
     {
-        //
+        $lessons = $course->lessons;
+        $lesson = $lessons[0];
+
+        if ($request->get('lesson_id')) {
+            $lesson = Lesson::find($request->get('lesson_id'));
+        }
+
+        return view('course.show',compact('lessons','course','lesson'));
     }
 
     /**
@@ -60,5 +69,10 @@ class CourseController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function lesson(Lesson $lesson, Course $course)
+    {
+        return view('course.show',compact('lesson','course'));
     }
 }

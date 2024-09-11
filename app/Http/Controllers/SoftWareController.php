@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SoftwareProduct;
 use Illuminate\Http\Request;
 
 class SoftWareController extends Controller
@@ -35,7 +36,8 @@ class SoftWareController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $software = SoftwareProduct::find($id);
+        return view('software.show',compact('software'));
     }
 
     /**

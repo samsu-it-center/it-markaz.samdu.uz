@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\NewsController;
@@ -7,7 +8,10 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\SoftWareController;
 use App\Http\Controllers\StartUpController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseApplicationController;
 
+Route::post('/apply', [CourseApplicationController::class, 'store'])->name('course.apply');
+Route::post('/contact/apply', [ContactController::class, 'store'])->name('contact.apply');
 // Source file
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::post('/news/{id}/like', [NewsController::class, 'like'])->name('news.like');
@@ -24,6 +28,8 @@ Route::resource('start_up',StartUpController::class);
 Route::resource('course',CourseController::class);
 Route::resource('software',SoftWareController::class);
 Route::get('/', [LayoutsController::class,'welcome'])->name('welcome');
+
+Route::get('/lesson/{lesson}/{course}',[CourseController::class,'lesson'])->name('lesson.show');
 
 // Language
 Route::get('/language/{lang}',[LayoutsController::class,'lang'])->name('lang');
