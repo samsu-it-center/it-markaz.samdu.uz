@@ -1,26 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Hero Slider Start -->
     <div class="rts-hero-slider v-1 rt-relative">
         <div class="rts-hero-slider-active swiper swiper-data" data-swiper='{
             "slidesPerView":1,
             "effect": "fade",
             "loop": true,
             "speed": 1000,
-            "navigation":{
-                "nextEl":".rt-next",
-                "prevEl":".rt-prev"
+            "navigation": {
+                "nextEl": ".rt-next",
+                "prevEl": ".rt-prev"
             },
-            "pagination":{
+            "pagination": {
                 "el": ".rts-swiper-dots",
-                "clickable": "true"
+                "clickable": true
             },
-            "autoplay":{
-                "delay":"7000"
+            "autoplay": {
+                "delay": 7000
             }
-    }'>
+        }'>
             <div class="swiper-wrapper">
-                <!-- single slider -->
+                <!-- Single Slider -->
                 @foreach ($sliders as $slider)
                     <div class="swiper-slide">
                         <div class="rts-slider-height rts-slider-overlay rt-relative">
@@ -36,10 +37,10 @@
                                                          alt="university-logo">
                                                 </div>
                                                 <div class="rts-university-estd">
-                                                    <span>{{ $slider-> title_uz}}</span>
+                                                    <span>{{ $slider['title_'.session('locale')] ?? 'Default Title' }}</span>
                                                 </div>
                                                 <p class="rts-slider-desc w-560">
-                                                    {{ $slider-> desc_uz}}
+                                                    {{ $slider['desc_'.session('locale')] ?? 'Default Description' }}
                                                 </p>
                                             </div>
                                         </div>
@@ -50,8 +51,7 @@
                     </div>
                 @endforeach
             </div>
-            <!-- slider arrow -->
-
+            <!-- Slider Arrow -->
             <div class="rts-slider-arrow">
                 <div class="rt-slider-btn rt-next">
                     <i class="fa-regular fa-arrow-left"></i>
@@ -63,14 +63,15 @@
             <div class="rts-swiper-dots"></div>
         </div>
     </div>
-    <!-- hero slider  end -->
-    <!-- about us -->
+    <!-- Hero Slider End -->
+
+    <!-- About Us Start -->
     <section class="rts-about v__1 rt-relative rts-section-padding">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-lg-5 col-xl-5 col-md-10">
                     <div class="rts-about-image">
-                        <img src="{{ asset('about.jpg') }}" alt="">
+                        <img src="{{ asset('about.jpg') }}" alt="About Us">
                     </div>
                 </div>
                 <div class="col-lg-7 col-xl-7 col-md-10">
@@ -80,8 +81,6 @@
                                 @lang('crud.about.abouts')<span class="rts-line"></span>
                             </h2>
                             <div class="about-rounded-text">
-                                <!-- <img src="assets/images/about/about-circle.png" alt="about college"> -->
-
                                 <div class="rt-rounded-shape">
                                     <svg class="uni-circle-text-path uk-text-secondary uni-animation-spin"
                                          viewBox="0 0 100 100" width="150" height="150">
@@ -95,15 +94,16 @@
                                     </svg>
                                     <div class="rt-round-dot-center"></div>
                                 </div>
-
                             </div>
                         </div>
                         <p class="rts-paragraph mb--50">
-                            {{ $about['about_center_'.session('locale')] }}
+                            {{ $about['about_center_'.session('locale')] ?? 'Default About Us Content' }}
                         </p>
-                        <a href="{{ route('about') }}" class="about-btn rts-nbg-btn btn-arrow"> @lang('crud.overview')
-                            <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></a>
-                        <div class="about-positioned-text ">
+                        <a href="{{ route('about') }}" class="about-btn rts-nbg-btn btn-arrow">
+                            @lang('crud.overview')
+                            <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                        </a>
+                        <div class="about-positioned-text">
                             <h2 class="rt-clip-text">EST. 2023</h2>
                         </div>
                     </div>
@@ -117,9 +117,9 @@
             <img class="rt-shape__4" src="{{ asset('site/assets/images/about/shape/04.png') }}" alt="">
         </div>
     </section>
-    <!-- about us end -->
+    <!-- About Us End -->
 
-    <!-- blog area start -->
+    <!-- Blog Area Start -->
     <div class="rts-blog v_1 rts-section-padding">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -128,61 +128,73 @@
                         <h2 class="rts-section-title">
                             @lang('crud.news')
                         </h2>
-                        <a href="{{ route('news') }}" class="rts-arrow">@lang('crud.news_arr.more') <span><i
-                                    class="fa-sharp fa-regular fa-arrow-right"></i></span></a>
+                        <a href="{{ route('news') }}" class="rts-arrow">
+                            @lang('crud.news_arr.more') 
+                            <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <!-- blog content -->
+            <!-- Blog Content -->
             <div class="row g-5 justify-content-md-center">
+                <!-- First Blog Post -->
                 <div class="col-md-11 col-lg-6">
                     <div class="rts-blog-post blog-v-full">
                         <div class="single-blog-post">
                             <div class="blog-thumb">
                                 <a href="#">
-                                    <img src="{{ asset('storage/'.$news->first()['image']) }}" alt="blog-thumb">
+                                    @if($news->first())
+                                        <img src="{{ asset('storage/'.$news->first()->image) }}" alt="blog-thumb">
+                                    @else
+                                        <img src="{{ asset('storage/default-image.jpg') }}" alt="default-image">
+                                    @endif
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <div class="post-meta">
-
                                     <div class="rt-date">
                                         <span><i class="fal fa-calendar"></i></span>
-                                        <span>{{ $news->first()['created_at'] }}</span>
+                                        <span>
+                                            @if($news->first())
+                                                {{ $news->first()->created_at->format('Y-m-d') }}
+                                            @else
+                                                N/A
+                                            @endif
+                                        </span>
                                     </div>
                                 </div>
-                                <a href="{{ route('news.show',$news->first()->id) }}" class="post-title">
-                                    {{ $news->first()['title_'.session('locale')] }}
+                                <a href="{{ route('news.show', $news->first()->id ?? '#') }}" class="post-title">
+                                    {{ $news->first()['title_'.session('locale')] ?? 'Default Title' }}
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Other Blog Posts -->
                 <div class="col-md-11 col-lg-6">
                     <div class="rts-blog-post">
-                        <!-- single blog -->
                         @foreach($news->skip(1) as $item)
                             <div class="single-blog-post">
                                 <div class="blog-thumb">
-                                    <a href="{{ route('news.show',$item->id) }}">
+                                    <a href="{{ route('news.show', $item->id) }}">
                                         <img src="{{ asset('storage/'.$item->image) }}" alt="post-thumbnail">
                                     </a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="post-meta">
                                         <div class="rt-author">
-                                        <span>
-                                        <i class="fa-light fa-eye"></i>
-                                    </span>
-                                            <a href="#">{{ $item->views }}</a>
+                                            <span><i class="fa-light fa-eye"></i></span>
+                                            <a href="#">{{ $item->views ?? '0' }}</a>
                                         </div>
                                         <div class="rt-date">
                                             <span><i class="fal fa-calendar"></i></span>
-                                            <span>{{ $item->created_at }}</span>
+                                            <span>
+                                                {{ $item->created_at->format('Y-m-d') ?? 'N/A' }}
+                                            </span>
                                         </div>
                                     </div>
-                                    <a href="{{ route('news.show',$item->id) }}" class="post-title">
-                                        {{ $item['title_'.session('locale')] }}
+                                    <a href="{{ route('news.show', $item->id) }}" class="post-title">
+                                        {{ $item['title_'.session('locale')] ?? 'Default Title' }}
                                     </a>
                                 </div>
                             </div>
@@ -192,15 +204,17 @@
             </div>
         </div>
     </div>
-    <!-- blog area end -->
 
 
+    <!-- Blog Area End -->
+
+    <!-- Semester Fee Start -->
     <div class="semister-fee pb--120 pb__md--80">
         <div class="container">
             <div class="row">
                 <div class="semister-fee__content">
                     <h5 class="rts-section-title">@lang('crud.course.name')</h5>
-                    <!-- tab item -->
+                    <!-- Tab Item -->
                     <div class="rts-fee-chart">
                         <div class="rts-fee-chart__tab">
                             <nav>
@@ -220,25 +234,24 @@
                             <div class="tab-pane fade show active" id="undergrade-1" role="tabpanel"
                                  aria-labelledby="undergrade-1-tab">
                                 <div class="row justify-content-md-center g-5">
-                                    <!-- single staff item -->
+                                    <!-- Single Staff Item -->
                                     @foreach($online as $on)
-                                    <div class="col-lg-6 col-md-11">
-                                        <div class="single-staff">
-                                            <div class="single-staff__content">
-                                                <div class="staf-image">
-                                                    <img src="{{ asset('storage/'.$on->image) }}" alt="staff-image">
-                                                </div>
-                                                <div class="staf-info">
-                                                    <h5 class="name">{{ $on['title_'.session('locale')] }}</h5>
-
-                                                    <div class="staf-info__speciality">
-                                                        <p>{!! $on['description_'.session('locale')] !!}</p>
+                                        <div class="col-lg-6 col-md-11">
+                                            <div class="single-staff">
+                                                <div class="single-staff__content">
+                                                    <div class="staf-image">
+                                                        <img src="{{ asset('storage/'.$on->image) }}" alt="staff-image">
                                                     </div>
-                                                    <a href="#" class="rts-theme-btn border-btn">@lang('crud.course.views')</a>
+                                                    <div class="staf-info">
+                                                        <h5 class="name">{{ $on['title_'.session('locale')] ?? 'Default Title' }}</h5>
+                                                        <div class="staf-info__speciality">
+                                                            <p>{!! $on['description_'.session('locale')] ?? 'Default Description' !!}</p>
+                                                        </div>
+                                                        <a href="#" class="rts-theme-btn border-btn">@lang('crud.course.views')</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -252,10 +265,9 @@
                                                     <img src="{{ asset('storage/'.$on->image) }}" alt="staff-image">
                                                 </div>
                                                 <div class="staf-info">
-                                                    <h5 class="name">{{ $on['title_'.session('locale')] }}</h5>
-
+                                                    <h5 class="name">{{ $on['title_'.session('locale')] ?? 'Default Title' }}</h5>
                                                     <div class="staf-info__speciality">
-                                                        <p>{!! $on['description_'.session('locale')] !!}</p>
+                                                        <p>{!! $on['description_'.session('locale')] ?? 'Default Description' !!}</p>
                                                     </div>
                                                     <a href="#" class="rts-theme-btn border-btn">@lang('crud.course.views')</a>
                                                 </div>
@@ -270,53 +282,52 @@
             </div>
         </div>
     </div>
+    <!-- Semester Fee End -->
 
+    <!-- Scholarship Start -->
     <div class="rts-scholarship">
         <div class="container">
             <div class="rts-scholarship-description">
                 <div class="row justify-content-md-center justify-content-start">
                     <div class="col-lg-8 col-md-11">
                         <div class="program-description-area">
-                            <!-- faq -->
+                            <!-- FAQ -->
                             <div class="program-credit-area faq mt--50">
                                 <h4 class="title">@lang('crud.faq')</h4>
                                 <div class="program-accordion">
                                     <div class="accordion" id="rts-accordion">
                                         @foreach($faqs as $faq)
-                                        <div class="accordion-item">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                {{ $faq->question }}
-                                            </button>
-                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                        {{ $faq->answer }}
-                                                    </p>
+                                            <div class="accordion-item">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $loop->index }}" aria-expanded="true" aria-controls="collapse-{{ $loop->index }}">
+                                                    {{ $faq->question }}
+                                                </button>
+                                                <div id="collapse-{{ $loop->index }}" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
+                                                    <div class="accordion-body">
+                                                        <p>
+                                                            {{ $faq->answer }}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="blog-comment mb-5 mb-lg-0">
                         <div class="blog-comment__template">
                             <h4>@lang('crud.contact')</h4>
-
                             <form action="{{ route('contact.apply') }}" class="comment-template" method="POST">
                                 @csrf
                                 <div class="input-area">
                                     <input type="text" placeholder="@lang('crud.course.form.first_name')" name="name" required="">
                                     <input type="text" placeholder="@lang('crud.course.form.email')" name="email" required="">
                                 </div>
-
                                 <textarea name="message" class="input-area-full w-full" placeholder="@lang('crud.course.form.msg')"></textarea>
                                 <button class="rts-theme-btn with-arrow" type="submit">@lang('crud.send')
-                                    <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
+                                    <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -324,4 +335,5 @@
             </div>
         </div>
     </div>
+    <!-- Scholarship End -->
 @endsection
