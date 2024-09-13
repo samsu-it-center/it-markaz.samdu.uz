@@ -32,15 +32,20 @@
                     }
             }'>
                     <div class="swiper-wrapper">
-                        @foreach($gallerys as $gallery)
-                            <div class="swiper-slide">
-                                <div class="single-brand-logo">
-                                    <a href="#">
-                                        <img class="" src="{{ asset('storage/'.$gallery->image_path) }}" alt="">
-                                    </a>
+                        @if($gallerys)
+                            @foreach($gallerys as $gallery)
+                                <div class="swiper-slide">
+                                    <div class="single-brand-logo">
+                                        <a href="#">
+                                            <img class="" src="{{ asset('storage/'.$gallery->image_path) }}" alt="">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @else
+                            Gallery data not found
+                        @endif
+
                     </div>
                 </div>
             </div>
