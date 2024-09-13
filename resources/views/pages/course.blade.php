@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
+    <!-- Courses Section -->
     <div class="rts-blog v_3 rts-section-padding">
         <div class="container">
             <div class="row justify-content-md-start justify-content-sm-center g-5">
@@ -34,6 +36,7 @@
         </div>
     </div>
 
+    <!-- Application Form Section -->
     <section class="rts-application-area moving pt--120 rts-application-area-bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -41,7 +44,7 @@
                     <h2 class="rts-section-title mb--10 rt-white">@lang('crud.course.contact')</h2>
                 </div>
             </div>
-            <!-- application form -->
+            <!-- Application Form -->
             <div class="row justify-content-md-center">
                 <div class="col-md-11 col-lg-6 col-xl-7">
                     <div class="rts-admission-form-image">
@@ -75,7 +78,7 @@
                                         <select name="cat-search" id="cat-filter">
                                             <option value="">@lang('crud.course.form.course')</option>
                                             @foreach($courses as $course)
-                                            <option value="{{ $course->id }}">{{ $course['title_'.session('locale')] }}</option>
+                                                <option value="{{ $course->id }}">{{ $course['title_'.session('locale')] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -86,7 +89,6 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="rts-theme-btn rts-nbg-btn btn-arrow v2 full-btn">@lang('crud.course.form.apply_now') <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
-
                             </form>
                         </div>
                     </div>

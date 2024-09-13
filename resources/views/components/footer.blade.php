@@ -10,11 +10,11 @@
                                 <img src="{{ asset('logo.png') }}" alt="itcenter">
                             </a>
                             <p>
-                                {{ $about['official_name_'.session('locale')] }}
+                                {{ $about['official_name_'.session('locale')] ?? 'Default Official Name' }}
                             </p>
                             <div class="rts-contact-link">
                                 <a href="mailto:contact@reacthemes.com"><i
-                                        class="fa-sharp fa-light fa-location-dot"></i> {{ $about['address_'.session('locale')] }}
+                                        class="fa-sharp fa-light fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Default Address' }}
                                 </a>
                                 <a href="callto:+998 93 728 68 67"><i class="fa-thin fa-phone"></i> +998 93 728 68
                                     67</a>
@@ -23,30 +23,11 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-2">
                         <div class="rts-footer-widget ">
-                            {{--                            <h6 class="rt-semi">Our Campus</h6>--}}
-                            {{--                            <div class="rts-footer-menu">--}}
-                            {{--                                <ul>--}}
-                            {{--                                    <li><a href="academic.html">Academic</a></li>--}}
-                            {{--                                    <li><a href="program-single.html">Planning & Admission</a></li>--}}
-                            {{--                                    <li><a href="campus-life.html">Campus Safety</a></li>--}}
-                            {{--                                    <li><a href="faculty.html">Faculty</a></li>--}}
-                            {{--                                    <li><a href="faculty-details.html">Human Resources</a></li>--}}
-                            {{--                                </ul>--}}
-                            {{--                            </div>--}}
+
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-2">
                         <div class="rts-footer-widget ml--30">
-                            {{--                            <h6 class="rt-semi">Our Campus</h6>--}}
-                            {{--                            <div class="rts-footer-menu">--}}
-                            {{--                                <ul>--}}
-                            {{--                                    <li><a href="about.html">About Us </a></li>--}}
-                            {{--                                    <li><a href="admission.html">Admission</a></li>--}}
-                            {{--                                    <li><a href="scholarship.html">Scholarship</a></li>--}}
-                            {{--                                    <li><a href="tution-fee.html">Tution Fee</a></li>--}}
-                            {{--                                    <li><a href="athletics.html">Athletics</a></li>--}}
-                            {{--                                </ul>--}}
-                            {{--                            </div>--}}
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-8 col-lg-4">
@@ -81,7 +62,7 @@
         </div>
         <div class="inner-content">
             <p class="disc">
-                {{ $about['official_name_'.session('locale')] }}
+                {{ $about['official_name_'.session('locale')] ?? 'Default Official Name' }}
             </p>
 
             <div class="offcanvase__info">
@@ -89,7 +70,8 @@
                     <a href="callto:+998937286867"><span><i class="fa-sharp fa-light fa-phone"></i></span>+998 93 728 68
                         67</a>
                     <a href="#"><span><i
-                                class="fa-sharp fa-light fa-location-dot"></i></span>{{ $about['address_'.session('locale')] }}
+                                class="fa-sharp fa-light fa-location-dot"></i></span>
+                        {{ $about['address_'.session('locale')] ?? 'Default Address' }}
                     </a>
                 </div>
             </div>
@@ -99,59 +81,28 @@
     <div class="mobile-menu-main">
         <nav class="nav-main mainmenu-nav mt--30">
             <ul class="mainmenu metismenu" id="mobile-menu-active">
-
-                <li class="has-droupdown">
-                    <a href="#" class="main">Homepages</a>
-                    <ul class="submenu mm-collapse">
-                        <li><a class="mobile-menu-link" href="index.html">Home Style One</a></li>
-                        <li><a class="mobile-menu-link" href="index-two.html">Home Style Two</a></li>
-                    </ul>
-                </li>
-                <li class="has-droupdown">
-                    <a href="#" class="main">Events</a>
-                    <ul class="submenu mm-collapse">
-                        <li><a class="mobile-menu-link" href="event.html">Event</a></li>
-                        <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
-                    </ul>
-                </li>
-                <li class="has-droupdown">
-                    <a href="#" class="main">Academics</a>
-                    <ul class="submenu mm-collapse">
-                        <li><a class="mobile-menu-link" href="academic.html">Academic</a></li>
-                        <li><a class="mobile-menu-link" href="admission.html">Admission</a></li>
-                        <li><a class="mobile-menu-link" href="academic-area.html">Academic Area</a></li>
-                        <li><a class="mobile-menu-link" href="campus-life.html">Campus Life</a></li>
-                        <li><a class="mobile-menu-link" href="scholarship.html">Scholarship</a></li>
-                        <li><a class="mobile-menu-link" href="tution-fee.html">Tution Fee</a></li>
-                        <li><a class="mobile-menu-link" href="program-single.html">Program Single</a></li>
-                    </ul>
-                </li>
-                <li class="has-droupdown">
-                    <a href="#" class="main">Pages</a>
-                    <ul class="submenu mm-collapse">
-                        <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
-                        <li><a class="mobile-menu-link" href="athletics.html">Athletics</a></li>
-                        <li class="has-dropdown third-lvl">
-                            <a href="javascript:void(0);">Faculty</a>
-                            <ul class="submenu third-lvl base">
-                                <li><a class="mobile-menu-link" href="faculty.html">Faculty</a></li>
-                                <li><a class="mobile-menu-link" href="faculty-details.html">Faculty details</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="mobile-menu-link" href="research.html">Research</a></li>
-                    </ul>
-                </li>
-                <li class="has-droupdown">
-                    <a href="#" class="main">Blog</a>
-                    <ul class="submenu mm-collapse">
-                        <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                        <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
-                        <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
-                        <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                    </ul>
+                <li>
+                    <a class="nav-link" href="{{ route('about') }}">@lang('crud.menu.about')</a>
                 </li>
                 <li>
-                    <a href="contact.html" class="main">Contact Us</a>
+                    <a class="nav-link" href="{{ route('news') }}">@lang('crud.menu.news')</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="{{ route('startup') }}">@lang('crud.menu.start_up')</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="{{ route('software') }}">@lang('crud.menu.software')</a>
+                </li>
+
+
+                <li>
+                    <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="{{ route('document') }}">@lang('crud.menu.document')</a>
                 </li>
             </ul>
         </nav>

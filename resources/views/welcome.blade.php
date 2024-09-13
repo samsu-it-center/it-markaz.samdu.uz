@@ -129,7 +129,7 @@
                             @lang('crud.news')
                         </h2>
                         <a href="{{ route('news') }}" class="rts-arrow">
-                            @lang('crud.news_arr.more') 
+                            @lang('crud.news_arr.more')
                             <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
                         </a>
                     </div>
@@ -146,7 +146,7 @@
                                     @if($news->first())
                                         <img src="{{ asset('storage/'.$news->first()->image) }}" alt="blog-thumb">
                                     @else
-                                        <img src="{{ asset('storage/default-image.jpg') }}" alt="default-image">
+                                        <img src="{{ asset('site/assets/images/banner/02-02.jpg') }}" alt="default-image">
                                     @endif
                                 </a>
                             </div>
@@ -204,8 +204,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- Blog Area End -->
 
     <!-- Semester Fee Start -->
@@ -216,66 +214,53 @@
                     <h5 class="rts-section-title">@lang('crud.course.name')</h5>
                     <!-- Tab Item -->
                     <div class="rts-fee-chart">
-                        <div class="rts-fee-chart__tab">
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="undergrade-1-tab" data-bs-toggle="tab"
-                                            data-bs-target="#undergrade-1" type="button" role="tab"
-                                            aria-controls="undergrade-1" aria-selected="true">Online
+                        <div class="rts-fee-chart-tabs">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                            type="button" role="tab" aria-controls="home" aria-selected="true">@lang('crud.course.online')
                                     </button>
-                                    <button class="nav-link" id="grade-tution-2-tab" data-bs-toggle="tab"
-                                            data-bs-target="#grade-tution-2" type="button" role="tab"
-                                            aria-controls="grade-tution-2" aria-selected="false">Offline
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                            type="button" role="tab" aria-controls="profile" aria-selected="false">@lang('crud.course.offline')
                                     </button>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="rts-fee-chart__content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="undergrade-1" role="tabpanel"
-                                 aria-labelledby="undergrade-1-tab">
-                                <div class="row justify-content-md-center g-5">
-                                    <!-- Single Staff Item -->
-                                    @foreach($online as $on)
-                                        <div class="col-lg-6 col-md-11">
-                                            <div class="single-staff">
-                                                <div class="single-staff__content">
-                                                    <div class="staf-image">
-                                                        <img src="{{ asset('storage/'.$on->image) }}" alt="staff-image">
-                                                    </div>
-                                                    <div class="staf-info">
-                                                        <h5 class="name">{{ $on['title_'.session('locale')] ?? 'Default Title' }}</h5>
-                                                        <div class="staf-info__speciality">
-                                                            <p>{!! $on['description_'.session('locale')] ?? 'Default Description' !!}</p>
-                                                        </div>
-                                                        <a href="#" class="rts-theme-btn border-btn">@lang('crud.course.views')</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="grade-tution-2" role="tabpanel"
-                                 aria-labelledby="grade-tution-2-tab">
-                                @foreach($offline as $on)
-                                    <div class="col-lg-6 col-md-11">
-                                        <div class="single-staff">
-                                            <div class="single-staff__content">
-                                                <div class="staf-image">
-                                                    <img src="{{ asset('storage/'.$on->image) }}" alt="staff-image">
-                                                </div>
-                                                <div class="staf-info">
-                                                    <h5 class="name">{{ $on['title_'.session('locale')] ?? 'Default Title' }}</h5>
-                                                    <div class="staf-info__speciality">
-                                                        <p>{!! $on['description_'.session('locale')] ?? 'Default Description' !!}</p>
-                                                    </div>
-                                                    <a href="#" class="rts-theme-btn border-btn">@lang('crud.course.views')</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                     aria-labelledby="home-tab">
+                                    <div class="rts-fee-chart-content">
+                                        <ul>
+                                            @foreach($online as $on)
+                                                <li>
+                                                    <a href="{{ route('course.show', $on->id) }}">
+                                                        <span>{{ $on['title_'.session('locale')] ?? 'Default Online Course' }}</span>
+                                                        <span>{{ $on->price ?? 'Free' }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
-                                @endforeach
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="rts-fee-chart-content">
+                                        <ul>
+                                            @foreach($offline as $off)
+                                                <li>
+                                                    <a href="{{ route('course.show', $off->id) }}">
+                                                        <span>{{ $off['title_'.session('locale')] ?? 'Default Offline Course' }}</span>
+                                                        <span>{{ $off->price ?? 'Free' }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="rts-fee-chart-circle">
+                            <img src="{{ asset('site/assets/images/course/scholarship-big.jpg') }}" alt="fee-chart">
                         </div>
                     </div>
                 </div>
@@ -284,56 +269,35 @@
     </div>
     <!-- Semester Fee End -->
 
-    <!-- Scholarship Start -->
-    <div class="rts-scholarship">
+    <!-- FAQ Start -->
+    <section class="rts-faq-section rts-section-padding">
         <div class="container">
-            <div class="rts-scholarship-description">
-                <div class="row justify-content-md-center justify-content-start">
-                    <div class="col-lg-8 col-md-11">
-                        <div class="program-description-area">
-                            <!-- FAQ -->
-                            <div class="program-credit-area faq mt--50">
-                                <h4 class="title">@lang('crud.faq')</h4>
-                                <div class="program-accordion">
-                                    <div class="accordion" id="rts-accordion">
-                                        @foreach($faqs as $faq)
-                                            <div class="accordion-item">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $loop->index }}" aria-expanded="true" aria-controls="collapse-{{ $loop->index }}">
-                                                    {{ $faq->question }}
-                                                </button>
-                                                <div id="collapse-{{ $loop->index }}" class="accordion-collapse collapse show" data-bs-parent="#rts-accordion">
-                                                    <div class="accordion-body">
-                                                        <p>
-                                                            {{ $faq->answer }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="faq-wrapper">
+                        <div class="accordion" id="faqExample">
+                            @foreach($faqs as $faq)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="faqHeading{{ $faq->id }}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#faqCollapse{{ $faq->id }}" aria-expanded="true"
+                                                aria-controls="faqCollapse{{ $faq->id }}">
+                                            {{ $faq['question_'.session('locale')] ?? 'Default Question' }}
+                                        </button>
+                                    </h2>
+                                    <div id="faqCollapse{{ $faq->id }}" class="accordion-collapse collapse"
+                                         aria-labelledby="faqHeading{{ $faq->id }}" data-bs-parent="#faqExample">
+                                        <div class="accordion-body">
+                                            {{ $faq['answer_'.session('locale')] ?? 'Default Answer' }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-comment mb-5 mb-lg-0">
-                        <div class="blog-comment__template">
-                            <h4>@lang('crud.contact')</h4>
-                            <form action="{{ route('contact.apply') }}" class="comment-template" method="POST">
-                                @csrf
-                                <div class="input-area">
-                                    <input type="text" placeholder="@lang('crud.course.form.first_name')" name="name" required="">
-                                    <input type="text" placeholder="@lang('crud.course.form.email')" name="email" required="">
-                                </div>
-                                <textarea name="message" class="input-area-full w-full" placeholder="@lang('crud.course.form.msg')"></textarea>
-                                <button class="rts-theme-btn with-arrow" type="submit">@lang('crud.send')
-                                    <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                </button>
-                            </form>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Scholarship End -->
+    </section>
+    <!-- FAQ End -->
 @endsection

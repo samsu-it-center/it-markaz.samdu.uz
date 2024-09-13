@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class gallery extends Component
 {
-    public $gallerys = [];
+    public $gallerys;
     /**
      * Create a new component instance.
      */

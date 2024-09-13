@@ -56,13 +56,17 @@ return [
             "course"        => "Kurs",
             "msg"           => "Xabar",
             "apply_now"     => "Kursga yozilish"
-        ]
+        ],
+        "online"    => "Onlayn Kurslar",
+        "offline"   => "Oflayn Kurslar"
     ],
 
     "document" => [
         "document" => "IT Markaz meyoriy hujatlari",
         "rules" => "IT markazining umumiy qoidalar",
-        "tasks" => "IT markaz ekspert kengashining vazifalari"
+        "tasks" => "IT markaz ekspert kengashining vazifalari",
+        "no_description"    => "Meyoriy Hujat haqidagi malumotlar kiritilmagan",
+        "no_files"          => "Faylar mavjud emas"
     ],
 
     "overview" => "Umumiy koʻrinish",
