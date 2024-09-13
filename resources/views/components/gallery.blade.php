@@ -32,7 +32,7 @@
                     }
             }'>
                     <div class="swiper-wrapper">
-                        @if($gallerys)
+                        @if(isset($gallerys))
                             @foreach($gallerys as $gallery)
                                 <div class="swiper-slide">
                                     <div class="single-brand-logo">
