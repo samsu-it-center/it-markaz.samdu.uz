@@ -1,82 +1,82 @@
 <?php
 return [
-    "title" => "Sharof Rashidov nomidagi Samarqand davlat universiteti intelektual tizimlari va kompyuter texnologiyalari fakulteti qoshidagi IT markazi",
-    "desc" => "Sharof Rashidov nomidagi Samarqand davlat universiteti",
+    "title" => "ИТ-центр Самаркандского государственного университета имени Шарафа Рашидова, факультет интеллектуальных систем и компьютерных технологий",
+    "desc" => "Самаркандский государственный университет имени Шарафа Рашидова",
     "menu" => [
-        "about" => "IT Markaz haqida",
-        "news" => "Yangiliklar",
-        "start_up" => "Start Up",
-        "software" => "Dasturiy mahsulotlar",
-        "course" => "Kurslar",
-        "document" => "Me'yoriy hujjatlar"
+        "about" => "О ИТ Центре",
+        "news" => "Новости",
+        "start_up" => "Стартапы",
+        "software" => "Программные продукты",
+        "course" => "Курсы",
+        "document" => "Регуляторные документы"
     ],
 
     "about" => [
-        "abouts" => "IT Markaz haqida",
-        "name" => "Markazning rasmiy nomi",
-        "contact" => "Bog'lanish uchun",
-        "location" => "Joylashuv",
-        "location_name" => "IT Markaz manzili",
-        "direction" => "IT markazning asosiy yo‘nalishlari",
+        "abouts" => "О ИТ Центре",
+        "name" => "Официальное название Центра",
+        "contact" => "Контактная информация",
+        "location" => "Местоположение",
+        "location_name" => "Адрес ИТ Центра",
+        "direction" => "Основные направления ИТ Центра",
         "step" => [
-            "step_1" => "IT markazda Sharof Rashidov nomidagi Samarqand davlat universiteti talabalari, magistrantlari, doktorantlari va yosh tadqiqotchilari dasturiy mahsulotlar yaratish, startaplar yaratish, sun’iy intellekt loyihalarini amalga oshirish, kompyuter grafikasi bo‘yicha xizmatlar ko‘rsatish va yosh dasturchilarni tayyorlash bo‘yicha faoliyat olib boriladi.",
-            "step_2" => " Startap-loyihalarni amalga oshirishda, shu jumladan, venchur moliyalashtirish asosida qo‘llab-quvvatlash, axborot texnologiyalari sohasida boshlovchi va kichik korxonalarga innovatsion faoliyat natijalarida ko‘maklashish.",
-            "step_3" => "IT markaz ma’lum bir soha uchun dasturiy mahsulotlar yaratish, startaplar yaratish, sun’iy intellekt loyihalarini amalga oshirish, kompyuter grafikasi bo‘yicha xizmatlar ko‘rsatish va yosh dasturchilarni tayyorlash bo‘yicha ishlarni amalga oshiradi",
-            "step_4" => "Viloyat hamda Respublikada faoliyat ko‘rsatayotgan korxona va tashkilotlarning raqamlashtirish bo‘yicha ilmiy-texnik muammolarining yechimiga yo‘naltirilgan ilg‘or va innovatsion ishlanmalar, texnologik loyiha va startaplar bazalari shakllantiriladi"
+            "step_1" => "В ИТ Центре студенты, магистранты, аспиранты и молодые исследователи Самаркандского государственного университета имени Шарафа Рашидова занимаются созданием программных продуктов, разработкой стартапов, реализацией проектов в области искусственного интеллекта, предоставлением услуг в области компьютерной графики и подготовкой молодых программистов.",
+            "step_2" => "Поддержка стартап-проектов, включая венчурное финансирование, а также помощь начинающим и малым предприятиям в области информационных технологий с результатами инновационной деятельности.",
+            "step_3" => "ИТ Центр создает программные продукты для определенных областей, разрабатывает стартапы, реализует проекты в области искусственного интеллекта, предоставляет услуги в области компьютерной графики и обучает молодых программистов.",
+            "step_4" => "Формирование передовых и инновационных разработок, технологических проектов и баз стартапов, направленных на решение научно-технических проблем цифровизации в предприятиях и организациях, работающих в регионе и в Республике."
         ],
     ],
 
-    "news" => "Yangiliklar",
+    "news" => "Новости",
 
     "start_up" => [
-        "title" => "StartUplar",
-        "project_purpose" => "Loyiha maqsadi",
-        "opportunities_tasks" => "Loyiha imkoniyatlari va vazifalari",
-        "price" => "Loyihani byudjeti",
-        "contact" => "Aloqa"
+        "title" => "Стартапы",
+        "project_purpose" => "Цель проекта",
+        "opportunities_tasks" => "Возможности и задачи проекта",
+        "price" => "Бюджет проекта",
+        "contact" => "Контакт"
     ],
 
     "software" => [
-        "name" => "Dasturiy maxsulotlar",
-        "about" => "Dastur haqida",
-        "views" => "Batafsil"
+        "name" => "Программные продукты",
+        "about" => "О программе",
+        "views" => "Подробнее"
     ],
 
     "course" => [
-        "name"      => "Kurslar",
-        "about"     => "Kurs haqida",
-        "views"     => "Batafsil",
-        "contact"   => "Kursga yozilish",
+        "name"      => "Курсы",
+        "about"     => "О курсе",
+        "views"     => "Подробнее",
+        "contact"   => "Записаться на курс",
         "form"      => [
-            'title'         => "Kerakli ma'lumotlarni to'ldirib chiqing",
-            "first_name"    => "Ism",
-            "last_name"     => "Familiya",
-            "email"         => "Elektron pochta",
-            "Phone"         => "Telefon raqam",
-            "course"        => "Kurs",
-            "msg"           => "Xabar",
-            "apply_now"     => "Kursga yozilish"
+            'title'         => "Пожалуйста, заполните необходимую информацию",
+            "first_name"    => "Имя",
+            "last_name"     => "Фамилия",
+            "email"         => "Электронная почта",
+            "Phone"         => "Телефонный номер",
+            "course"        => "Курс",
+            "msg"           => "Сообщение",
+            "apply_now"     => "Записаться сейчас"
         ],
-        "online"    => "Onlayn Kurslar",
-        "offline"   => "Oflayn Kurslar"
+        "online"    => "Онлайн Курсы",
+        "offline"   => "Офлайн Курсы"
     ],
 
     "document" => [
-        "document" => "IT Markaz meyoriy hujatlari",
-        "rules" => "IT markazining umumiy qoidalar",
-        "tasks" => "IT markaz ekspert kengashining vazifalari",
-        "no_description"    => "Meyoriy Hujat haqidagi malumotlar kiritilmagan",
-        "no_files"          => "Faylar mavjud emas"
+        "document" => "Регуляторные документы ИТ Центра",
+        "rules" => "Общие правила ИТ Центра",
+        "tasks" => "Задачи экспертного совета ИТ Центра",
+        "no_description"    => "Информация о регуляторном документе не предоставлена",
+        "no_files"          => "Файлы отсутствуют"
     ],
 
-    "overview" => "Umumiy koʻrinish",
+    "overview" => "Обзор",
 
     "news_arr" => [
-        "more" => "Ko'proq Yangiliklar"
+        "more" => "Больше новостей"
     ],
 
-    "faq"       => "Ko'p beriladigan savollar",
-    "topics"    => "Mavzular",
-    "contact"   => "Biz bilan bog'lanish",
-    'send'      => "Jo'natish"
+    "faq"       => "Часто задаваемые вопросы",
+    "topics"    => "Темы",
+    "contact"   => "Связаться с нами",
+    'send'      => "Отправить"
 ];

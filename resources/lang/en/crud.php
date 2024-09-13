@@ -1,82 +1,82 @@
 <?php
 return [
-    "title" => "Sharof Rashidov nomidagi Samarqand davlat universiteti intelektual tizimlari va kompyuter texnologiyalari fakulteti qoshidagi IT markazi",
-    "desc" => "Sharof Rashidov nomidagi Samarqand davlat universiteti",
+    "title" => "IT Center of Samarkand State University named after Sharof Rashidov, Faculty of Intellectual Systems and Computer Technologies",
+    "desc" => "Samarkand State University named after Sharof Rashidov",
     "menu" => [
-        "about" => "IT Markaz haqida",
-        "news" => "Yangiliklar",
-        "start_up" => "Start Up",
-        "software" => "Dasturiy mahsulotlar",
-        "course" => "Kurslar",
-        "document" => "Me'yoriy hujjatlar"
+        "about" => "About the IT Center",
+        "news" => "News",
+        "start_up" => "Start Ups",
+        "software" => "Software Products",
+        "course" => "Courses",
+        "document" => "Regulatory Documents"
     ],
 
     "about" => [
-        "abouts" => "IT Markaz haqida",
-        "name" => "Markazning rasmiy nomi",
-        "contact" => "Bog'lanish uchun",
-        "location" => "Joylashuv",
-        "location_name" => "IT Markaz manzili",
-        "direction" => "IT markazning asosiy yo‘nalishlari",
+        "abouts" => "About the IT Center",
+        "name" => "Official Name of the Center",
+        "contact" => "Contact Information",
+        "location" => "Location",
+        "location_name" => "IT Center Address",
+        "direction" => "Main Directions of the IT Center",
         "step" => [
-            "step_1" => "IT markazda Sharof Rashidov nomidagi Samarqand davlat universiteti talabalari, magistrantlari, doktorantlari va yosh tadqiqotchilari dasturiy mahsulotlar yaratish, startaplar yaratish, sun’iy intellekt loyihalarini amalga oshirish, kompyuter grafikasi bo‘yicha xizmatlar ko‘rsatish va yosh dasturchilarni tayyorlash bo‘yicha faoliyat olib boriladi.",
-            "step_2" => " Startap-loyihalarni amalga oshirishda, shu jumladan, venchur moliyalashtirish asosida qo‘llab-quvvatlash, axborot texnologiyalari sohasida boshlovchi va kichik korxonalarga innovatsion faoliyat natijalarida ko‘maklashish.",
-            "step_3" => "IT markaz ma’lum bir soha uchun dasturiy mahsulotlar yaratish, startaplar yaratish, sun’iy intellekt loyihalarini amalga oshirish, kompyuter grafikasi bo‘yicha xizmatlar ko‘rsatish va yosh dasturchilarni tayyorlash bo‘yicha ishlarni amalga oshiradi",
-            "step_4" => "Viloyat hamda Respublikada faoliyat ko‘rsatayotgan korxona va tashkilotlarning raqamlashtirish bo‘yicha ilmiy-texnik muammolarining yechimiga yo‘naltirilgan ilg‘or va innovatsion ishlanmalar, texnologik loyiha va startaplar bazalari shakllantiriladi"
+            "step_1" => "At the IT Center, students, undergraduates, doctoral candidates, and young researchers of Samarkand State University named after Sharof Rashidov work on creating software products, developing startups, implementing artificial intelligence projects, providing computer graphics services, and training young programmers.",
+            "step_2" => "Supporting startup projects, including venture funding, and assisting beginner and small enterprises in the field of information technology with innovative activities.",
+            "step_3" => "The IT Center creates software products for specific fields, develops startups, implements artificial intelligence projects, provides computer graphics services, and trains young programmers.",
+            "step_4" => "Advanced and innovative developments, technological projects, and startup bases focused on solving scientific and technical problems of digitalization in enterprises and organizations operating in the region and the Republic."
         ],
     ],
 
-    "news" => "Yangiliklar",
+    "news" => "News",
 
     "start_up" => [
-        "title" => "StartUplar",
-        "project_purpose" => "Loyiha maqsadi",
-        "opportunities_tasks" => "Loyiha imkoniyatlari va vazifalari",
-        "price" => "Loyihani byudjeti",
-        "contact" => "Aloqa"
+        "title" => "Start Ups",
+        "project_purpose" => "Project Purpose",
+        "opportunities_tasks" => "Project Opportunities and Tasks",
+        "price" => "Project Budget",
+        "contact" => "Contact"
     ],
 
     "software" => [
-        "name" => "Dasturiy maxsulotlar",
-        "about" => "Dastur haqida",
-        "views" => "Batafsil"
+        "name" => "Software Products",
+        "about" => "About the Software",
+        "views" => "Details"
     ],
 
     "course" => [
-        "name"      => "Kurslar",
-        "about"     => "Kurs haqida",
-        "views"     => "Batafsil",
-        "contact"   => "Kursga yozilish",
+        "name"      => "Courses",
+        "about"     => "About the Course",
+        "views"     => "Details",
+        "contact"   => "Enroll in the Course",
         "form"      => [
-            'title'         => "Kerakli ma'lumotlarni to'ldirib chiqing",
-            "first_name"    => "Ism",
-            "last_name"     => "Familiya",
-            "email"         => "Elektron pochta",
-            "Phone"         => "Telefon raqam",
-            "course"        => "Kurs",
-            "msg"           => "Xabar",
-            "apply_now"     => "Kursga yozilish"
+            'title'         => "Please fill out the required information",
+            "first_name"    => "First Name",
+            "last_name"     => "Last Name",
+            "email"         => "Email",
+            "Phone"         => "Phone Number",
+            "course"        => "Course",
+            "msg"           => "Message",
+            "apply_now"     => "Enroll Now"
         ],
-        "online"    => "Onlayn Kurslar",
-        "offline"   => "Oflayn Kurslar"
+        "online"    => "Online Courses",
+        "offline"   => "Offline Courses"
     ],
 
     "document" => [
-        "document" => "IT Markaz meyoriy hujatlari",
-        "rules" => "IT markazining umumiy qoidalar",
-        "tasks" => "IT markaz ekspert kengashining vazifalari",
-        "no_description"    => "Meyoriy Hujat haqidagi malumotlar kiritilmagan",
-        "no_files"          => "Faylar mavjud emas"
+        "document" => "IT Center Regulatory Documents",
+        "rules" => "General Rules of the IT Center",
+        "tasks" => "Tasks of the IT Center Expert Council",
+        "no_description"    => "No information about the regulatory document",
+        "no_files"          => "No files available"
     ],
 
-    "overview" => "Umumiy koʻrinish",
+    "overview" => "Overview",
 
     "news_arr" => [
-        "more" => "Ko'proq Yangiliklar"
+        "more" => "More News"
     ],
 
-    "faq"       => "Ko'p beriladigan savollar",
-    "topics"    => "Mavzular",
-    "contact"   => "Biz bilan bog'lanish",
-    'send'      => "Jo'natish"
+    "faq"       => "Frequently Asked Questions",
+    "topics"    => "Topics",
+    "contact"   => "Contact Us",
+    'send'      => "Send"
 ];
