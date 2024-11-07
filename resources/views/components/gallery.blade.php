@@ -8,44 +8,30 @@
                     "autoplay":{
                         "delay":"3000"
                     },
-                    "breakpoints":{
-                        "320":{
-                            "slidesPerView": 3,
-                            "centeredSlides": true
-                        },
-                        "575":{
-                            "slidesPerView": 4,
-                            "centeredSlides": true
-                        },
-                        "768":{
-                            "slidesPerView": 5,
-                            "centeredSlides": true
-                        },
-                        "991":{
-                            "slidesPerView": 6,
-                            "centeredSlides": true
-                        },
-                        "1201":{
-                            "slidesPerView": 7,
-                            "centeredSlides": true
-                        }
+                    "breakpoints": {
+                        "320": { "slidesPerView": 3, "centeredSlides": true },
+                        "575": { "slidesPerView": 4, "centeredSlides": true },
+                        "768": { "slidesPerView": 5, "centeredSlides": true },
+                        "991": { "slidesPerView": 6, "centeredSlides": true },
+                        "1201": { "slidesPerView": 7, "centeredSlides": true }
                     }
-            }'>
+                }'>
                     <div class="swiper-wrapper">
-                        @if($gallerys)
+                        @if($gallerys && $gallerys->count())
                             @foreach($gallerys as $gallery)
                                 <div class="swiper-slide">
                                     <div class="single-brand-logo">
                                         <a href="#">
-                                            <img class="" src="{{ asset('storage/'.$gallery->image_path) }}" alt="">
+                                            <img class="" src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->description ?? 'Gallery image' }}">
                                         </a>
                                     </div>
                                 </div>
                             @endforeach
                         @else
-                            Gallery data not found
+                            <div class="swiper-slide">
+                                <p>Gallery data not found</p>
+                            </div>
                         @endif
-
                     </div>
                 </div>
             </div>

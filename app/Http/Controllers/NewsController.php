@@ -14,9 +14,15 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
         $news->incrementViews();
 
-        $course = Course::inRandomOrder()->first();
-        return view('pages.show', compact('news','course'));
+        $course = Course::inRandomOrder()->first(); // Kursni tanlash
+        if (!$course) {
+            // Kurs bo'lmasa, null qiymatini uzatish yoki boshqa bir qiymat
+            $course = null;
+        }
+
+        return view('pages.show', compact('news', 'course'));
     }
+
 
     public function like($id)
     {

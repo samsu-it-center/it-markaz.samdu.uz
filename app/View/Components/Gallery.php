@@ -2,20 +2,20 @@
 
 namespace App\View\Components;
 
-use App\Models\About;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class footer extends Component
+class Gallery extends Component
 {
-    public $about;
+    public $gallerys;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        $this->about = About::first();
+        $this->gallerys = \App\Models\Gallery::all();
     }
 
     /**
@@ -23,7 +23,6 @@ class footer extends Component
      */
     public function render(): View|Closure|string
     {
-
-        return view('components.footer');
+        return view('components.gallery', ['gallerys' => $this->gallerys]);
     }
 }
