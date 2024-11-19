@@ -25,14 +25,9 @@ jobs:
             set -e
             cd /home/itmarkaz/sam
 
-            # Git pull
             git reset --hard
             git pull origin main
 
-            # Install dependencies
-            composer install --no-dev --optimize-autoloader
-
-            # Set permissions
             chown -R www-data:www-data /home/itmarkaz/sam
             chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
 
@@ -41,6 +36,5 @@ jobs:
             php artisan route:clear
             php artisan view:clear
 
-            # Restart PHP-FPM
             sudo systemctl restart php8.1-fpm
           EOF
