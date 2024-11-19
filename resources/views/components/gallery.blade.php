@@ -1,3 +1,4 @@
+
 <div class="rts-brand v_1 rts-padding-100">
     <div class="container">
         <div class="row justify-content-md-center">
@@ -31,8 +32,9 @@
                         }
                     }
             }'>
-                    <div class="swiper-wrapper">
-                        @if(isset($gallerys))
+		   
+                    <div class="swiper-wrapper">		
+                        @if($gallerys && $gallerys->count())
                             @foreach($gallerys as $gallery)
                                 <div class="swiper-slide">
                                     <div class="single-brand-logo">
@@ -45,7 +47,6 @@
                         @else
                             Gallery data not found
                         @endif
-
                     </div>
                 </div>
             </div>

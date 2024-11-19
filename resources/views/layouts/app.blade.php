@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ env('APP_NAME', "IT Markaz") }}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     <!-- animate css -->
     <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/animate.min.css') }}">
@@ -37,9 +37,10 @@
 
 @yield('content')
 
-<x-gallery></x-gallery>
-<!-- footer end -->
-<x-footer></x-footer>
+<!-- gallery -->
+<x-gallery />
+<!-- footer -->
+<x-footer />
 
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -81,6 +82,5 @@
 <script src="{{ asset('site/assets/js/plugins/nice-select.min.js') }}"></script>
 <!-- main Js -->
 <script src="{{ asset('site/assets/js/main.js') }}"></script>
-
 </body>
 </html>

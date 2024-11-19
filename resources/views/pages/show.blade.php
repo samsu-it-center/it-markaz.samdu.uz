@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="rts-blog-details rts-section-padding">
+     <div class="rts-blog-details rts-section-padding">
         <div class="container">
             <div class="row justify-content-center g-5">
                 <div class="col-lg-8 col-md-10">
+		   <img class="image-fluid my-3" src="{{ asset('storage/'.$news->image)  }}">
                     <h4>{{ $news['title_'.session('locale')] }}</h4>
                     <article class="blog-details">
                         {!! $news['content_'.session('locale')] !!}
@@ -11,7 +12,7 @@
                 </div>
                 <div class="col-lg-4 col-md-10">
                     <div class="program-sidebar">
-
+			@if($course)
                         <!-- join event -->
                         <div class="program-event" style="background-image: url({{ asset('storage/'.$course->image) }})">
                             <div class="program-event-content">
@@ -30,6 +31,7 @@
                                 </div>
                             </div>
                         </div>
+			@endif
                     </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@ class LayoutsController extends Controller
         $online = Course::where('type','online')->get();
         $offline = Course::where('type','offline')->get();
         $news = News::orderBy('id', 'desc')->skip(0)->take(4)->get();
-        return view('welcome',compact('sliders','about','news','online','offline','faqs'));
+	return view('welcome',compact('sliders','about','news','online','offline','faqs'));
     }
 
     public function lang($lang)
