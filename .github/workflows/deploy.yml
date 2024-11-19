@@ -29,7 +29,7 @@ jobs:
             git pull origin main
 
             chown -R www-data:www-data /home/itmarkaz/sam
-            chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
+            chmod -R 777 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
 
             php artisan cache:clear
             php artisan config:clear
