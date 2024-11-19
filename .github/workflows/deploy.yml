@@ -18,11 +18,12 @@ jobs:
 
       - name: Deploy to Server
         run: |
+          # Parolni ishlatib SSH ulanishi
           sshpass -p "IT_markaz_2024" ssh -T -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
             set -e
             cd /home/itmarkaz/sam
 
-            # Update source code
+            # Git pull
             git reset --hard
             git pull origin main
 
@@ -33,11 +34,13 @@ jobs:
             chown -R www-data:www-data /home/itmarkaz/sam
             chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
 
+            # Run migrations and clear caches
+            php artisan migrate --force
             php artisan cache:clear
             php artisan config:clear
             php artisan route:clear
             php artisan view:clear
 
-            # Restart PHP-FPM (optional, depending on your setup)
+            # Restart PHP-FPM
             sudo systemctl restart php8.1-fpm
           EOF
