@@ -16,10 +16,13 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
+      - name: Set safe directory for git
+        run: git config --global --add safe.directory /home/itmarkaz/sam
+
       - name: Deploy to Server
         run: |
           # Parolni ishlatib SSH ulanishi
-          sshpass -p "IT_markaz_2024" ssh -T -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
+          sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -T -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
             set -e
             cd /home/itmarkaz/sam
 
@@ -34,8 +37,6 @@ jobs:
             chown -R www-data:www-data /home/itmarkaz/sam
             chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
 
-            # Run migrations and clear caches
-            php artisan migrate --force
             php artisan cache:clear
             php artisan config:clear
             php artisan route:clear
