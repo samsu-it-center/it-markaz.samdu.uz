@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="rts-event rts-section-padding">
+<div class="rts-event rts-section-padding">
         <div class="container">
             <div class="row justify-content-sm-center justify-content-md-start g-5">
                 @foreach($news as $new)

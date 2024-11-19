@@ -38,7 +38,7 @@ class CourseController extends Controller
     public function show(Request $request, Course $course, Lesson $lesson)
     {
         $lessons = $course->lessons;
-        $lesson = $lessons[0];
+        $lesson = $lessons[0] ?? $lessons->first();
 
         if ($request->get('lesson_id')) {
             $lesson = Lesson::find($request->get('lesson_id'));

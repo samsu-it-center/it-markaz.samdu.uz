@@ -1,0 +1,45 @@
+name: Laravel Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to Server
+        run: |
+          sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
+            set -e
+            cd /home/itmarkaz/sam
+
+            # Update source code
+            git reset --hard
+            git pull origin main
+
+            # Install dependencies
+            composer install --no-dev --optimize-autoloader
+
+            # Set permissions
+            chown -R www-data:www-data /home/itmarkaz/sam
+            chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
+
+            # Run migrations and clear caches
+            php artisan migrate --force
+            php artisan cache:clear
+            php artisan config:clear
+            php artisan route:clear
+            php artisan view:clear
+
+            # Restart PHP-FPM (optional, depending on your setup)
+            sudo systemctl restart php8.1-fpm
+  EOF

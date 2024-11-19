@@ -5,10 +5,10 @@
             <div class="rts-program-single-header">
                 <div class="row g-3">
                     <div class="col-lg-6">
-                        <h3 class="rts-section-title">{{ $course['title_'.session('locale')] }}</h3>
+                        <h3 class="rts-section-title">{{ $course['title_'.session('locale')] ?? "Title not found" }}</h3>
                     </div>
                     <div class="col-lg-6">
-                        <p class="rts-section-description">{!! $course['description_'.session('locale')] !!}</p>
+                        <p class="rts-section-description">{!! $course['description_'.session('locale')] ?? "Desc not found" !!}</p>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="program-description-area" id="curriculum">
-                            {!! $lesson['description_'.session('locale')] !!}
+                            {!! $lesson['description_'.session('locale')] ?? "Desc Not found" !!}
                         </div>
                     </div>
                     <!-- sidebar -->
