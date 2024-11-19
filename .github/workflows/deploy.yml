@@ -21,8 +21,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          # Parolni ishlatib SSH ulanishi
-          sshpass -p "IT_markaz_2024" ssh -T -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
+          sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -T -o StrictHostKeyChecking=no itmarkaz@sampc.uz << 'EOF'
             set -e
             cd /home/itmarkaz/sam
 
