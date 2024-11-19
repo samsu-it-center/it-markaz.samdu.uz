@@ -34,7 +34,6 @@ jobs:
             chmod -R 775 /home/itmarkaz/sam/storage /home/itmarkaz/sam/bootstrap/cache
 
             # Run migrations and clear caches
-            php artisan migrate --force
             php artisan cache:clear
             php artisan config:clear
             php artisan route:clear
@@ -42,4 +41,4 @@ jobs:
 
             # Restart PHP-FPM (optional, depending on your setup)
             sudo systemctl restart php8.1-fpm
-  EOF
+          EOF
