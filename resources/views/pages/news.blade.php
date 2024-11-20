@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="rts-event rts-section-padding">
+    <div class="rts-event rts-section-padding">
         <div class="row container">
             <div class="rts-section">
                 <h3 class="rts-section-title animated fadeIn">@lang('crud.news')</h3>
