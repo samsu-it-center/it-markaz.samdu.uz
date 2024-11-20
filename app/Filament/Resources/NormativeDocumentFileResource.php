@@ -41,8 +41,7 @@ class NormativeDocumentFileResource extends Resource
                     ->multiple()
                     ->preserveFilenames()
                     ->directory('normative-documents')
-                    ->maxFiles(10), // Adjust the maximum number of files as needed
-
+                    ->maxFiles(10),
                 TextInput::make('description')
                     ->label('File Description')
                     ->nullable(),

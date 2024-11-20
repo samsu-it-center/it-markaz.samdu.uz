@@ -35,7 +35,6 @@ class SliderResource extends Resource
                     ->schema([
                         FileUpload::make('image')
                             ->label('Image')
-                            ->image()
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif'])
                             ->maxSize(10240),
                         TextInput::make('title_en')
