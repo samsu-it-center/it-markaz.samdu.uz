@@ -32,33 +32,32 @@
                                     <li>
                                         <a class="nav-link" href="{{ route('news') }}">@lang('crud.menu.news')</a>
                                     </li>
-
-
+                                    <li>
+                                        <a class="nav-link"
+                                           href="{{ route('startup') }}">@lang('crud.menu.start_up')</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-2">
                         <div class="rts-footer-widget ml--30">
-                            <li>
-                                <a class="nav-link"
-                                   href="{{ route('startup') }}">@lang('crud.menu.start_up')</a>
-                            </li>
-
-                            <li>
-                                <a class="nav-link"
-                                   href="{{ route('software') }}">@lang('crud.menu.software')</a>
-                            </li>
+                            <div class="rts-footer-menu">
+                                <li>
+                                    <a class="nav-link"
+                                       href="{{ route('software') }}">@lang('crud.menu.software')</a>
+                                </li>
 
 
-                            <li>
-                                <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
-                            </li>
+                                <li>
+                                    <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
+                                </li>
 
-                            <li>
-                                <a class="nav-link"
-                                   href="{{ route('document') }}">@lang('crud.menu.document')</a>
-                            </li>
+                                <li>
+                                    <a class="nav-link"
+                                       href="{{ route('document') }}">@lang('crud.menu.document')</a>
+                                </li>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-8 col-lg-4">
