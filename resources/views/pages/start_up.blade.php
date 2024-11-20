@@ -10,6 +10,7 @@
             </div>
             <div class="all-program-category">
                 <div class="row g-4">
+                    {{ $start_ups }}
                     @foreach($start_ups as $start_up)
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="single-cat-item">
