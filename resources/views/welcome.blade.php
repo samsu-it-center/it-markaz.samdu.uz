@@ -203,7 +203,8 @@
         </div>
     </div>
 
-    @if(isset($online) or isset($ofline))
+    @if(isset($online) or isset($offline))
+        {{ $offline }} {{$online}}
     <div class="semister-fee pb--120 pb__md--80">
         <div class="container">
             <div class="row">
