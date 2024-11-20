@@ -33,6 +33,7 @@
         /* Container styling */
         .single-cat-item {
             display: flex;
+            flex-direction: column; /* Mobil uchun vertikal tartib */
             align-items: stretch;
             height: 100%;
             border: 1px solid #ddd;
@@ -40,11 +41,18 @@
             overflow: hidden;
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+        }
+
+        @media (min-width: 992px) {
+            .single-cat-item {
+                flex-direction: row; /* Katta ekranlar uchun gorizontal tartib */
+            }
         }
 
         .single-cat-item .cat-thumb {
-            flex: 1; /* Rasm o'lchami mos */
-            max-width: 40%;
+            flex: 1;
+            max-width: 40%; /* Rasmlar katta ekranlarda 40% maydon egallaydi */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -54,13 +62,13 @@
 
         .single-cat-item .cat-thumb img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Rasmlar kesmasdan to'g'ri ko'rinish */
+            height: auto;
+            object-fit: cover;
             border-right: 1px solid #ddd;
         }
 
         .single-cat-item .cat-meta {
-            flex: 1; /* Matn o'lchami mos */
+            flex: 2;
             padding: 16px;
             display: flex;
             flex-direction: column;
@@ -68,35 +76,37 @@
         }
 
         .cat-title-link {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #333;
             text-decoration: none;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .cat-description {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #666;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .cat-link-btn {
             display: inline-block;
-            margin-top: 8px;
-            padding: 8px 12px;
-            font-size: 0.85rem;
+            margin-top: 16px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
             font-weight: 500;
             color: #fff;
             background-color: #007bff;
             border-radius: 4px;
             text-align: center;
             text-decoration: none;
+            max-width: 150px;
         }
 
         .cat-link-btn:hover {
             background-color: #0056b3;
         }
+
 
     </style>
 </head>

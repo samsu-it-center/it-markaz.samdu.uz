@@ -9,10 +9,10 @@
                 </div>
             </div>
             <div class="all-program-category">
-                <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="row g-4">
                     @foreach($start_ups as $start_up)
-                        <div class="col">
-                            <div class="single-cat-item d-flex flex-column flex-md-row">
+                        <div class="col-12">
+                            <div class="single-cat-item d-flex flex-column flex-lg-row">
                                 <div class="cat-thumb">
                                     <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
                                     <a href="{{ route('start_up.show', $start_up->id) }}" class="cat-link-btn">startup</a>
