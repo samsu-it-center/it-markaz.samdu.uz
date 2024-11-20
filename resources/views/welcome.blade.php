@@ -265,9 +265,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="rts-fee-chart-circle">
-                                <img src="{{ asset('site/assets/images/course/scholarship-big.jpg') }}" alt="fee-chart">
-                            </div>
                         </div>
                     </div>
                 </div>
