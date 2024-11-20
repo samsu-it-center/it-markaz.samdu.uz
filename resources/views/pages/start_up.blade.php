@@ -9,29 +9,28 @@
                 </div>
             </div>
             <div class="all-program-category">
-                <div class="row g-5">
-                    {{ $start_ups }}
+                <div class="row g-4">
                     @foreach($start_ups as $start_up)
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-cat-item">
-                            <div class="cat-thumb">
-                                <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail">
-                                <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
-                            </div>
-                            <div class="cat-meta">
-                                <div class="cat-title">
-                                    <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="single-cat-item">
+                                <div class="cat-thumb">
+                                    <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
+                                    <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
                                 </div>
-                                <div class="cat-link">
-                                    <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                <div class="cat-meta">
+                                    <div class="cat-title">
+                                        <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
+                                    </div>
+                                    <div class="cat-link">
+                                        <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
                 <div class="container">
-                    <div class="mt--20 d-flex justify-content-center">
+                    <div class="mt-4 d-flex justify-content-center">
                         {{ $start_ups->links() }}
                     </div>
                 </div>
