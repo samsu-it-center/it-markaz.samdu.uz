@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="rts-blog v_3 rts-section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="rts-section">
-                    <h3 class="rts-section-title">@lang('crud.software.name')</h3>
-                </div>
+        <div class="row">
+            <div class="rts-section">
+                <h3 class="rts-section-title">@lang('crud.software.name')</h3>
             </div>
+            <hr>
+        </div>
+        <div class="container">
+
             <div class="row justify-content-md-start justify-content-sm-center g-5">
                 @foreach($softwares as $software)
                 <div class="col-sm-10 col-md-6 col-lg-6 col-xl-4">
