@@ -9,18 +9,18 @@
                 </div>
             </div>
             <div class="all-program-category">
-                <div class="row g-4">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
                     @foreach($start_ups as $start_up)
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-cat-item row">
-                                <div class="cat-thumb col-md-5">
-                                    <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
-                                    <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
+                        <div class="col">
+                            <div class="single-cat-item d-flex flex-column flex-md-row">
+                                <div class="cat-thumb col-md-5 mb-3 mb-md-0">
+                                    <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid rounded">
+                                    <a href="{{ route('start_up.show', $start_up->id) }}" class="cat-link-btn mt-2 d-inline-block">startup</a>
                                 </div>
                                 <div class="cat-meta col-md-7">
                                     <div class="cat-title">
-                                        <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
-                                        <p>{!! $start_up['opportunities_tasks_'.session('locale')] !!}</p>
+                                        <a href="{{ route('start_up.show', $start_up->id) }}" class="h5 text-decoration-none d-block">{!! $start_up['title_'.session('locale')] !!}</a>
+                                        <p class="mt-2 text-muted">{!! $start_up['opportunities_tasks_'.session('locale')] !!}</p>
                                     </div>
                                 </div>
                             </div>
