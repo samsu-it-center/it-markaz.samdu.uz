@@ -13,14 +13,14 @@
                     @foreach($start_ups as $start_up)
                         <div class="col">
                             <div class="single-cat-item d-flex flex-column flex-md-row">
-                                <div class="cat-thumb col-md-5 mb-3 mb-md-0">
-                                    <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid rounded">
-                                    <a href="{{ route('start_up.show', $start_up->id) }}" class="cat-link-btn mt-2 d-inline-block">startup</a>
+                                <div class="cat-thumb">
+                                    <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
+                                    <a href="{{ route('start_up.show', $start_up->id) }}" class="cat-link-btn">startup</a>
                                 </div>
-                                <div class="cat-meta col-md-7">
+                                <div class="cat-meta">
                                     <div class="cat-title">
-                                        <a href="{{ route('start_up.show', $start_up->id) }}" class="h5 text-decoration-none d-block">{!! $start_up['title_'.session('locale')] !!}</a>
-                                        <p class="mt-2 text-muted">{!! $start_up['opportunities_tasks_'.session('locale')] !!}</p>
+                                        <a href="{{ route('start_up.show', $start_up->id) }}" class="cat-title-link">{!! $start_up['title_'.session('locale')] !!}</a>
+                                        <p class="cat-description">{!! $start_up['opportunities_tasks_'.session('locale')] !!}</p>
                                     </div>
                                 </div>
                             </div>

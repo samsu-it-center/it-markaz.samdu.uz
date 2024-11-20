@@ -29,6 +29,75 @@
             padding: 5px;
             width: 30px;
         }
+
+        /* Container styling */
+        .single-cat-item {
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .single-cat-item .cat-thumb {
+            flex: 1; /* Rasm o'lchami mos */
+            max-width: 40%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f8f8;
+        }
+
+        .single-cat-item .cat-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Rasmlar kesmasdan to'g'ri ko'rinish */
+            border-right: 1px solid #ddd;
+        }
+
+        .single-cat-item .cat-meta {
+            flex: 1; /* Matn o'lchami mos */
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cat-title-link {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        .cat-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .cat-link-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .cat-link-btn:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 
