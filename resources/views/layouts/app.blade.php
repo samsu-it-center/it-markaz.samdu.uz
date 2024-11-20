@@ -52,11 +52,8 @@
 
         .single-cat-item .cat-thumb {
             flex: 1;
-            max-width: 40%; /* Rasmlar katta ekranlarda 40% maydon egallaydi */
+            max-width: 40%;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: #f8f8f8;
         }
 
