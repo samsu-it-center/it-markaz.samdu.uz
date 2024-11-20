@@ -275,11 +275,10 @@
                 <div class="col-lg-12">
                     <div class="faq-wrapper">
                         <div class="accordion" id="faqExample">
-                            {{$faqs}}
                             @foreach($faqs as $faq)
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqHeading{{ $faq->id }}">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        <button class="accordion-button" type="button" style="font-size: 20px;" data-bs-toggle="collapse"
                                                 data-bs-target="#faqCollapse{{ $faq->id }}" aria-expanded="true"
                                                 aria-controls="faqCollapse{{ $faq->id }}">
                                             {{ $faq['question'] ?? 'Default Question' }}
