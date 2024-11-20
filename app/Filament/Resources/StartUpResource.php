@@ -101,7 +101,7 @@ class StartUpResource extends Resource
                     ->label('Project Image')
                     ->image()
                     ->directory('startup-images')
-                    ->required() // Set to required if necessary
+                    ->required()
                     ->columnSpan('full'),
             ]);
     }
