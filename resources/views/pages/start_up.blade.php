@@ -13,7 +13,6 @@
                     @foreach($start_ups as $start_up)
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="single-cat-item row">
-                                {{ $start_up }}
                                 <div class="cat-thumb col-md-5">
                                     <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
                                     <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
@@ -21,8 +20,7 @@
                                 <div class="cat-meta col-md-7">
                                     <div class="cat-title">
                                         <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
-                                        <p>{!! $start_up['description_'.session('locale')] !!}</p>
-
+                                        <p>{!! $start_up['opportunities_tasks_'.session('locale')] !!}</p>
 
                                         <div class="cat-link">
                                             <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
