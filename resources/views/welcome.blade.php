@@ -271,7 +271,7 @@
     <!-- FAQ Start -->
     <section class="rts-faq-section rts-section-padding">
         <div class="container">
-            <h2>@lang('faq')</h2>
+            <h2>@lang('crud.faq')</h2>
         </div>
         <div class="container">
             <div class="row">
