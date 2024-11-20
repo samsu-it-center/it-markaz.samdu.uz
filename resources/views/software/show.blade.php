@@ -16,12 +16,12 @@
 
                         @if($software->video_url)
                             <div class="video-link">
-                                <a class="btn btn-primary" href="{{ $software->video_url }}">Watch Video</a>
+                                <a class="btn btn-primary text-center btn-xs" target="_blank"  href="{{ $software->video_url }}">Watch Video</a>
                             </div>
                         @endif
 
                         <div class="software-link">
-                            <a class="btn btn-primary" href="{{ $software->link }}">Visit the software website</a>
+                            <a class="btn btn-primary text-center btn-xs" target="_blank"  href="{{ $software->link }}">Visit the software website</a>
                         </div>
                     </article>
                 </div>
