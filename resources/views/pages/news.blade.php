@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class="rts-academic-area rts-section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="rts-section">
-                    <h3 class="rts-section-title animated fadeIn">@lang('crud.news')</h3>
-                </div>
+<div class="rts-event rts-section-padding">
+        <div class="row container">
+            <div class="rts-section">
+                <h3 class="rts-section-title animated fadeIn">@lang('crud.news')</h3>
             </div>
-
+            <hr>
+        </div>
+        <div class="container">
             <div class="all-program-category">
                 <div class="row justify-content-sm-center justify-content-md-start g-5">
                     @foreach($news as $new)
