@@ -2,6 +2,11 @@
 @section('content')
 <div class="rts-event rts-section-padding">
         <div class="container">
+            <div class="row">
+                <div class="rts-section">
+                    <h3 class="rts-section-title animated fadeIn">@lang('crud.news')</h3>
+                </div>
+            </div>
             <div class="row justify-content-sm-center justify-content-md-start g-5">
                 @foreach($news as $new)
                     <div class="col-lg-4 col-md-6 col-sm-10">
