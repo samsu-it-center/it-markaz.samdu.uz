@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="col-md-6 col-sm-6 col-lg-2">
-                        <div class="rts-footer-widget ">
+                        <div class="rts-footer-widget">
                             <div class="rts-footer-menu">
                                 <ul>
                                     <li>
@@ -43,20 +43,22 @@
                     <div class="col-md-6 col-sm-4 col-lg-2">
                         <div class="rts-footer-widget ml--30">
                             <div class="rts-footer-menu">
-                                <li>
-                                    <a class="nav-link"
-                                       href="{{ route('software') }}">@lang('crud.menu.software')</a>
-                                </li>
+                                <ul>
+                                    <li>
+                                        <a class="nav-link"
+                                           href="{{ route('software') }}">@lang('crud.menu.software')</a>
+                                    </li>
 
 
-                                <li>
-                                    <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
-                                </li>
+                                    <li>
+                                        <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
+                                    </li>
 
-                                <li>
-                                    <a class="nav-link"
-                                       href="{{ route('document') }}">@lang('crud.menu.document')</a>
-                                </li>
+                                    <li>
+                                        <a class="nav-link"
+                                           href="{{ route('document') }}">@lang('crud.menu.document')</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
