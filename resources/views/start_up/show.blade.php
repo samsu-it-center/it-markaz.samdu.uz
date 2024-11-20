@@ -18,17 +18,17 @@
                         </div>
 
                         <div class="project-objective">
-                            <h4 class="text-center my-1">@lang('crud.start_up.project_purpose')</h4>
+                            <h5 class="text-center my-1">@lang('crud.start_up.project_purpose')</h5>
                             {!! $start_up['project_objective_' . session('locale', 'en')] ?? $start_up['project_objective_en'] !!}
                         </div>
 
                         <div class="opportunities-tasks">
-                            <h4 class="text-center my-1">@lang('crud.start_up.opportunities_tasks')</h4>
+                            <h5 class="text-center my-1">@lang('crud.start_up.opportunities_tasks')</h5>
                             {!! $start_up['opportunities_tasks_' . session('locale', 'en')] ?? $start_up['opportunities_tasks_en'] !!}
                         </div>
 
                         <div class="budget">
-                            <h4 class="text-center my-1">@lang('crud.start_up.price')</h4>
+                            <h5 class="text-center my-1">@lang('crud.start_up.price')</h5>
                             {!! $start_up['budget_' . session('locale', 'en')] ?? $start_up['budget_en'] !!}
                         </div>
 
