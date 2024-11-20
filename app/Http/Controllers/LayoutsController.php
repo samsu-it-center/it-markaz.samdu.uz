@@ -29,7 +29,7 @@ class LayoutsController extends Controller
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $start_ups = StartUp::orderBy('id', 'desc')->paginate(9);
+        $start_ups = StartUp::orderBy('id', 'desc')->paginate(4);
         return view('pages.start_up',compact('start_ups'));
     }
 
