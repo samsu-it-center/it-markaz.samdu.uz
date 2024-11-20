@@ -34,9 +34,7 @@ class SliderResource extends Resource
                 Card::make()
                     ->schema([
                         FileUpload::make('image')
-                            ->label('Rasm yoki gif')
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif'])
-                            ->maxSize(7000),
+                            ->label('Rasm yoki gif'),
                         TextInput::make('title_en')
                             ->label('Title (English)')
                             ->required(),
