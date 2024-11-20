@@ -11,7 +11,7 @@
             <div class="all-program-category">
                 <div class="row g-4">
                     @foreach($start_ups as $start_up)
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="single-cat-item row">
                                 <div class="cat-thumb col-md-5">
                                     <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
