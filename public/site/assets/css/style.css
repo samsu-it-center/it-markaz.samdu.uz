@@ -16731,9 +16731,9 @@ nav ul li a {
 }
 
 .single-brand-logo a img {
-    transition: var(--transition);
+  filter: saturate(0.5) contrast(0.1);
+  transition: var(--transition);
 }
-
 .single-brand-logo:hover a img {
   filter: saturate(1) contrast(1);
 }
