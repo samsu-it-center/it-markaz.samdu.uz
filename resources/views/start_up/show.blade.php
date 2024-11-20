@@ -2,6 +2,7 @@
 @section('content')
     <div class="rts-blog-details rts-section-padding">
         <div class="container">
+            {{ $start_up }}
             <div class="row justify-content-center g-5">
                 <div class="col-lg-12 col-md-12">
                     <article class="blog-details">
