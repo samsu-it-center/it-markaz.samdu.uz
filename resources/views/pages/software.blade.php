@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="rts-blog v_3 rts-section-padding">
-        <div class="row">
+        <div class="row container">
             <div class="rts-section">
                 <h3 class="rts-section-title">@lang('crud.software.name')</h3>
             </div>
