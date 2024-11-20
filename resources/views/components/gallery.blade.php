@@ -1,4 +1,3 @@
-
 <div class="rts-brand v_1 rts-padding-100">
     <div class="container">
         <div class="row justify-content-md-center">
@@ -16,14 +15,8 @@
                         "991": { "slidesPerView": 6, "centeredSlides": true },
                         "1201": { "slidesPerView": 7, "centeredSlides": true }
                     }
-<<<<<<< HEAD
-                }'>
+                    }'>
                     <div class="swiper-wrapper">
-=======
-            }'>
-		   
-                    <div class="swiper-wrapper">		
->>>>>>> 52a637813aadb1f8d6e0f1438fece941520300d4
                         @if($gallerys && $gallerys->count())
                             @foreach($gallerys as $gallery)
                                 <div class="swiper-slide">

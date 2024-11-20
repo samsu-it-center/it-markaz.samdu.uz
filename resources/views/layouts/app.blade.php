@@ -37,14 +37,8 @@
 
 @yield('content')
 
-<<<<<<< HEAD
-<x-gallery />
-<!-- footer end -->
-=======
-<!-- gallery -->
 <x-gallery />
 <!-- footer -->
->>>>>>> 52a637813aadb1f8d6e0f1438fece941520300d4
 <x-footer />
 
 <div class="progress-wrap">
