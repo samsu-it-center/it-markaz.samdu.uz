@@ -203,7 +203,7 @@
         </div>
     </div>
 
-    @if($online or $ofline)
+    @if(isset($online) or isset($ofline))
     <div class="semister-fee pb--120 pb__md--80">
         <div class="container">
             <div class="row">
@@ -213,14 +213,13 @@
                     <div class="rts-fee-chart">
                         <div class="rts-fee-chart-tabs">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                @if($online)
+                                @if(isset($online))
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                                             type="button" role="tab" aria-controls="home" aria-selected="true">@lang('crud.course.online')
                                     </button>
                                 </li>
-                                @endif
-                                @if($offline)
+                                @elseif(isset($offline))
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
                                             type="button" role="tab" aria-controls="profile" aria-selected="false">@lang('crud.course.offline')
@@ -276,6 +275,7 @@
                 <div class="col-lg-12">
                     <div class="faq-wrapper">
                         <div class="accordion" id="faqExample">
+                            {{$faqs}}
                             @foreach($faqs as $faq)
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqHeading{{ $faq->id }}">
