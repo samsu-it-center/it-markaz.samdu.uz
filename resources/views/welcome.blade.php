@@ -203,71 +203,78 @@
         </div>
     </div>
 
-    @if(isset($online) or isset($offline))
-    <div class="semister-fee pb--120 pb__md--80">
-        <div class="container">
-            <div class="row">
-                <div class="semister-fee__content">
-                    <h5 class="rts-section-title">@lang('crud.course.name')</h5>
-                    <!-- Tab Item -->
-                    <div class="rts-fee-chart">
-                        <div class="rts-fee-chart-tabs">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                @if(isset($online))
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                                            type="button" role="tab" aria-controls="home" aria-selected="true">@lang('crud.course.online')
-                                    </button>
-                                </li>
-                                @elseif(isset($offline))
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                                            type="button" role="tab" aria-controls="profile" aria-selected="false">@lang('crud.course.offline')
-                                    </button>
-                                </li>
-                                @endif
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                     aria-labelledby="home-tab">
-                                    <div class="rts-fee-chart-content">
-                                        <ul>
-                                            @foreach($online as $on)
-                                                <li>
-                                                    <a href="{{ route('course.show', $on->id) }}">
-                                                        <span>{{ $on['title_'.session('locale')] ?? 'Default Online Course' }}</span>
-                                                        <span>{{ $on->price ?? 'Free' }}</span>
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="rts-fee-chart-content">
-                                        <ul>
-                                            @foreach($offline as $off)
-                                                <li>
-                                                    <a href="{{ route('course.show', $off->id) }}">
-                                                        <span>{{ $off['title_'.session('locale')] ?? 'Default Offline Course' }}</span>
-                                                        <span>{{ $off->price ?? 'Free' }}</span>
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+
+    @if($online->isNotEmpty() || $offline->isNotEmpty())
+        <div class="semister-fee pb--120 pb__md--80">
+            <div class="container">
+                <div class="row">
+                    <div class="semister-fee__content">
+                        <h5 class="rts-section-title">@lang('crud.course.name')</h5>
+                        <!-- Tab Item -->
+                        <div class="rts-fee-chart">
+                            <div class="rts-fee-chart-tabs">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    @if($online->isNotEmpty())
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                                    type="button" role="tab" aria-controls="home" aria-selected="true">@lang('crud.course.online')
+                                            </button>
+                                        </li>
+                                    @endif
+                                    @if($offline->isNotEmpty())
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                                    type="button" role="tab" aria-controls="profile" aria-selected="false">@lang('crud.course.offline')
+                                            </button>
+                                        </li>
+                                    @endif
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    @if($online->isNotEmpty())
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                             aria-labelledby="home-tab">
+                                            <div class="rts-fee-chart-content">
+                                                <ul>
+                                                    @foreach($online as $on)
+                                                        <li>
+                                                            <a href="{{ route('course.show', $on->id) }}">
+                                                                <span>{{ $on['title_'.session('locale')] ?? 'Default Online Course' }}</span>
+                                                                <span>{{ $on->price ?? 'Free' }}</span>
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($offline->isNotEmpty())
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="rts-fee-chart-content">
+                                                <ul>
+                                                    @foreach($offline as $off)
+                                                        <li>
+                                                            <a href="{{ route('course.show', $off->id) }}">
+                                                                <span>{{ $off['title_'.session('locale')] ?? 'Default Offline Course' }}</span>
+                                                                <span>{{ $off->price ?? 'Free' }}</span>
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
-                        <div class="rts-fee-chart-circle">
-                            <img src="{{ asset('site/assets/images/course/scholarship-big.jpg') }}" alt="fee-chart">
+                            <div class="rts-fee-chart-circle">
+                                <img src="{{ asset('site/assets/images/course/scholarship-big.jpg') }}" alt="fee-chart">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
+
     <!-- FAQ Start -->
     <section class="rts-faq-section rts-section-padding">
         <div class="container">
