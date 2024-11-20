@@ -22,9 +22,11 @@
                                     <div class="cat-title">
                                         <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
                                         <p>{!! $start_up['description_'.session('locale')] !!}</p>
-                                    </div>
-                                    <div class="cat-link">
-                                        <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+
+
+                                        <div class="cat-link">
+                                            <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
