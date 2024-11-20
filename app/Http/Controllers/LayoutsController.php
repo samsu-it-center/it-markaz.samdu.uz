@@ -23,25 +23,25 @@ class LayoutsController extends Controller
 
     public function news(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $news = News::paginate(9);
+        $news = News::orderBy('id', 'desc')->paginate(9);
         return view('pages.news',compact('news'));
     }
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $start_ups = StartUp::paginate(9);
+        $start_ups = StartUp::orderBy('id', 'desc')->paginate(9);
         return view('pages.start_up',compact('start_ups'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $softwares = SoftwareProduct::paginate(9);
+        $softwares = SoftwareProduct::orderBy('id', 'desc')->paginate(9);
         return view('pages.software',compact('softwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $courses = Course::all();
+        $courses = Course::orderBy('id', 'desc')->get();
         return view('pages.course',compact('courses'));
     }
 
@@ -54,8 +54,8 @@ class LayoutsController extends Controller
 
     public function welcome(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $faqs = Question::all();
-        $sliders = Slider::all();
+        $faqs = Question::orderBy('id', 'desc')->get();
+        $sliders = Slider::orderBy('id', 'desc')->get();
         $about = About::first();
         $online = Course::where('type','online')->get();
         $offline = Course::where('type','offline')->get();
