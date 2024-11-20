@@ -271,6 +271,9 @@
     <!-- FAQ Start -->
     <section class="rts-faq-section rts-section-padding">
         <div class="container">
+            <h2>@lang('faq')</h2>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="faq-wrapper">
@@ -278,7 +281,7 @@
                             @foreach($faqs as $faq)
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="faqHeading{{ $faq->id }}">
-                                        <button class="accordion-button" type="button" style="font-size: 20px;" data-bs-toggle="collapse"
+                                        <button class="accordion-button" type="button" style="font-size: 17px;" data-bs-toggle="collapse"
                                                 data-bs-target="#faqCollapse{{ $faq->id }}" aria-expanded="true"
                                                 aria-controls="faqCollapse{{ $faq->id }}">
                                             {{ $faq['question'] ?? 'Default Question' }}
