@@ -10,10 +10,10 @@
             </div>
             <div class="all-program-category">
                 <div class="row g-4">
-                    {{ $start_ups }}
                     @foreach($start_ups as $start_up)
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="single-cat-item row">
+                                {{ $start_up }}
                                 <div class="cat-thumb col-md-5">
                                     <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
                                     <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
