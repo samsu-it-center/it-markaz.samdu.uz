@@ -282,13 +282,13 @@
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#faqCollapse{{ $faq->id }}" aria-expanded="true"
                                                 aria-controls="faqCollapse{{ $faq->id }}">
-                                            {{ $faq['question_'.session('locale')] ?? 'Default Question' }}
+                                            {{ $faq['question'] ?? 'Default Question' }}
                                         </button>
                                     </h2>
                                     <div id="faqCollapse{{ $faq->id }}" class="accordion-collapse collapse"
                                          aria-labelledby="faqHeading{{ $faq->id }}" data-bs-parent="#faqExample">
                                         <div class="accordion-body">
-                                            {{ $faq['answer_'.session('locale')] ?? 'Default Answer' }}
+                                            {{ $faq['answer'] ?? 'Default Answer' }}
                                         </div>
                                     </div>
                                 </div>
