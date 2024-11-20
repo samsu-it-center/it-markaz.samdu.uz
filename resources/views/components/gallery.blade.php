@@ -4,9 +4,8 @@
             <div class="col-lg-12 col-md-11">
                 <div class="rts-brand-slider swiper swiper-data" data-swiper='{
                     "slidesPerView":7,
-                    "loop": true,
-                    "autoplay":{
-                        "delay":"3000"
+                    "autoplay": {
+                        "delay": 3000
                     },
                     "breakpoints": {
                         "320": { "slidesPerView": 3, "centeredSlides": true },
@@ -15,7 +14,7 @@
                         "991": { "slidesPerView": 6, "centeredSlides": true },
                         "1201": { "slidesPerView": 7, "centeredSlides": true }
                     }
-                    }'>
+                }'>
                     <div class="swiper-wrapper">
                         @if($gallerys && $gallerys->count())
                             @foreach($gallerys as $gallery)
