@@ -117,9 +117,7 @@
             <img class="rt-shape__4" src="{{ asset('site/assets/images/about/shape/04.png') }}" alt="">
         </div>
     </section>
-    <!-- About Us End -->
 
-    <!-- Blog Area Start -->
     <div class="rts-blog v_1 rts-section-padding">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -204,9 +202,8 @@
             </div>
         </div>
     </div>
-    <!-- Blog Area End -->
 
-    <!-- Semester Fee Start -->
+    @if($online or $ofline)
     <div class="semister-fee pb--120 pb__md--80">
         <div class="container">
             <div class="row">
@@ -216,16 +213,20 @@
                     <div class="rts-fee-chart">
                         <div class="rts-fee-chart-tabs">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                @if($online)
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                                             type="button" role="tab" aria-controls="home" aria-selected="true">@lang('crud.course.online')
                                     </button>
                                 </li>
+                                @endif
+                                @if($offline)
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
                                             type="button" role="tab" aria-controls="profile" aria-selected="false">@lang('crud.course.offline')
                                     </button>
                                 </li>
+                                @endif
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel"
@@ -267,8 +268,7 @@
             </div>
         </div>
     </div>
-    <!-- Semester Fee End -->
-
+    @endif
     <!-- FAQ Start -->
     <section class="rts-faq-section rts-section-padding">
         <div class="container">

@@ -39,7 +39,7 @@
 
 <x-gallery />
 <!-- footer -->
-<x-footer />
+<x-footer></x-footer>
 
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

@@ -10,11 +10,11 @@
                                 <img src="{{ asset('logo.png') }}" alt="itcenter">
                             </a>
                             <p>
-                                {{ $about['official_name_'.session('locale')] ?? 'Default Official Name' }}
+                                {{ $about['official_name_'.session('locale')] ?? 'Birlamchi rasmiy ism' }}
                             </p>
                             <div class="rts-contact-link">
                                 <a href="mailto:contact@reacthemes.com"><i
-                                        class="fa-sharp fa-light fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Default Address' }}
+                                        class="fa-sharp fa-light fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
                                 <a href="callto:+998 93 728 68 67"><i class="fa-thin fa-phone"></i> +998 93 728 68
                                     67</a>
@@ -33,7 +33,7 @@
                     <div class="col-md-6 col-sm-8 col-lg-4">
                         <div class="rts-footer-widget ml--30">
                             <iframe height="300"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9320.458032388887!2d66.9694552!3d39.6383979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f8bc8499255%3A0x7d89646ab179a0fe!2sSamarqand%20Davlat%20Universiteti%20IT%20Markazi!5e0!3m2!1sen!2s!4v1662635733627!5m2!1sen!2s">
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9320.458032388887!2d66.9694552!3d39.6383979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f8bc8499255%3A0x7d89646ab179a0fe!2sSamarqand%20Davlat%20Universiteti%20IT%20Markazi!5e0!3m2!1sen!2s!4v1662635733627!5m2!1sen!2s">
                             </iframe>
                         </div>
                     </div>
