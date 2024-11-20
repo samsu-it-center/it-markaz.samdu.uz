@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="rts-event rts-section-padding">
+<div class="rts-academic-area rts-section-padding">
         <div class="container">
             <div class="row">
                 <div class="rts-section">
