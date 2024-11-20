@@ -13,12 +13,12 @@
                     {{ $start_ups }}
                     @foreach($start_ups as $start_up)
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-cat-item">
-                                <div class="cat-thumb">
+                            <div class="single-cat-item row">
+                                <div class="cat-thumb col-md-5">
                                     <img src="{{ asset('storage/'.$start_up->image) }}" alt="course-thumbnail" class="img-fluid">
                                     <a href="{{ route('start_up.show',$start_up->id) }}" class="cat-link-btn">startup</a>
                                 </div>
-                                <div class="cat-meta">
+                                <div class="cat-meta col-md-7">
                                     <div class="cat-title">
                                         <a href="{{ route('start_up.show',$start_up->id) }}">{!! $start_up['title_'.session('locale')] !!}</a>
                                     </div>
