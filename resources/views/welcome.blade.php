@@ -172,7 +172,7 @@
                 <div class="col-md-11 col-lg-6">
                     <div class="rts-blog-post">
                         @foreach($news->skip(1) as $item)
-                            <div class="single-blog-post m-2">
+                            <div class="single-blog-post">
                                 <div class="blog-thumb">
                                     <a href="{{ route('news.show', $item->id) }}">
                                         <img src="{{ asset('storage/'.$item->image) }}" alt="post-thumbnail">
