@@ -16731,7 +16731,6 @@ nav ul li a {
 }
 
 .single-brand-logo a img {
-    filter: saturate(0.2) contrast(0.03) brightness(0.7);
     transition: var(--transition);
 }
 
