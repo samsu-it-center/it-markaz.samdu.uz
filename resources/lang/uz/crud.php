@@ -5,7 +5,7 @@ return [
     "menu" => [
         "about" => "IT Markaz haqida",
         "news" => "Yangiliklar",
-        "start_up" => "Start Up",
+        "start_up" => "StartUplar va Ilmiy loyihalar",
         "software" => "Dasturiy mahsulotlar",
         "course" => "Kurslar",
         "document" => "Me'yoriy hujjatlar"
@@ -29,7 +29,7 @@ return [
     "news" => "Yangiliklar",
 
     "start_up" => [
-        "title" => "StartUplar",
+        "title" => "StartUplar va Ilmiy loyihalar",
         "project_purpose" => "Loyiha maqsadi",
         "opportunities_tasks" => "Loyiha imkoniyatlari va vazifalari",
         "price" => "Loyihani byudjeti",

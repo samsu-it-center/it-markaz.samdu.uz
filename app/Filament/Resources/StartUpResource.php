@@ -24,6 +24,7 @@ class StartUpResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
     protected static ?string $navigationLabel = "StartUp";
     protected static ?string $label = "StartUp";
+
     public static function form(Form $form): Form
     {
         return $form
@@ -103,6 +104,16 @@ class StartUpResource extends Resource
                     ->directory('startup-images')
                     ->required()
                     ->columnSpan('full'),
+
+                Forms\Components\Select::make('type')
+                    ->label('Type (Turi)')
+                    ->required()
+                    ->options(
+                        \App\Models\Category::pluck('name', 'id')->toArray()
+                    )
+                    ->searchable() // Kategoriyalar orasida qidirish uchun
+                    ->columnSpan('full'),
+
             ]);
     }
 

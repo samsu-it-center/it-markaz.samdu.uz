@@ -37,7 +37,7 @@
 
 @yield('content')
 
-<x-gallery></x-gallery>
+{{--<x-gallery></x-gallery>--}}
 <!-- footer -->
 <x-footer></x-footer>
 

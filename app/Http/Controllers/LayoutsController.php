@@ -29,8 +29,13 @@ class LayoutsController extends Controller
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $start_ups = StartUp::orderBy('id', 'desc')->paginate(4);
-        return view('pages.start_up',compact('start_ups'));
+        $start_ups = StartUp::where('type',2)
+        ->orderBy('id', 'desc')->paginate(4);
+
+        $projects = StartUp::where('type',1)
+        ->orderBy('id', 'desc')->paginate(4);
+
+        return view('pages.start_up',compact('start_ups','projects'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application

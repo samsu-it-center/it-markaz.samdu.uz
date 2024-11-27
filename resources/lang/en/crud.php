@@ -5,7 +5,7 @@ return [
     "menu" => [
         "about" => "About the IT Center",
         "news" => "News",
-        "start_up" => "Start Ups",
+        "start_up" => "Start Ups and Scientific Projects",
         "software" => "Software Products",
         "course" => "Courses",
         "document" => "Regulatory Documents"
@@ -29,7 +29,7 @@ return [
     "news" => "News",
 
     "start_up" => [
-        "title" => "Start Ups",
+        "title" => "Start Ups and Scientific Projects",
         "project_purpose" => "Project Purpose",
         "opportunities_tasks" => "Project Opportunities and Tasks",
         "price" => "Project Budget",

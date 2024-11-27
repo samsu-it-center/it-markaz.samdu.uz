@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StartUp extends Model
 {
     use HasFactory;
+
     public $table = "startups";
     protected $fillable = [
         'description_en',
@@ -25,6 +26,13 @@ class StartUp extends Model
         'image',
         'title_en',
         'title_uz',
-        'title_ru'
+        'title_ru',
+        'type'
     ];
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
