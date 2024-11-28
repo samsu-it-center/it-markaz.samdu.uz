@@ -37,7 +37,7 @@ return [
     ],
 
     "software" => [
-        "name" => "Dasturiy maxsulotlar",
+        "name" => "Dasturiy mahsulotlar",
         "about" => "Dastur haqida",
         "views" => "Batafsil"
     ],

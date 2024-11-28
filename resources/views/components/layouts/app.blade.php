@@ -13,7 +13,46 @@
         [x-cloak] {
             display: none !important;
         }
+
+
+          body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .bg-light {
+      background-color: #f8faff !important;
+    }
+
+    .shadow {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded {
+      border-radius: 10px;
+    }
+
+    .text-muted {
+      color: #6c757d !important;
+    }
+
+    .btn-primary {
+      background-color: #0047ab;
+      border-color: #0047ab;
+    }
+
+    .btn-primary:hover {
+      background-color: #003a91;
+    }
+
+    .image-center {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
     </style>
+
 
     @filamentStyles
     @vite('resources/css/app.css')
