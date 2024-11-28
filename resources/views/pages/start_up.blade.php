@@ -70,9 +70,19 @@
                                             </div>
                                             <div class="cat-meta col-md-7">
                                                 <div class="cat-title">
-                                                    <a href="{{ route('start_up.show', $project->id) }}">{!! $project['title_' . session('locale')] !!}</a>
-                                                    <p>{!! $project['description_' . session('locale')] !!}</p>
+                                                    <a href="{{ route('start_up.show', $project->id) }}">
+                                                        {!! $project['title_' . session('locale')] !!}
+                                                    </a>
+                                                    <p>
+                                                        @if(strlen($project['description_' . session('locale')]) > 150)
+                                                            {!! Str::limit($project['description_' . session('locale')],150) !!}
+                                                            <a href="{{ route('start_up.show', $project->id) }}">davomi</a>
+                                                        @else
+                                                            {!! Str::limit($project['description_' . session('locale')]) !!}
+                                                        @endif
+                                                    </p>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
