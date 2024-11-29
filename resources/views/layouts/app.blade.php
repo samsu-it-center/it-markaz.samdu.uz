@@ -29,6 +29,68 @@
             padding: 5px;
             width: 30px;
         }
+
+        /* Navbar Background */
+        .custom-navbar {
+            background-color: #004a9f;
+            padding: 10px 20px;
+        }
+
+        /* Navbar Links */
+        .custom-navbar .my-nav-link {
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect on Links */
+        .custom-navbar .my-nav-link:hover {
+            background-color: #ffffff;
+            color: #004a9f;
+            text-decoration: none;
+        }
+
+        /* Active Link Effect */
+        .custom-navbar .my-nav-link.active {
+            background-color: #ffffff;
+            color: #004a9f;
+            font-weight: bold; /* Tanlangan linkni qalin qilib ko'rsatish */
+        }
+
+        /* Buttons for right-side */
+        .custom-navbar .btn {
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect for Buttons */
+        .custom-navbar .btn:hover {
+            background-color: #ffffff;
+            color: #004a9f;
+            border-color: #ffffff;
+        }
+
+        /* Icon Buttons */
+        .custom-navbar .icon-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            padding: 6px 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect for Icon Buttons */
+        .custom-navbar .icon-btn:hover {
+            background-color: #ffffff;
+            color: #004a9f;
+        }
+
+
     </style>
 </head>
 
@@ -43,7 +105,8 @@
 
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+              style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
     </svg>
 </div>
 
@@ -51,6 +114,7 @@
 </div>
 
 <!-- scripts -->
+
 <!-- jquery js -->
 <script src="{{ asset('site/assets/js/vendor/jquery.min.js') }}"></script>
 <!-- bootstrap 5.0.2 -->
@@ -80,6 +144,11 @@
 <script src="{{ asset('site/assets/js/plugins/contact.form.js') }}"></script>
 <script src="{{ asset('site/assets/js/plugins/nice-select.min.js') }}"></script>
 <!-- main Js -->
+<!-- Bootstrap Icons (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="{{ asset('site/assets/js/main.js') }}"></script>
 </body>
 </html>

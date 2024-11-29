@@ -87,6 +87,8 @@
             justify-content: space-between; /* Tugmani pastga joylashadi */
         }
 
+
+
     </style>
 
 

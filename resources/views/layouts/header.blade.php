@@ -49,55 +49,92 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="header-one-wrapper">
-                    <div class="left-side-header">
-                        <a href="/" class="logo-area">
-                            <img src="{{ asset('logo.png') }}" alt="logo" style="width: 90px">
-                        </a>
-                    </div>
-
-                    <div class="main-nav-one">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a class="nav-link" href="{{ route('about') }}">@lang('crud.menu.about')</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="{{ route('news') }}">@lang('crud.menu.news')</a>
-                                </li>
-
-                                <li>
-                                    <a class="nav-link" href="{{ route('startup') }}">@lang('crud.menu.start_up')</a>
-                                </li>
-
-                                <li>
-                                    <a class="nav-link" href="{{ route('software') }}">@lang('crud.menu.software')</a>
-                                </li>
+    {{--    <div class="container">--}}
+    <div class="row ">
+    {{--            <div class="col-lg-12">--}}
+    {{--                <div class="header-one-wrapper">--}}
 
 
-                                <li>
-                                    <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
-                                </li>
+    <!-- Navbar -->
+        <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
+            <!-- Left: Logo -->
+            <div class="d-flex align-items-center bg-white p-3 border rounded-3">
+                {{--                            <img src="https://via.placeholder.com/50" alt="Logo" class="me-3">--}}
+                <a href="/" class="logo-area">
+                    <img src="{{ asset('logo.png') }}" alt="logo" style="width: 90px">
+                </a>
 
-                                <li>
-                                    <a class="nav-link" href="{{ route('document') }}">@lang('crud.menu.document')</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+            </div>
 
-                    <div class="header-right-area-one">
-                        <div class="header-right-content">
-                            <div class="menu-bar" id="menu-btn">
-                                <img src="{{ asset('site/assets/images/icon/bar.svg') }}" alt="menu-bar">
-                            </div>
-                        </div>
+            <ul class="nav container">
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
+                        @lang('crud.menu.about')
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('news') ? 'active' : '' }}" href="{{ route('news') }}">
+                        @lang('crud.menu.news')
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('startup') ? 'active' : '' }}"
+                       href="{{ route('startup') }}">
+                        @lang('crud.menu.start_up')
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('software') ? 'active' : '' }}"
+                       href="{{ route('software') }}">
+                        @lang('crud.menu.software')
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('course') ? 'active' : '' }}"
+                       href="{{ route('course') }}">
+                        @lang('crud.menu.course')
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('document') ? 'active' : '' }}"
+                       href="{{ route('document') }}">
+                        @lang('crud.menu.document')
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- Right: Icons and Button -->
+            <div class="d-flex align-items-center">
+                <!-- Icon Buttons -->
+                <button class="icon-btn me-2">
+                    <i class="bi bi-search"></i> <!-- Search Icon -->
+                </button>
+                <button class="icon-btn me-2">
+                    <i class="bi bi-sun"></i> <!-- Theme Icon -->
+                </button>
+                <button class="icon-btn me-2">
+                    <i class="bi bi-globe"></i> <!-- Language Icon -->
+                </button>
+
+                <!-- Submit Button -->
+                <button class="btn btn-outline-light">Оставить заявку</button>
+            </div>
+            <div class="header-right-area-one">
+                <div class="header-right-content">
+                    <div class="menu-bar" id="menu-btn">
+                        <img src="{{ asset('site/assets/images/icon/bar.svg') }}" alt="menu-bar">
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
+
+        {{--                </div>--}}
     </div>
+    {{--        </div>--}}
+    {{--    </div>--}}
 </header>
