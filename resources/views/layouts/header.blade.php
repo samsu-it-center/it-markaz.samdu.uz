@@ -108,12 +108,12 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="my-nav-link {{ Request::routeIs('document') ? 'active' : '' }}"
-                       href="{{ route('document') }}">
-                        @lang('crud.menu.document')
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="my-nav-link {{ Request::routeIs('document') ? 'active' : '' }}"--}}
+{{--                       href="{{ route('document') }}">--}}
+{{--                        @lang('crud.menu.document')--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
 
 
