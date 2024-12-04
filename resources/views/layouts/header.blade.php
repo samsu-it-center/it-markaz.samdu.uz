@@ -58,8 +58,23 @@
     <!-- Navbar -->
         <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
             <!-- Left: Logo -->
+             <!-- Right: Icons and Button -->
 
-           <div id="myDiv"></div>
+            <div class="d-flex align-items-center">
+                <!-- Icon Buttons -->
+                <button class="border-0 ">
+                <button class="btn btn-outline-light menu ml-5"> <a href="/" class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>
+                </button>
+                <button class="border-0 ">
+                </button>
+                <button class="border-0 ">
+                </button>
+
+                <!-- Submit Button -->
+            </div>
+
+
+
             <ul class="nav container">
                 <li class="nav-item">
                     <a class="my-nav-link {{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
@@ -102,19 +117,7 @@
             </ul>
 
 
-            <!-- Right: Icons and Button -->
-            <div class="d-flex align-items-center">
-                <!-- Icon Buttons -->
-                <button class="border-0 ">
-                </button>
-                <button class="border-0 ">
-                </button>
-                <button class="border-0 ">
-                </button>
 
-                <!-- Submit Button -->
-                <button class="btn btn-outline-light menu m-1"> <a href="/" class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>
-            </div>
             <div class="header-right-area-one ">
                 <div class="header-right-content">
                     <div class="menu-bar" id="menu-btn">
