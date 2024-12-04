@@ -58,14 +58,8 @@
     <!-- Navbar -->
         <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
             <!-- Left: Logo -->
-            <div class="d-flex align-items-center bg-white p-3 border rounded-3">
-                {{--                            <img src="https://via.placeholder.com/50" alt="Logo" class="me-3">--}}
-                <a href="/" class="logo-area">
-                    <img src="{{ asset('logo.png') }}" alt="logo" style="width: 90px">
-                </a>
 
-            </div>
-
+           <div id="myDiv"></div>
             <ul class="nav container">
                 <li class="nav-item">
                     <a class="my-nav-link {{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
@@ -111,23 +105,20 @@
             <!-- Right: Icons and Button -->
             <div class="d-flex align-items-center">
                 <!-- Icon Buttons -->
-                <button class="icon-btn me-2">
-                    <i class="bi bi-search"></i> <!-- Search Icon -->
+                <button class="border-0 ">
                 </button>
-                <button class="icon-btn me-2">
-                    <i class="bi bi-sun"></i> <!-- Theme Icon -->
+                <button class="border-0 ">
                 </button>
-                <button class="icon-btn me-2">
-                    <i class="bi bi-globe"></i> <!-- Language Icon -->
+                <button class="border-0 ">
                 </button>
 
                 <!-- Submit Button -->
-                <button class="btn btn-outline-light">Оставить заявку</button>
+                <button class="btn btn-outline-light menu m-1"> <a href="/" class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>
             </div>
-            <div class="header-right-area-one">
+            <div class="header-right-area-one ">
                 <div class="header-right-content">
                     <div class="menu-bar" id="menu-btn">
-                        <img src="{{ asset('site/assets/images/icon/bar.svg') }}" alt="menu-bar">
+                        <i class="fa fa-list  fa-xl"></i>
                     </div>
                 </div>
             </div>

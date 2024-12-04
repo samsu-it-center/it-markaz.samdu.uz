@@ -34,6 +34,7 @@
         .custom-navbar {
             background-color: #004a9f;
             padding: 10px 20px;
+
         }
 
         /* Navbar Links */
@@ -65,11 +66,12 @@
             padding: 8px 15px;
             font-size: 16px;
             transition: all 0.3s ease-in-out;
+            background-color: #ffffff;
         }
 
         /* Hover Effect for Buttons */
         .custom-navbar .btn:hover {
-            background-color: #ffffff;
+            background-color: lightgrey;
             color: #004a9f;
             border-color: #ffffff;
         }
@@ -90,6 +92,42 @@
             color: #004a9f;
         }
 
+        /* Desktop yoki katta ekranlar uchun */
+        #myDiv {
+            margin-right: 450px !important;
+        }
+
+        .menu {
+            display: flex; /* Tugmalar ko‘rinadi */
+        }
+
+        .header-right-content {
+            display: none !important;
+        }
+
+        /* Mobil ekranlar uchun (768px yoki kichikroq) */
+        @media (max-width: 768px) {
+            #myDiv {
+                margin-right: 0 !important;
+            }
+
+            .menu {
+                display: none; /* Menyu butunlay yashiriladi */
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .header-right-content {
+                display: block !important;
+            }
+
+            .menu-bar {
+                color: #fff;
+                /*border-radius: 3px;*/
+            }
+        }
 
     </style>
 </head>
