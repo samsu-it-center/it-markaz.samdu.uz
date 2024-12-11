@@ -23,12 +23,11 @@
             <!-- Single Slider -->
             @foreach ($sliders as $slider)
 
-
                 <div class="slider">
                     <div class="slides">
 
                         <div>
-                            <img src="{{ asset('site/assets/images/banner/01.jpg') }}" alt="Slide 1">
+                            <img src="{{ asset('storage/'.$start_up->image) }}" alt="Slide 1">
                             <div class="caption">
                                 <span>{{ $slider['title_'.session('locale')] ?? 'Default Title' }}</span><br>
                                 <span>{{ $slider['desc_'.session('locale')] ?? 'Default Description' }}</span>
