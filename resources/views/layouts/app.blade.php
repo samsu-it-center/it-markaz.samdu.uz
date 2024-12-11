@@ -224,11 +224,14 @@
 
         .buttons {
             position: absolute;
-            width: 100%;
             top: 50%;
+            left: 0;
+            right: 0;
             transform: translateY(-50%);
             display: flex;
             justify-content: space-between;
+            padding: 0;
+            color: #004A9F;
         }
 
         .buttons button {
@@ -237,6 +240,20 @@
             border: none;
             cursor: pointer;
             font-size: 24px;
+            padding: 0; /* Tugmalar ichki masofasini olib tashlash */
+            margin: 0; /* Oraliqlarni yo'q qilish */
+        }
+
+        .buttons .left-button {
+            text-align: left; /* Chapga yopishgan */
+            color: #004A9F;
+            margin-left: 10px;
+        }
+
+        .buttons .right-button {
+            text-align: right; /* O'ngga yopishgan */
+            color: #004A9F;
+            margin-right: 10px;
         }
 
         .buttons button:hover {

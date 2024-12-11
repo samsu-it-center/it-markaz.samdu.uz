@@ -21,31 +21,28 @@
             }
         }'>
             <!-- Single Slider -->
-            @foreach ($sliders as $slider)
-
-                <div class="slider">
-                    <div class="slides">
-
+            <div class="slider">
+                <div class="slides">
+                    @foreach ($sliders as $slider)
                         <div>
-                            <img src="{{ asset('storage/'.$slider->image) }}" alt="Slide 1">
+                            <img src="{{ asset('storage/' . $slider->image) }}" alt="Slide Image">
                             <div class="caption">
-                                <span>{{ $slider['title_'.session('locale')] ?? 'Default Title' }}</span><br>
-                                <span>{{ $slider['desc_'.session('locale')] ?? 'Default Description' }}</span>
+                                <span>{{ $slider['title_' . session('locale')] ?? 'Default Title' }}</span><br>
+                                <span>{{ $slider['desc_' . session('locale')] ?? 'Default Description' }}</span>
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="buttons">
-                        <button id="prev">&#9664;</button>
-                        <button id="next">&#9654;</button>
-                    </div>
+                    @endforeach
                 </div>
 
-            @endforeach
+                <div class="buttons">
+                    <button class="left-button" id="prev">&#9664;</button>
+                    <button class="right-button"  id="next">&#9654;</button>
+                </div>
+
+            </div>
 
 
-        <!-- Hero Slider End -->
+            <!-- Hero Slider End -->
 
             <!-- About Us Start -->
             <section class="rts-about v__1 rt-relative rts-section-padding">
