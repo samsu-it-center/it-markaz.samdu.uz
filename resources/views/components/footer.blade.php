@@ -1,4 +1,4 @@
-<footer class="rts-footer v_1 pt--100 pb--80">
+    <footer class="rts-blog v_1 pt--100 pb--80">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-12 col-md-11">
@@ -62,9 +62,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-8 col-lg-4">
-                        <div class="rts-footer-widget ml--30">
-                            <iframe height="300"
+                    <div class="col-md-6 col-sm-8 col-lg-4 rounded-3 border-5">
+                        <div class="rts-footer-widget ml--30 ">
+                            <iframe class="" height="300"
                                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9320.458032388887!2d66.9694552!3d39.6383979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f8bc8499255%3A0x7d89646ab179a0fe!2sSamarqand%20Davlat%20Universiteti%20IT%20Markazi!5e0!3m2!1sen!2s!4v1662635733627!5m2!1sen!2s">
                             </iframe>
                         </div>
@@ -74,11 +74,11 @@
         </div>
     </div>
 </footer>
-<div class="rts-footer-copy-right v_1">
+<div class="rts-footer-copy-right rt-primary-bg v_1">
     <div class="container">
         <div class="row">
             <div class="rt-center">
-                <p class="--p-xs">Copyright &copy; 2023-{{date('Y')}} All Rights Reserved by <a
+                <p class="--p-xs text-white">Copyright &copy; 2023-{{date('Y')}} All Rights Reserved by <a
                         href="https://it-markaz.samdu.uz/">SamSU IT center</a></p>
             </div>
         </div>

@@ -21,27 +21,27 @@
 
                         <div class="right-information">
                             <ul class="rts-dropdown-menu language-switch">
-                                <li class="has-child-menu">
-                                    <a href="#">
-                                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""
-                                             class="flag">
-                                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>
-                                        <i class="fa-regular fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        @foreach($languages as $langCode => $langData)
-                                            @if($langCode != $currentLocale)
-                                                <li>
-                                                    <a href="{{ route('lang', $langCode) }}">
-                                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""
-                                                             class="flag">
-                                                        <span class="menu-item">{{ $langData['name'] }}</span>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </li>
+{{--                                <li class="has-child-menu">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""--}}
+{{--                                             class="flag">--}}
+{{--                                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>--}}
+{{--                                        <i class="fa-regular fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <ul class="sub-menu">--}}
+{{--                                        @foreach($languages as $langCode => $langData)--}}
+{{--                                            @if($langCode != $currentLocale)--}}
+{{--                                                <li>--}}
+{{--                                                    <a href="{{ route('lang', $langCode) }}">--}}
+{{--                                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""--}}
+{{--                                                             class="flag">--}}
+{{--                                                        <span class="menu-item">{{ $langData['name'] }}</span>--}}
+{{--                                                    </a>--}}
+{{--                                                </li>--}}
+{{--                                            @endif--}}
+{{--                                        @endforeach--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -58,12 +58,13 @@
     <!-- Navbar -->
         <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
             <!-- Left: Logo -->
-             <!-- Right: Icons and Button -->
+            <!-- Right: Icons and Button -->
 
             <div class="d-flex align-items-center">
                 <!-- Icon Buttons -->
                 <button class="border-0 ">
-                <button class="btn btn-outline-light menu ml-5"> <a href="/" class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>
+                    <button class="btn btn-outline-light menu ml-5"><a href="/" class="logo-area"><img
+                                src="{{ asset('logo.png') }}" alt="logo"></a></button>
                 </button>
                 <button class="border-0 ">
                 </button>
@@ -72,7 +73,6 @@
 
                 <!-- Submit Button -->
             </div>
-
 
 
             <ul class="nav container">
@@ -108,14 +108,39 @@
                     </a>
                 </li>
 
-{{--                <li class="nav-item">--}}
-{{--                    <a class="my-nav-link {{ Request::routeIs('document') ? 'active' : '' }}"--}}
-{{--                       href="{{ route('document') }}">--}}
-{{--                        @lang('crud.menu.document')--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-            </ul>
 
+                <li class="nav-item dropdown">
+                    <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""
+                             class="flag">
+                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach($languages as $langCode => $langData)
+                            @if($langCode != $currentLocale)
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('lang', $langCode) }}">
+                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""
+                                             class="flag">
+                                        <span class="menu-item">{{ $langData['name'] }}</span>
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>--}}
+{{--                    <ul class="dropdown-menu">--}}
+{{--                        <li><a href="#" class="dropdown-item">Web Design</a></li>--}}
+{{--                        <li><a href="#" class="dropdown-item">SEO Optimization</a></li>--}}
+{{--                        <li><a href="#" class="dropdown-item">App Development</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+
+                </li>
+
+            </ul>
 
 
             <div class="header-right-area-one ">

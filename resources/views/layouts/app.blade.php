@@ -34,6 +34,7 @@
         .custom-navbar {
             background-color: #004a9f;
             padding: 10px 20px;
+            margin-bottom: 0px !important;
 
         }
 
@@ -82,7 +83,7 @@
             color: #ffffff;
             border: 1px solid #ffffff;
             border-radius: 5px;
-            padding: 6px 10px;
+            padding: 0px 10px;
             transition: all 0.3s ease-in-out;
         }
 
@@ -90,6 +91,43 @@
         .custom-navbar .icon-btn:hover {
             background-color: #ffffff;
             color: #004a9f;
+        }
+
+        /* Dropdown styles */
+        .custom-navbar .dropdown {
+            position: relative;
+        }
+
+        .custom-navbar .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none; /* Hide the dropdown by default */
+            background-color: #004a9f;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 160px;
+        }
+
+        .custom-navbar .dropdown-menu .dropdown-item {
+            color: #ffffff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .custom-navbar .dropdown-menu .dropdown-item:hover {
+            background-color: #fff;
+            border-radius: 10px;
+            color: #004a9f;
+        }
+
+        /* Show dropdown on hover */
+        .custom-navbar .dropdown:hover .dropdown-menu {
+            display: block;
         }
 
         /* Desktop yoki katta ekranlar uchun */
@@ -127,8 +165,116 @@
                 color: #fff;
                 /*border-radius: 3px;*/
             }
+
+            .custom-navbar .dropdown-menu {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+            }
+
+            .custom-navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
         }
 
+        /* start of slider*/
+
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slides > div {
+            position: relative;
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slides .caption {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            color: #f4f4f4;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .buttons button:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .slider {
+                height: 60vh;
+            }
+
+            .slides .caption {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .buttons button {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider {
+                height: 50vh;
+            }
+
+            .slides .caption {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .buttons button {
+                font-size: 16px;
+            }
+        }
+
+        /* end of slider*/
     </style>
 </head>
 
@@ -188,5 +334,35 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="{{ asset('site/assets/js/main.js') }}"></script>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slides > div').length;
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Auto-slide functionality
+    setInterval(nextSlide, 3000);
+</script>
+
 </body>
 </html>
