@@ -44,7 +44,7 @@ class CourseController extends Controller
             $lesson = Lesson::find($request->get('lesson_id'));
         }
 
-        return view('course.show',compact('lessons','course','lesson'));
+        return view('course.show', compact('lessons', 'course', 'lesson'));
     }
 
     /**
@@ -73,6 +73,6 @@ class CourseController extends Controller
 
     public function lesson(Lesson $lesson, Course $course)
     {
-        return view('course.show',compact('lesson','course'));
+        return view('course.show', compact('lesson', 'course'));
     }
 }

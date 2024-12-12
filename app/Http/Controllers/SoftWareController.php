@@ -37,7 +37,7 @@ class SoftWareController extends Controller
     public function show(string $id)
     {
         $software = SoftwareProduct::find($id);
-        return view('software.show',compact('software'));
+        return view('software.show', compact('software'));
     }
 
     /**

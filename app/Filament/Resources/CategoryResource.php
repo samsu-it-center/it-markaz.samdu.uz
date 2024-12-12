@@ -23,10 +23,10 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                 Forms\Components\TextInput::make('name')
-                ->label('Bo\'lim nomi')
-                ->required()
-                ->maxLength(255),
+                Forms\Components\TextInput::make('name')
+                    ->label('Bo\'lim nomi')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -34,7 +34,7 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                 Tables\Columns\TextColumn::make('id')
+                Tables\Columns\TextColumn::make('id')
                     ->label('ID')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')

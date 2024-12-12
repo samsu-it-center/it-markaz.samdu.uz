@@ -20,10 +20,10 @@ class NewsController extends Controller
         }
 
         $course = Course::inRandomOrder()->first();
-        if(!$course) {
+        if (!$course) {
             $course = null;
         }
-        return view('pages.show', compact('news','course'));
+        return view('pages.show', compact('news', 'course'));
     }
 
 

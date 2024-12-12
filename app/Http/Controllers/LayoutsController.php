@@ -18,42 +18,42 @@ class LayoutsController extends Controller
     public function about(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $about = About::first();
-        return view('pages.about',compact('about'));
+        return view('pages.about', compact('about'));
     }
 
     public function news(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $news = News::orderBy('id', 'desc')->paginate(6);
-        return view('pages.news',compact('news'));
+        return view('pages.news', compact('news'));
     }
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $start_ups = StartUp::where('type',2)
-        ->orderBy('id', 'desc')->paginate(4);
+        $start_ups = StartUp::where('type', 2)
+            ->orderBy('id', 'desc')->paginate(4);
 
-        $projects = StartUp::where('type',1)
-        ->orderBy('id', 'desc')->paginate(4);
+        $projects = StartUp::where('type', 1)
+            ->orderBy('id', 'desc')->paginate(4);
 
-        return view('pages.start_up',compact('start_ups','projects'));
+        return view('pages.start_up', compact('start_ups', 'projects'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $softwares = SoftwareProduct::orderBy('id', 'desc')->paginate(6);
-        return view('pages.software',compact('softwares'));
+        return view('pages.software', compact('softwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $courses = Course::orderBy('id', 'desc')->get();
-        return view('pages.course',compact('courses'));
+        return view('pages.course', compact('courses'));
     }
 
     public function document(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $document = NormativeDocument::first();
-        return view('pages.document',compact('document'));
+        return view('pages.document', compact('document'));
     }
 
 
@@ -62,17 +62,16 @@ class LayoutsController extends Controller
         $faqs = Question::orderBy('id', 'desc')->get();
         $sliders = Slider::orderBy('id', 'desc')->get();
         $about = About::first();
-        $online = Course::where('type','online')->get();
-        $offline = Course::where('type','offline')->get();
+        $online = Course::where('type', 'online')->get();
+        $offline = Course::where('type', 'offline')->get();
         $news = News::orderBy('id', 'desc')->skip(0)->take(4)->get();
-	return view('welcome',compact('sliders','about','news','online','offline','faqs'));
+        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs'));
     }
 
     public function lang($lang)
     {
         $lang = strtolower($lang);
-        if ($lang == 'ru' || $lang == 'uz' || $lang == 'en')
-        {
+        if ($lang == 'ru' || $lang == 'uz' || $lang == 'en') {
             session([
                 'locale' => $lang
             ]);

@@ -36,14 +36,12 @@
 
                 <div class="buttons">
                     <button class="left-button" id="prev">&#9664;</button>
-                    <button class="right-button"  id="next">&#9654;</button>
+                    <button class="right-button" id="next">&#9654;</button>
                 </div>
 
             </div>
 
-
             <!-- Hero Slider End -->
-
             <!-- About Us Start -->
             <section class="rts-about v__1 rt-relative rts-section-padding">
                 <div class="container">

@@ -20,7 +20,7 @@ class SetLocale
     {
         if (!session('locale')) {
             session([
-                'locale'    => config('app.locale')
+                'locale' => config('app.locale')
             ]);
         }
 

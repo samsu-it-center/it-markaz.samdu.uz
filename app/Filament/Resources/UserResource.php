@@ -34,6 +34,7 @@ class UserResource extends Resource
     protected static ?string $modelLabel = "Foydalanuvchi";
 
     protected static ?string $navigationGroup = "Boshqaruv";
+
     public static function getNavigationLabel(): string
     {
         return trans('filament-user::user.resource.label');
@@ -75,8 +76,8 @@ class UserResource extends Resource
                 ->maxLength(255)
                 ->dehydrateStateUsing(static function ($state) use ($form) {
                     return !empty($state)
-                            ? Hash::make($state)
-                            : User::find($form->getColumns())?->password;
+                        ? Hash::make($state)
+                        : User::find($form->getColumns())?->password;
                 }),
         ];
 

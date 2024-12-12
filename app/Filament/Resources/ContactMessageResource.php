@@ -75,7 +75,7 @@ class ContactMessageResource extends Resource
                             ->success()
                             ->send();
                     })
-                    ->visible(fn (ContactMessage $record) => !$record->is_read),
+                    ->visible(fn(ContactMessage $record) => !$record->is_read),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

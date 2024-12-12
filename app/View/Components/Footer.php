@@ -10,6 +10,7 @@ use Illuminate\View\Component;
 class Footer extends Component
 {
     public $about;
+
     /**
      * Create a new component instance.
      */
@@ -23,7 +24,7 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer',[
+        return view('components.footer', [
             'about' => $this->about
         ]);
     }

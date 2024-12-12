@@ -43,7 +43,7 @@ class GalleryResource extends Resource
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('image_path')
                     ->label('Image')
-                    ->formatStateUsing(fn ($state) => $state ? '<img src="'.asset('storage/'.$state).'" width="100" />' : '')
+                    ->formatStateUsing(fn($state) => $state ? '<img src="' . asset('storage/' . $state) . '" width="100" />' : '')
                     ->html(),
             ])
             ->filters([

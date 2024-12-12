@@ -11,6 +11,6 @@ class StartUpController extends Controller
     {
         $start_up = StartUp::find($id);
 
-        return view('start_up.show',compact('start_up'));
+        return view('start_up.show', compact('start_up'));
     }
 }
