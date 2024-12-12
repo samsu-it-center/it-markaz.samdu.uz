@@ -43,7 +43,7 @@
     <!-- History Section End -->
 
     <!-- Mission Section -->
-    <section class="rts-mission">
+    <section class="rts-mission m-3">
         <div class="container">
             <div class="row justify-content-center rt-center">
                 <div class="rts-section mb--50">
