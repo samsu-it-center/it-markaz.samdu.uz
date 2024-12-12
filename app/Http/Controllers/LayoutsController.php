@@ -40,7 +40,7 @@ class LayoutsController extends Controller
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $softwares = SoftwareProduct::orderBy('id', 'desc')->paginate(6);
+        $softwares = SoftwareProduct::orderBy('id', 'asc')->paginate(6);
         return view('pages.software', compact('softwares'));
     }
 
