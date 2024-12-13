@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- History Section -->
-    <div class="rts-history">
+    <div class="rts-history m-3">
         <div class="container">
             <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
                 <div class="col-lg-6 col-md-11">
