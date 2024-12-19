@@ -292,6 +292,182 @@
         }
 
         /* end of slider*/
+
+        /* Container for Cards */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Main Card */
+        .card {
+            position: relative;
+            width: 48%;
+            height: 40vh;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Title Section */
+        .card .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to right, #336699, #004A9F);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1.5px;
+            z-index: 2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            padding: 15px;
+        }
+
+        /* Ornament/Divider for Title */
+        .card .title::before,
+        .card .title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: white;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+
+        .card .title::before {
+            left: 15px;
+        }
+
+        .card .title::after {
+            right: 15px;
+        }
+
+        /* Mobil qurilmalar uchun */
+        @media (max-width: 768px) {
+            .card .title {
+                font-size: 1.2rem; /* Shrinking the font size */
+                height: 50px; /* Reducing the height */
+                padding: 10px; /* Adjusting the padding */
+                letter-spacing: 1px; /* Decreasing letter spacing */
+            }
+
+            .card .title::before,
+            .card .title::after {
+                width: 30px; /* Adjusting the size of the ornament lines */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card .title {
+                font-size: 1rem; /* Even smaller font size for very small devices */
+                height: 40px; /* Further reducing the height */
+                padding: 8px; /* Smaller padding */
+                letter-spacing: 0.8px; /* Narrower letter spacing */
+            }
+
+            .card .title::before,
+            .card .title::after {
+                width: 20px; /* Even smaller lines */
+            }
+        }
+
+
+        /* Image Section - Using <img> tag */
+        .card .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover .image img {
+            filter: brightness(0.9);
+        }
+
+        /* Content Section */
+        .card .content {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            text-align: left;
+            color: white;
+            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            transform: translateY(100%);
+            width: 100%;
+        }
+
+        .card:hover .content {
+            transform: translateY(0);
+        }
+
+        .card .content h2 {
+            font-size: 2.2rem;
+            margin: 10px 0;
+        }
+
+        .card .content p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .card .content .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #336699;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .content .btn:hover {
+            background-color: #28557a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                width: 48vw;
+                height: 30vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 90vw;
+                height: 28vh;
+            }
+        }
     </style>
 </head>
 

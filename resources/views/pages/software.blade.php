@@ -73,10 +73,10 @@
                                             <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
                                                  class="img-fluid rounded shadow">
                                         </div>
-
+s
                                         <!-- O'ng tomon: Yozuv -->
                                         <div class="col-md-4">
-                                            <h3 class="fw-bold">Loyiha haqida</h3>
+                                            <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
                                             <p class="text-muted">
                                                 {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
                                             </p>

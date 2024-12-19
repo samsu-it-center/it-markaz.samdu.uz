@@ -45,41 +45,72 @@
     <!-- Mission Section -->
     <section class="rts-mission m-3">
         <div class="container">
-            <div class="row justify-content-center rt-center">
-                <div class="rts-section mb--50">
-                    <h2 class="rts-section-title">@lang('crud.about.direction')</h2>
+            <div class="row justify-content-center text-center">
+                <div class="rts-section mb--50 text-center">
+                    <h2 class="rts-section-title text-center">@lang('crud.about.direction')</h2>
                 </div>
             </div>
-            <!-- Timeline -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="rts-timeline-section">
-                        <div class="rts-timeline-content">
-                            <div class="left-side">
-                                <div class="single-timeline-item">
-                                    <p>@lang('crud.about.step.step_1')</p>
-                                    <img src="{{ asset('step/image5.png') }}" alt="">
-                                </div>
-                                <div class="single-timeline-item">
-                                    <p>@lang('crud.about.step.step_2')</p>
-                                    <img src="{{ asset('step/image2.png') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="separator"></div>
-                            <div class="right-side">
-                                <div class="single-timeline-item">
-                                    <p>@lang('crud.about.step.step_3')</p>
-                                    <img src="{{ asset('step/image3.png') }}" alt="">
-                                </div>
-                                <div class="single-timeline-item">
-                                    <p>@lang('crud.about.step.step_4')</p>
-                                    <img src="{{ asset('step/image4.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        <!-- First Card -->
+            <div class="card">
+                <div class="title">ILMIY LOYIHALAR.</div>
+                <div class="image">
+                    <img src="{{ asset('step/image5.png') }}" alt="">
+                </div>
+                <div class="content">
+{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6  class="text-white">
+                       @lang('crud.about.step.step_1')
+                    </h6>
+                    {{--                    <a href="#" class="btn">Explore More</a>--}}
                 </div>
             </div>
+
+         <!-- First Card -->
+            <div class="card">
+                <div class="title">STARTUPLAR</div>
+                <div class="image">
+                    <img src="{{ asset('step/image2.png') }}" alt="">
+                </div>
+                <div class="content">
+{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6  class="text-white">
+                       @lang('crud.about.step.step_2')
+                    </h6>
+                    {{--                    <a href="#" class="btn">Explore More</a>--}}
+                </div>
+            </div>
+
+            <!-- First Card -->
+            <div class="card">
+                <div class="title">O'QUV KURSLARI</div>
+                <div class="image">
+                    <img src="{{ asset('step/image3.png') }}" alt="">
+                </div>
+                <div class="content">
+{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6  class="text-white">
+                      @lang('crud.about.step.step_3')
+                    </h6>
+                    {{--                    <a href="#" class="btn">Explore More</a>--}}
+                </div>
+            </div>
+
+            <!-- First Card -->
+            <div class="card">
+                <div class="title">DASTURIY MAHSULOTLAR</div>
+                <div class="image">
+                    <img src="{{ asset('step/image4.png') }}" alt="">
+                </div>
+                <div class="content">
+{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6  class="text-white">
+                      @lang('crud.about.step.step_4')
+                    </h6>
+                    {{--                    <a href="#" class="btn">Explore More</a>--}}
+                </div>
+            </div>
+
         </div>
     </section>
     <!-- Mission Section End -->
