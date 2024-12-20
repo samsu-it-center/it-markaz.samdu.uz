@@ -5,12 +5,17 @@
     <div class="rts-history m-3">
         <div class="container">
             <div class="row g-5 justify-content-md-center justify-content-start align-items-center">
-                <div class="col-lg-6 col-md-11">
-                    <div class="rts-history-image">
-                        <img src="{{ asset('step/image1.png') }}" class="image-fluid" alt="history">
+
+                <div class="col-lg-12 col-md-12">
+                    <div
+                        style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); border-radius: 15px; margin: 10px; padding: 0;">
+                        <img src="{{ asset('ban.png') }}" class="img-fluid" alt="history" style="border-radius: 15px; ">
                     </div>
+
+
                 </div>
-                <div class="col-lg-6 col-md-11">
+
+                <div class="col-lg-12 col-md-11">
                     <div class="rts-history-section">
                         <h6 class="rts-section-description mb--10">@lang('crud.about.abouts')</h6>
                         <p>
@@ -29,6 +34,7 @@
                             {{ $about['contact_it_center_'.(session('locale') ?? 'uz')] ?? 'Default Contact Info' }}
                             <span class="d-block mb--30"></span>
                         </p>
+
 
                         <h6 class="rts-section-description mb--10">@lang('crud.about.location_name')</h6>
                         <p>
@@ -51,31 +57,31 @@
                 </div>
             </div>
 
-        <!-- First Card -->
+            <!-- First Card -->
             <div class="card">
                 <div class="title">ILMIY LOYIHALAR.</div>
                 <div class="image">
                     <img src="{{ asset('step/image5.png') }}" alt="">
                 </div>
                 <div class="content">
-{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
-                    <h6  class="text-white">
-                       @lang('crud.about.step.step_1')
+                    {{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6 class="text-white">
+                        @lang('crud.about.step.step_1')
                     </h6>
                     {{--                    <a href="#" class="btn">Explore More</a>--}}
                 </div>
             </div>
 
-         <!-- First Card -->
+            <!-- First Card -->
             <div class="card">
                 <div class="title">STARTUPLAR</div>
                 <div class="image">
                     <img src="{{ asset('step/image2.png') }}" alt="">
                 </div>
                 <div class="content">
-{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
-                    <h6  class="text-white">
-                       @lang('crud.about.step.step_2')
+                    {{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6 class="text-white">
+                        @lang('crud.about.step.step_2')
                     </h6>
                     {{--                    <a href="#" class="btn">Explore More</a>--}}
                 </div>
@@ -88,9 +94,9 @@
                     <img src="{{ asset('step/image3.png') }}" alt="">
                 </div>
                 <div class="content">
-{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
-                    <h6  class="text-white">
-                      @lang('crud.about.step.step_3')
+                    {{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6 class="text-white">
+                        @lang('crud.about.step.step_3')
                     </h6>
                     {{--                    <a href="#" class="btn">Explore More</a>--}}
                 </div>
@@ -103,9 +109,9 @@
                     <img src="{{ asset('step/image4.png') }}" alt="">
                 </div>
                 <div class="content">
-{{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
-                    <h6  class="text-white">
-                      @lang('crud.about.step.step_4')
+                    {{--                    <h2 class="text-white">2024 Trend Design 2</h2>--}}
+                    <h6 class="text-white">
+                        @lang('crud.about.step.step_4')
                     </h6>
                     {{--                    <a href="#" class="btn">Explore More</a>--}}
                 </div>

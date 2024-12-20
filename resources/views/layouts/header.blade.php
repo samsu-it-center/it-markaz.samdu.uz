@@ -21,27 +21,27 @@
 
                         <div class="right-information">
                             <ul class="rts-dropdown-menu language-switch">
-{{--                                <li class="has-child-menu">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""--}}
-{{--                                             class="flag">--}}
-{{--                                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>--}}
-{{--                                        <i class="fa-regular fa-chevron-down"></i>--}}
-{{--                                    </a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        @foreach($languages as $langCode => $langData)--}}
-{{--                                            @if($langCode != $currentLocale)--}}
-{{--                                                <li>--}}
-{{--                                                    <a href="{{ route('lang', $langCode) }}">--}}
-{{--                                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""--}}
-{{--                                                             class="flag">--}}
-{{--                                                        <span class="menu-item">{{ $langData['name'] }}</span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @endif--}}
-{{--                                        @endforeach--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
+                                {{--                                <li class="has-child-menu">--}}
+                                {{--                                    <a href="#">--}}
+                                {{--                                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""--}}
+                                {{--                                             class="flag">--}}
+                                {{--                                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>--}}
+                                {{--                                        <i class="fa-regular fa-chevron-down"></i>--}}
+                                {{--                                    </a>--}}
+                                {{--                                    <ul class="sub-menu">--}}
+                                {{--                                        @foreach($languages as $langCode => $langData)--}}
+                                {{--                                            @if($langCode != $currentLocale)--}}
+                                {{--                                                <li>--}}
+                                {{--                                                    <a href="{{ route('lang', $langCode) }}">--}}
+                                {{--                                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""--}}
+                                {{--                                                             class="flag">--}}
+                                {{--                                                        <span class="menu-item">{{ $langData['name'] }}</span>--}}
+                                {{--                                                    </a>--}}
+                                {{--                                                </li>--}}
+                                {{--                                            @endif--}}
+                                {{--                                        @endforeach--}}
+                                {{--                                    </ul>--}}
+                                {{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -129,18 +129,29 @@
                         @endforeach
                     </ul>
 
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>--}}
-{{--                    <ul class="dropdown-menu">--}}
-{{--                        <li><a href="#" class="dropdown-item">Web Design</a></li>--}}
-{{--                        <li><a href="#" class="dropdown-item">SEO Optimization</a></li>--}}
-{{--                        <li><a href="#" class="dropdown-item">App Development</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                    {{--                <li class="nav-item dropdown">--}}
+                    {{--                    <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>--}}
+                    {{--                    <ul class="dropdown-menu">--}}
+                    {{--                        <li><a href="#" class="dropdown-item">Web Design</a></li>--}}
+                    {{--                        <li><a href="#" class="dropdown-item">SEO Optimization</a></li>--}}
+                    {{--                        <li><a href="#" class="dropdown-item">App Development</a></li>--}}
+                    {{--                    </ul>--}}
+                    {{--                </li>--}}
 
                 </li>
 
             </ul>
+
+
+            <div class="d-flex align-items-center">
+                <ul class="nav container">
+                    <li class="nav-item dropdown">
+                        <button class="my-nav-link">Оставить заявку</button>
+                    </li>
+                </ul>
+                {{--                <button class="btn btn-outline-light menu m-1"> <a class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>--}}
+
+            </div>
 
 
             <div class="header-right-area-one ">

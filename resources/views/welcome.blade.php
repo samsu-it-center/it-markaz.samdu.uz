@@ -43,14 +43,16 @@
 
             <!-- Hero Slider End -->
             <!-- About Us Start -->
-            <section class="rts-about v__1 rt-relative rts-section-padding">
+            <section class=" v__1 rt-relative rts-section-padding">
                 <div class="container">
                     <div class="row justify-content-md-center">
-                        <div class="col-lg-5 col-xl-5 col-md-10">
-                            <div class="rts-about-image border-3 ">
-                                <img class="rounded-3" src="{{ asset('img.png') }}" alt="About Us">
-                            </div>
+
+                      <div class="col-lg-6 col-xl-5 col-md-6">
+                        <div class="rts-about-image border-3" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                            <img class="rounded-3" src="{{ asset('ban.png') }}" alt="About Us" width="1200">
                         </div>
+                      </div>
+
                         <div class="col-lg-7 col-xl-7 col-md-10">
                             <div class="rts-about-content">
                                 <div class="rts-about-flex mb--10">
@@ -81,7 +83,7 @@
                                     <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
                                 </a>
                                 <div class="about-positioned-text">
-                                    <h2 class="rt-clip-text">EST. 2023</h2>
+{{--                                    <h2 class="rt-clip-text">EST. 2023</h2>--}}
                                 </div>
                             </div>
                         </div>
@@ -223,7 +225,7 @@
                                                                 <li>
                                                                     <a href="{{ route('course.show', $on->id) }}">
                                                                         <span>{{ $on['title_'.session('locale')] ?? 'Default Online Course' }}</span>
-                                                                        <span>{{ $on->price ?? 'Free' }}</span>
+{{--                                                                        <span>{{ $on->price ?? 'Free' }}</span>--}}
                                                                     </a>
                                                                 </li>
                                                             @endforeach
@@ -232,7 +234,7 @@
                                                 </div>
                                             @endif
                                             @if($offline->isNotEmpty())
-                                                <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                <div class="tab-pane fade  active" id="profile" role="tabpanel"
                                                      aria-labelledby="profile-tab">
                                                     <div class="rts-fee-chart-content">
                                                         <ul>
@@ -240,7 +242,7 @@
                                                                 <li>
                                                                     <a href="{{ route('course.show', $off->id) }}">
                                                                         <span>{{ $off['title_'.session('locale')] ?? 'Default Offline Course' }}</span>
-                                                                        <span>{{ $off->price ?? 'Free' }}</span>
+{{--                                                                        <span>{{ $off->price ?? 'Free' }}</span>--}}
                                                                     </a>
                                                                 </li>
                                                             @endforeach

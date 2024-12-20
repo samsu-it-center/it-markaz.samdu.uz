@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="{{ asset('site/assets/css/style.css') }}">
 
     <style>
+
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
         .flag {
             padding: 5px;
             width: 30px;
