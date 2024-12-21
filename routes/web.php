@@ -24,6 +24,7 @@ Route::get('/center/start_up',[LayoutsController::class,'start_up'])->name('star
 Route::get('/center/software',[LayoutsController::class,'software'])->name('software');
 Route::get('/center/course',[LayoutsController::class,'course'])->name('course');
 Route::get('/center/document',[LayoutsController::class,'document'])->name('document');
+Route::get('/center/contact',[LayoutsController::class,'contact'])->name('contact');
 Route::resource('start_up',StartUpController::class);
 Route::resource('course',CourseController::class);
 Route::resource('software',SoftWareController::class);

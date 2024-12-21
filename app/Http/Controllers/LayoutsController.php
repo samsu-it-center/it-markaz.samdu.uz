@@ -56,6 +56,13 @@ class LayoutsController extends Controller
         return view('pages.document', compact('document'));
     }
 
+    public function contact(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $document = NormativeDocument::first();
+
+        return view('pages.contact', compact('document'));
+    }
+
 
     public function welcome(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {

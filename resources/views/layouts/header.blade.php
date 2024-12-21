@@ -108,6 +108,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="my-nav-link {{ Request::routeIs('contact') ? 'active' : '' }}"
+                       href="{{ route('contact') }}">
+                        Kontakt
+                    </a>
+                </li>
+
 
                 <li class="nav-item dropdown">
                     <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

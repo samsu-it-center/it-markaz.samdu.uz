@@ -22,7 +22,10 @@
     <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/jquery-ui.css') }}">
     <!-- custom style css -->
+
     <link rel="stylesheet" href="{{ asset('site/assets/css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('site/assets/css/contact.css') }}">
 
     <style>
 
