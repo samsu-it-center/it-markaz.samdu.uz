@@ -43,30 +43,30 @@ return [
     ],
 
     "course" => [
-        "name"      => "Kurslar",
-        "about"     => "Kurs haqida",
-        "views"     => "Batafsil",
-        "contact"   => "Kursga yozilish",
-        "form"      => [
-            'title'         => "Kerakli ma'lumotlarni to'ldirib chiqing",
-            "first_name"    => "Ism",
-            "last_name"     => "Familiya",
-            "email"         => "Elektron pochta",
-            "Phone"         => "Telefon raqam",
-            "course"        => "Kurs",
-            "msg"           => "Xabar",
-            "apply_now"     => "Kursga yozilish"
+        "name" => "Kurslar",
+        "about" => "Kurs haqida",
+        "views" => "Batafsil",
+        "contact" => "Kursga yozilish",
+        "form" => [
+            'title' => "Kerakli ma'lumotlarni to'ldirib chiqing",
+            "first_name" => "Ism",
+            "last_name" => "Familiya",
+            "email" => "Elektron pochta",
+            "Phone" => "Telefon raqam",
+            "course" => "Kurs",
+            "msg" => "Xabar",
+            "apply_now" => "Kursga yozilish"
         ],
-        "online"    => "Onlayn Kurslar",
-        "offline"   => "Oflayn Kurslar"
+        "online" => "Onlayn Kurslar",
+        "offline" => "Oflayn Kurslar"
     ],
 
     "document" => [
         "document" => "IT Markaz meyoriy hujatlari",
         "rules" => "IT markazining umumiy qoidalar",
         "tasks" => "IT markaz ekspert kengashining vazifalari",
-        "no_description"    => "Meyoriy Hujat haqidagi malumotlar kiritilmagan",
-        "no_files"          => "Faylar mavjud emas"
+        "no_description" => "Meyoriy Hujat haqidagi malumotlar kiritilmagan",
+        "no_files" => "Faylar mavjud emas"
     ],
 
     "overview" => "Umumiy koʻrinish",
@@ -75,8 +75,14 @@ return [
         "more" => "Ko'proq Yangiliklar"
     ],
 
+    "aim" => [
+
+    ],
+
     "faq"       => "Ko'p beriladigan savollar",
     "topics"    => "Mavzular",
     "contact"   => "Biz bilan bog'lanish",
-    'send'      => "Jo'natish"
+    'send'      => "Jo'natish",
+
+
 ];

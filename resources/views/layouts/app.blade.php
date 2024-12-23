@@ -303,7 +303,7 @@
         /* end of slider*/
 
         /* Container for Cards */
-        .container {
+            .container-my {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -314,7 +314,7 @@
         }
 
         /* Main Card */
-        .card {
+        .card-about {
             position: relative;
             width: 48%;
             height: 40vh;
@@ -326,13 +326,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card:hover {
+        .card-about:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         /* Title Section */
-        .card .title {
+        .card-about .title {
             position: absolute;
             top: 0;
             left: 0;
@@ -355,8 +355,8 @@
         }
 
         /* Ornament/Divider for Title */
-        .card .title::before,
-        .card .title::after {
+        .card-about .title::before,
+        .card-about .title::after {
             content: '';
             position: absolute;
             width: 40px;
@@ -367,46 +367,46 @@
             z-index: 3;
         }
 
-        .card .title::before {
+        .card-about .title::before {
             left: 15px;
         }
 
-        .card .title::after {
+        .card-about .title::after {
             right: 15px;
         }
 
         /* Mobil qurilmalar uchun */
         @media (max-width: 768px) {
-            .card .title {
+            .card-about .title {
                 font-size: 1.2rem; /* Shrinking the font size */
                 height: 50px; /* Reducing the height */
                 padding: 10px; /* Adjusting the padding */
                 letter-spacing: 1px; /* Decreasing letter spacing */
             }
 
-            .card .title::before,
-            .card .title::after {
+            .card-about .title::before,
+            .card-about .title::after {
                 width: 30px; /* Adjusting the size of the ornament lines */
             }
         }
 
         @media (max-width: 480px) {
-            .card .title {
+            .card-about .title {
                 font-size: 1rem; /* Even smaller font size for very small devices */
                 height: 40px; /* Further reducing the height */
                 padding: 8px; /* Smaller padding */
                 letter-spacing: 0.8px; /* Narrower letter spacing */
             }
 
-            .card .title::before,
-            .card .title::after {
+            .card-about .title::before,
+            .card-about .title::after {
                 width: 20px; /* Even smaller lines */
             }
         }
 
 
         /* Image Section - Using <img> tag */
-        .card .image img {
+        .card-about .image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -414,12 +414,12 @@
             transition: filter 0.3s ease;
         }
 
-        .card:hover .image img {
+        .card-about:hover .image img {
             filter: brightness(0.9);
         }
 
         /* Content Section */
-        .card .content {
+        .card-about .content {
             position: absolute;
             bottom: 0px;
             left: 0;
@@ -434,21 +434,21 @@
             width: 100%;
         }
 
-        .card:hover .content {
+        .card-about:hover .content {
             transform: translateY(0);
         }
 
-        .card .content h2 {
+        .card-about .content h2 {
             font-size: 2.2rem;
             margin: 10px 0;
         }
 
-        .card .content p {
+        .card-about .content p {
             font-size: 1.1rem;
             line-height: 1.5;
         }
 
-        .card .content .btn {
+        .card-about .content .btn {
             margin-top: 20px;
             padding: 12px 25px;
             background-color: #336699;
@@ -459,20 +459,20 @@
             transition: background-color 0.3s ease;
         }
 
-        .card .content .btn:hover {
+        .card-about .content .btn:hover {
             background-color: #28557a;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .card {
+            .card-about {
                 width: 48vw;
                 height: 30vh;
             }
         }
 
         @media (max-width: 480px) {
-            .card {
+            .card-about {
                 width: 90vw;
                 height: 28vh;
             }

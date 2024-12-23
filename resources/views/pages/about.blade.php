@@ -50,7 +50,7 @@
 
     <!-- Mission Section -->
     <section class="rts-mission m-3">
-        <div class="container">
+        <div class="container-my container ">
             <div class="row justify-content-center text-center">
                 <div class="rts-section mb--50 text-center">
                     <h2 class="rts-section-title text-center">@lang('crud.about.direction')</h2>
@@ -58,7 +58,7 @@
             </div>
 
             <!-- First Card -->
-            <div class="card">
+            <div class="card-about">
                 <div class="title">ILMIY LOYIHALAR.</div>
                 <div class="image">
                     <img src="{{ asset('step/image5.png') }}" alt="">
@@ -73,7 +73,7 @@
             </div>
 
             <!-- First Card -->
-            <div class="card">
+            <div class="card-about">
                 <div class="title">STARTUPLAR</div>
                 <div class="image">
                     <img src="{{ asset('step/image2.png') }}" alt="">
@@ -88,7 +88,7 @@
             </div>
 
             <!-- First Card -->
-            <div class="card">
+            <div class="card-about">
                 <div class="title">O'QUV KURSLARI</div>
                 <div class="image">
                     <img src="{{ asset('step/image3.png') }}" alt="">
@@ -103,7 +103,7 @@
             </div>
 
             <!-- First Card -->
-            <div class="card">
+            <div class="card-about">
                 <div class="title">DASTURIY MAHSULOTLAR</div>
                 <div class="image">
                     <img src="{{ asset('step/image4.png') }}" alt="">

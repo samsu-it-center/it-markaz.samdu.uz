@@ -14,7 +14,7 @@
                             </p>
                             <div class="rts-contact-link">
                                 <a href="mailto:contact@reacthemes.com"><i
-                                        class="fa-sharp fa-light fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
+                                        class="fa-sharp  fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
                                 <a href="callto:+998 93 728 68 67"><i class="fa-thin fa-phone"></i> +998 93 728 68
                                     67</a>
