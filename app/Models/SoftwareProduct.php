@@ -19,10 +19,11 @@ class SoftwareProduct extends Model
         'image',
         'video_url',
         'link',
+        'type',
     ];
 
-    public function productTypes()
+    public function softwarecategory()
     {
-        return $this->belongsToMany(ProductType::class, 'product_type_software_product');
+        return $this->belongsTo(Category::class);
     }
 }

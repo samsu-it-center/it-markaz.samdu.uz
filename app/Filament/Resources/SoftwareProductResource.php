@@ -81,12 +81,14 @@ class SoftwareProductResource extends Resource
                     ->url()
                     ->columnSpan('full'),
 
-//                Select::make('productTypes')
-//                    ->label('Product Types')
-//                    ->options(ProductType::all()->pluck('name', 'id'))
-//                    ->multiple() // Enable multi-select
-//                    ->required()
-//                    ->columnSpan('full'),
+                Forms\Components\Select::make('type')
+                    ->label('Type (Turi)')
+                    ->required()
+                    ->options(
+                        \App\Models\CategorySoftware::pluck('name', 'id')->toArray()
+                    )
+                    ->searchable() // Kategoriyalar orasida qidirish uchun
+                    ->columnSpan('full'),
             ]);
     }
 
