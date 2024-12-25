@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request('tab') == 'courses' ? 'active' : '' }} p-3 m-5 border-1 rounded-pill"
                        href="?tab=courses">
-                         Tijoratga  asoslangan loyihalar
+                        Tijoratga asoslangan loyihalar
                     </a>
                 </li>
                 <li class="nav-item">
@@ -49,7 +49,7 @@
                 <!-- StartUplar -->
                 <div class="tab-pane fade {{ request('tab', 'home') == 'home' ? 'show active' : '' }}" id="home"
                      role="tabpanel">
-                    @foreach($softwares as $software)
+                    @foreach($aiSoftwares as $aiSoftware)
                         <div class="container my-5">
                             <div class="row align-items-center bg-light rounded shadow p-4">
                                 <!-- Chap tomon: Kartalar -->
@@ -57,9 +57,9 @@
                                     <div class="row gy-3">
                                         <div class="col-12">
                                             <div class="bg-white rounded p-3 shadow">
-                                                <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
+                                                <h5 class="fw-bold">{!! $aiSoftware['title_' . session('locale')] !!}</h5>
                                                 <ul class="list-unstyled">
-                                                    <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
+                                                    <li>{!! Str::limit($aiSoftware['description_' . session('locale')], 170, '...') !!}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -68,17 +68,17 @@
 
                                 <!-- Markaz: Rasm -->
                                 <div class="col-md-4 text-center">
-                                    <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
+                                    <img src="{{ asset('storage/'.$aiSoftware->image) }}" alt="Center Image"
                                          class="img-fluid rounded shadow">
                                 </div>
 
                                 <!-- O'ng tomon: Yozuv -->
                                 <div class="col-md-4">
-                                    <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
+                                    <h3 class="fw-bold">{!! $aiSoftware['name_' . session('locale')] !!}</h3>
                                     <p class="text-muted">
-                                        {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
+                                        {!! Str::limit($aiSoftware['project_objective_' . session('locale')], 150, '...') !!}
                                     </p>
-                                    <a href="{{ route('software.show', $software->id)}}"
+                                    <a href="{{ route('software.show', $aiSoftware->id)}}"
                                        class="btn btn-primary mt-5 p-3">
                                         batafsil
                                     </a>
@@ -86,12 +86,17 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="container">
+                        <div class="mt-4 d-flex justify-content-center">
+                            {{ $aiSoftwares->appends(request()->except('ai_page'))->links() }}
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Ilmiy Loyihalar -->
                 <div class="tab-pane fade {{ request('tab') == 'profile' ? 'show active' : '' }}" id="profile"
                      role="tabpanel">
-                    @foreach($softwares as $software)
+                    @foreach($educationalSoftwares as $educationalSoftware)
                         <div class="container my-5">
                             <div class="row align-items-center bg-light rounded shadow p-4">
                                 <!-- Chap tomon: Kartalar -->
@@ -99,9 +104,9 @@
                                     <div class="row gy-3">
                                         <div class="col-12">
                                             <div class="bg-white rounded p-3 shadow">
-                                                <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
+                                                <h5 class="fw-bold">{!! $educationalSoftware['title_' . session('locale')] !!}</h5>
                                                 <ul class="list-unstyled">
-                                                    <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
+                                                    <li>{!! Str::limit($educationalSoftware['description_' . session('locale')], 170, '...') !!}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -110,17 +115,17 @@
 
                                 <!-- Markaz: Rasm -->
                                 <div class="col-md-4 text-center">
-                                    <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
+                                    <img src="{{ asset('storage/'.$educationalSoftware->image) }}" alt="Center Image"
                                          class="img-fluid rounded shadow">
                                 </div>
 
                                 <!-- O'ng tomon: Yozuv -->
                                 <div class="col-md-4">
-                                    <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
+                                    <h3 class="fw-bold">{!! $educationalSoftware['name_' . session('locale')] !!}</h3>
                                     <p class="text-muted">
-                                        {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
+                                        {!! Str::limit($educationalSoftware['project_objective_' . session('locale')], 150, '...') !!}
                                     </p>
-                                    <a href="{{ route('software.show', $software->id)}}"
+                                    <a href="{{ route('software.show', $educationalSoftware->id)}}"
                                        class="btn btn-primary mt-5 p-3">
                                         batafsil
                                     </a>
@@ -128,227 +133,171 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
-
-                <!-- Kurslar -->
-                <div class="tab-pane fade {{ request('tab') == 'courses' ? 'show active' : '' }}" id="courses"
-                     role="tabpanel">
-                    @foreach($softwares as $software)
-                        <div class="container my-5">
-                            <div class="row align-items-center bg-light rounded shadow p-4">
-                                <!-- Chap tomon: Kartalar -->
-                                <div class="col-md-4">
-                                    <div class="row gy-3">
-                                        <div class="col-12">
-                                            <div class="bg-white rounded p-3 shadow">
-                                                <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
-                                                <ul class="list-unstyled">
-                                                    <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Markaz: Rasm -->
-                                <div class="col-md-4 text-center">
-                                    <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
-                                         class="img-fluid rounded shadow">
-                                </div>
-
-                                <!-- O'ng tomon: Yozuv -->
-                                <div class="col-md-4">
-                                    <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
-                                    <p class="text-muted">
-                                        {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
-                                    </p>
-                                    <a href="{{ route('software.show', $software->id)}}"
-                                       class="btn btn-primary mt-5 p-3">
-                                        batafsil
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- Mahsulotlar -->
-                <div class="tab-pane fade {{ request('tab') == 'products' ? 'show active' : '' }}" id="products"
-                     role="tabpanel">
-                    @foreach($softwares as $software)
-                        <div class="container my-5">
-                            <div class="row align-items-center bg-light rounded shadow p-4">
-                                <!-- Chap tomon: Kartalar -->
-                                <div class="col-md-4">
-                                    <div class="row gy-3">
-                                        <div class="col-12">
-                                            <div class="bg-white rounded p-3 shadow">
-                                                <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
-                                                <ul class="list-unstyled">
-                                                    <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Markaz: Rasm -->
-                                <div class="col-md-4 text-center">
-                                    <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
-                                         class="img-fluid rounded shadow">
-                                </div>
-
-                                <!-- O'ng tomon: Yozuv -->
-                                <div class="col-md-4">
-                                    <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
-                                    <p class="text-muted">
-                                        {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
-                                    </p>
-                                    <a href="{{ route('software.show', $software->id)}}"
-                                       class="btn btn-primary mt-5 p-3">
-                                        batafsil
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- Tadbirlar -->
-                <div class="tab-pane fade {{ request('tab') == 'events' ? 'show active' : '' }}" id="events"
-                     role="tabpanel">
-                    @foreach($softwares as $software)
-                        <div class="container my-5">
-                            <div class="row align-items-center bg-light rounded shadow p-4">
-                                <!-- Chap tomon: Kartalar -->
-                                <div class="col-md-4">
-                                    <div class="row gy-3">
-                                        <div class="col-12">
-                                            <div class="bg-white rounded p-3 shadow">
-                                                <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
-                                                <ul class="list-unstyled">
-                                                    <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Markaz: Rasm -->
-                                <div class="col-md-4 text-center">
-                                    <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
-                                         class="img-fluid rounded shadow">
-                                </div>
-
-                                <!-- O'ng tomon: Yozuv -->
-                                <div class="col-md-4">
-                                    <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
-                                    <p class="text-muted">
-                                        {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
-                                    </p>
-                                    <a href="{{ route('software.show', $software->id)}}"
-                                       class="btn btn-primary mt-5 p-3">
-                                        batafsil
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
 
 
-            </div>
-            <div class="container">
-                <div class="mt-4 d-flex justify-content-center">
-                    {{ $softwares->links() }}
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-
-
-@endsection
-
-
-@extends('layouts.app')
-@section('content')
-    <div class="rts-blog v_3 rts-section-padding">
-        <div class="row container">
-
-
-            <div class="rts-section">
-                <h3 class="rts-section-title">@lang('crud.software.name')</h3>
-            </div>
-            <hr>
-        </div>
-
-
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="tab-content" id="horizontalNavbarContent">
-
-                    <!-- StartUplar tab -->
-                    <div
-                        class="tab-pane fade show {{ request('tab') == 'home' || request('tab') == null ? 'active' : '' }}"
-                        id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                        @foreach($softwares as $software)
-                            <div class="container my-5">
-                                <div class="row align-items-center bg-light rounded shadow p-4">
-                                    <!-- Chap tomon: Kartalar -->
-                                    <div class="col-md-4">
-                                        <div class="row gy-3">
-                                            <div class="col-12">
-                                                <div class="bg-white rounded p-3 shadow">
-                                                    <h5 class="fw-bold">{!! $software['title_' . session('locale')] !!}</h5>
-                                                    <ul class="list-unstyled">
-                                                        <li>{!! Str::limit($software['description_' . session('locale')], 170, '...') !!}</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Markaz: Rasm -->
-                                    <div class="col-md-4 text-center">
-                                        <img src="{{ asset('storage/'.$software->image) }}" alt="Center Image"
-                                             class="img-fluid rounded shadow">
-                                    </div>
-
-                                    <!-- O'ng tomon: Yozuv -->
-                                    <div class="col-md-4">
-                                        <h3 class="fw-bold">{!! $software['name_' . session('locale')] !!}</h3>
-                                        <p class="text-muted">
-                                            {!! Str::limit($software['project_objective_' . session('locale')], 150, '...') !!}
-                                        </p>
-                                        <a href="{{ route('software.show', $software->id)}}"
-                                           class="btn btn-primary mt-5 p-3">
-                                            batafsil
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                        <div class="container">
-                            <div class="mt-4 d-flex justify-content-center">
-                                {{ $softwares->links() }}
-                            </div>
+                    <div class="container">
+                        <div class="mt-4 d-flex justify-content-center">
+                            {{ $educationalSoftwares->appends(request()->except('educational_page'))->links() }}
                         </div>
                     </div>
 
                 </div>
 
+                <!-- Kurslar -->
+                <div class="tab-pane fade {{ request('tab') == 'courses' ? 'show active' : '' }}" id="courses"
+                     role="tabpanel">
+                    @foreach($commericalSoftwares as $commericalSoftware)
+                        <div class="container my-5">
+                            <div class="row align-items-center bg-light rounded shadow p-4">
+                                <!-- Chap tomon: Kartalar -->
+                                <div class="col-md-4">
+                                    <div class="row gy-3">
+                                        <div class="col-12">
+                                            <div class="bg-white rounded p-3 shadow">
+                                                <h5 class="fw-bold">{!! $commericalSoftware['title_' . session('locale')] !!}</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>{!! Str::limit($commericalSoftware['description_' . session('locale')], 170, '...') !!}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Markaz: Rasm -->
+                                <div class="col-md-4 text-center">
+                                    <img src="{{ asset('storage/'.$commericalSoftware->image) }}" alt="Center Image"
+                                         class="img-fluid rounded shadow">
+                                </div>
+
+                                <!-- O'ng tomon: Yozuv -->
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">{!! $commericalSoftware['name_' . session('locale')] !!}</h3>
+                                    <p class="text-muted">
+                                        {!! Str::limit($commericalSoftware['project_objective_' . session('locale')], 150, '...') !!}
+                                    </p>
+                                    <a href="{{ route('software.show', $commericalSoftware->id)}}"
+                                       class="btn btn-primary mt-5 p-3">
+                                        batafsil
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    <div class="container">
+                        <div class="mt-4 d-flex justify-content-center">
+                            {{ $commericalSoftwares->appends(request()->except('commerical_page'))->links() }}
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mahsulotlar -->
+                <div class="tab-pane fade {{ request('tab') == 'products' ? 'show active' : '' }}" id="products"
+                     role="tabpanel">
+                    @foreach($buisaSoftwares as $buisaSoftware)
+                        <div class="container my-5">
+                            <div class="row align-items-center bg-light rounded shadow p-4">
+                                <!-- Chap tomon: Kartalar -->
+                                <div class="col-md-4">
+                                    <div class="row gy-3">
+                                        <div class="col-12">
+                                            <div class="bg-white rounded p-3 shadow">
+                                                <h5 class="fw-bold">{!! $buisaSoftware['title_' . session('locale')] !!}</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>{!! Str::limit($buisaSoftware['description_' . session('locale')], 170, '...') !!}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Markaz: Rasm -->
+                                <div class="col-md-4 text-center">
+                                    <img src="{{ asset('storage/'.$buisaSoftware->image) }}" alt="Center Image"
+                                         class="img-fluid rounded shadow">
+                                </div>
+
+                                <!-- O'ng tomon: Yozuv -->
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">{!! $buisaSoftware['name_' . session('locale')] !!}</h3>
+                                    <p class="text-muted">
+                                        {!! Str::limit($buisaSoftware['project_objective_' . session('locale')], 150, '...') !!}
+                                    </p>
+                                    <a href="{{ route('software.show', $buisaSoftware->id)}}"
+                                       class="btn btn-primary mt-5 p-3">
+                                        batafsil
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    <div class="container">
+                        <div class="mt-4 d-flex justify-content-center">
+                            {{ $buisaSoftwares->appends(request()->except('buisa_page'))->links() }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tadbirlar -->
+                <div class="tab-pane fade {{ request('tab') == 'events' ? 'show active' : '' }}" id="events"
+                     role="tabpanel">
+                    @foreach($publicSoftwares as $publicSoftware)
+                        <div class="container my-5">
+                            <div class="row align-items-center bg-light rounded shadow p-4">
+                                <!-- Chap tomon: Kartalar -->
+                                <div class="col-md-4">
+                                    <div class="row gy-3">
+                                        <div class="col-12">
+                                            <div class="bg-white rounded p-3 shadow">
+                                                <h5 class="fw-bold">{!! $publicSoftware['title_' . session('locale')] !!}</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>{!! Str::limit($publicSoftware['description_' . session('locale')], 170, '...') !!}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Markaz: Rasm -->
+                                <div class="col-md-4 text-center">
+                                    <img src="{{ asset('storage/'.$publicSoftware->image) }}" alt="Center Image"
+                                         class="img-fluid rounded shadow">
+                                </div>
+
+                                <!-- O'ng tomon: Yozuv -->
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">{!! $publicSoftware['name_' . session('locale')] !!}</h3>
+                                    <p class="text-muted">
+                                        {!! Str::limit($publicSoftware['project_objective_' . session('locale')], 150, '...') !!}
+                                    </p>
+                                    <a href="{{ route('software.show', $publicSoftware->id)}}"
+                                       class="btn btn-primary mt-5 p-3">
+                                        batafsil
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    <div class="container">
+                        <div class="mt-4 d-flex justify-content-center">
+                            {{ $publicSoftwares->appends(request()->except('public_page'))->links() }}
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+
         </div>
     </div>
 
 
-    </div>
+
 @endsection
+
 
 
 

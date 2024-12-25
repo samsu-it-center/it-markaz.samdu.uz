@@ -40,8 +40,23 @@ class LayoutsController extends Controller
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $softwares = SoftwareProduct::orderBy('id', 'desc')->paginate(6);
-        return view('pages.software', compact('softwares'));
+
+      $aiSoftwares = SoftwareProduct::where('type', 1)
+        ->orderBy('id', 'desc')->paginate(4, ['*'], 'ai_page');
+
+    $educationalSoftwares = SoftwareProduct::where('type', 2)
+        ->orderBy('id', 'desc')->paginate(4, ['*'], 'educational_page');
+
+    $commericalSoftwares = SoftwareProduct::where('type', 3)
+        ->orderBy('id', 'desc')->paginate(4, ['*'], 'commerical_page');
+
+    $buisaSoftwares = SoftwareProduct::where('type', 4)
+        ->orderBy('id', 'desc')->paginate(4, ['*'], 'buisa_page');
+
+    $publicSoftwares = SoftwareProduct::where('type', 5)
+        ->orderBy('id', 'desc')->paginate(4, ['*'], 'public_page');
+
+        return view('pages.software', compact('aiSoftwares','educationalSoftwares','commericalSoftwares','buisaSoftwares','publicSoftwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
