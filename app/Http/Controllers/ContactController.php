@@ -10,11 +10,14 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
+//        dd($request);
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'phone' => 'required|max:255',
             'message' => 'nullable|string',
         ]);
+
+
 
         ContactMessage::create($validated);
 

@@ -158,16 +158,21 @@
                 </ul>
                 {{--                <button class="btn btn-outline-light menu m-1"> <a class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>--}}
 
-            </div>
-
-
-            <div class="header-right-area-one ">
-                <div class="header-right-content">
-                    <div class="menu-bar" id="menu-btn">
-                        <i class="fa fa-list  fa-xl"></i>
+            <div class="header-right-area-one " style="background-color: #fff !important;">
+                <div class="header-right-content" style="background-color: #fff !important;">
+                    <div class="search-form" style="background-color: #fff !important;">
+                        <form action="#" style="background-color: #fff !important;">
+                            <input type="text" name="s" id="search-site" placeholder="Search...">
+                            <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                    <div class="menu-bar" id="menu-btn" style="background-color: #fff !important;">
+                        <i class="fa fa-list bg-light"></i>
                     </div>
                 </div>
             </div>
+            </div>
+
         </nav>
 
         {{--                </div>--}}

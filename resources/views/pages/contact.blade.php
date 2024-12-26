@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div
+            style="background-color: darkgreen ; color: #fff; padding: 10px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 15px;">
+           <h5 class="text-center text-white">Xabaringiz muvaffaqiyatli yuborildi.</h5>
+        </div>
+    @endif
 
 
     @php
@@ -61,7 +67,8 @@
         ">
                 <i class="fas fa-phone-alt" style="font-size: 2rem; color: white;"></i>
                 <h3 style="color: white; margin-top: 10px;">Raqam</h3>
-                <p style="color: white;">(+123) 456-7890</p>
+                <p style="color: white;"><a href="tel:+998937286768" style="color: white; text-decoration: none;">+998-93-728-68-67</a>
+                </p>
             </div>
             <div class="item" style="
             flex: 1 1 30%; /* Har bir bo'lim uchun kenglikni belgilash */
@@ -74,7 +81,9 @@
         ">
                 <i class="fas fa-envelope" style="font-size: 2rem; color: white;"></i>
                 <h3 style="color: white; margin-top: 10px;">Email</h3>
-                <p style="color: white;">contact@website.com</p>
+                <p style="color: white;">
+                    <a href="mailto:itmarkazsam@gmail.com" style="color: white; text-decoration: none;">itmarkazsam@gmail.com</a>
+                </p>
             </div>
             <div class="item" style="
             flex: 1 1 30%; /* Har bir bo'lim uchun kenglikni belgilash */
@@ -87,7 +96,7 @@
         ">
                 <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: white;"></i>
                 <h3 style="color: white; margin-top: 10px;">Joylashuv</h3>
-                <p style="color: white;">123 Main Street, City, Country</p>
+                <p style="color: white;">Namozgoh ko'chasi 88-uy</p>
             </div>
         </div>
     </section>
@@ -111,18 +120,22 @@
             <div class="contact-form"
                  style="flex: 1 1 48%; max-width: 600px; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border: #004a9f;">
                 <h2 style="color: #004a9f;">Bog'lanish</h2>
-                <form style=" border: #004a9f !important;">
+                <form action="{{ route('contact.apply') }}" method="POST"
+                      style="padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
+                    @csrf
                     <input type="text" name="name" placeholder="Ismingiz:" required
-                           style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: #004a9f;">
+                           style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
                     <input type="text" name="phone" placeholder="Telefon raqamingiz:" required
-                           style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: #004a9f;">
+                           style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
                     <textarea name="message" placeholder="Xabaringiz:" required
-                              style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: #004a9f;"></textarea>
+                              style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;"></textarea>
                     <button type="submit"
                             style="background-color: #004a9f; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer;">
                         Jo'natish
                     </button>
                 </form>
+
+
             </div>
         </div>
     </section>
