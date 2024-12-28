@@ -29,7 +29,7 @@
 
     <style>
 
-         body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
         }
@@ -185,7 +185,22 @@
             .custom-navbar .dropdown:hover .dropdown-menu {
                 display: block;
             }
+
+            /* Logotipni faqat mobilda ko'rsatish va chapga hizalash */
+            .logo-area {
+                display: block; /* Mobilda logotipni ko'rsatish */
+                margin-left: 0; /* Chap tomonga hizalanadi */
+                margin-right: auto;
+            }
+
+            /* Desktopda logotipni yashirish */
+            @media (min-width: 769px) {
+                .logo-area {
+                    display: block; /* Desktop uchun logotipni yashirish */
+                }
+            }
         }
+
 
         /* start of slider*/
 
@@ -303,7 +318,7 @@
         /* end of slider*/
 
         /* Container for Cards */
-            .container-my {
+        .container-my {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;

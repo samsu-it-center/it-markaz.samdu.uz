@@ -21,27 +21,6 @@
 
                         <div class="right-information">
                             <ul class="rts-dropdown-menu language-switch">
-                                {{--                                <li class="has-child-menu">--}}
-                                {{--                                    <a href="#">--}}
-                                {{--                                        <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""--}}
-                                {{--                                             class="flag">--}}
-                                {{--                                        <span class="menu-item">{{ $languages[$currentLocale]['name'] }}</span>--}}
-                                {{--                                        <i class="fa-regular fa-chevron-down"></i>--}}
-                                {{--                                    </a>--}}
-                                {{--                                    <ul class="sub-menu">--}}
-                                {{--                                        @foreach($languages as $langCode => $langData)--}}
-                                {{--                                            @if($langCode != $currentLocale)--}}
-                                {{--                                                <li>--}}
-                                {{--                                                    <a href="{{ route('lang', $langCode) }}">--}}
-                                {{--                                                        <img src="{{ asset('flags/' . $langData['flag']) }}" alt=""--}}
-                                {{--                                                             class="flag">--}}
-                                {{--                                                        <span class="menu-item">{{ $langData['name'] }}</span>--}}
-                                {{--                                                    </a>--}}
-                                {{--                                                </li>--}}
-                                {{--                                            @endif--}}
-                                {{--                                        @endforeach--}}
-                                {{--                                    </ul>--}}
-                                {{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -63,8 +42,11 @@
             <div class="d-flex align-items-center">
                 <!-- Icon Buttons -->
                 <button class="border-0 ">
-                    <button class="btn btn-outline-light menu ml-5"><a href="/" class="logo-area"><img
-                                src="{{ asset('logo.png') }}" alt="logo"></a></button>
+                    <button class="btn btn-outline-light  ml-5">
+                          <a href="/" class="logo-area">
+                    <img src="{{ asset('logo.png') }}" alt="Logo" style="max-width: 150px;">
+                </a>
+                    </button>
                 </button>
                 <button class="border-0 ">
                 </button>
@@ -72,6 +54,10 @@
                 </button>
 
                 <!-- Submit Button -->
+
+
+
+
             </div>
 
 
@@ -158,22 +144,18 @@
                 </ul>
                 {{--                <button class="btn btn-outline-light menu m-1"> <a class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>--}}
 
-            <div class="header-right-area-one " style="background-color: #fff !important;">
-                <div class="header-right-content" style="background-color: #fff !important;">
-                    <div class="search-form" style="background-color: #fff !important;">
-                        <form action="#" style="background-color: #fff !important;">
-                            <input type="text" name="s" id="search-site" placeholder="Search...">
-                            <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
-                        </form>
-                    </div>
-                    <div class="menu-bar" id="menu-btn" style="background-color: #fff !important;">
-                        <i class="fa fa-list bg-light"></i>
+                <div class="header-right-area-one ">
+                    <div class="header-right-content">
+                        <div class="menu-bar" id="menu-btn">
+                          <i class="fa fa-list fa-2x"></i>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
 
         </nav>
+
 
         {{--                </div>--}}
     </div>
