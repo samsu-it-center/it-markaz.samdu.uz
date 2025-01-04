@@ -298,4 +298,42 @@
         {{--                </div>--}}
         {{--            </section>--}}
         <!-- FAQ End -->
+
+{{--     <div id="side-bar" class="side-bar">--}}
+{{--        <button class="close-icon-menu"><i class="far fa-times"></i></button>--}}
+{{--        <!-- inner menu area desktop start -->--}}
+{{--        <div class="inner-main-wrapper-desk">--}}
+{{--            <div class="thumbnail">--}}
+{{--                <img src="assets/images/logo/logo-default.svg" alt="studyhub-university">--}}
+{{--            </div>--}}
+{{--            <div class="inner-content">--}}
+{{--                <p class="disc">--}}
+{{--                    A modern HTML template for education, offering intuitive design & essential features for seamless learning experiences.--}}
+{{--                </p>--}}
+{{--                <!-- offcanvase banner -->--}}
+{{--                <div class="offcanvase__banner mt--50">--}}
+{{--                    <div class="offcanvase__banner--content">--}}
+{{--                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">--}}
+{{--                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="offcanvase__info">--}}
+{{--                    <div class="offcanvase__info--content">--}}
+{{--                        <a href="callto:+61485826710"><span><i class="fa-sharp fa-light fa-phone"></i></span>+(61) 485-826-710</a>--}}
+{{--                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>--}}
+{{--                        <div class="offcanvase__info--content--social">--}}
+{{--                            <p class="title">Follow Us:</p>--}}
+{{--                            <div class="social__links">--}}
+{{--                                <a href="#"><i class="fa-brands fa-facebook"></i></a>--}}
+{{--                                <a href="#"><i class="fa-brands fa-instagram"></i></a>--}}
+{{--                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>--}}
+{{--                                <a href="#"><i class="fa-brands fa-youtube"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
+{{--            </div>--}}
+{{--        </div>--}}
 @endsection

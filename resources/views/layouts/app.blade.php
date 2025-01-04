@@ -149,7 +149,7 @@
         }
 
         .header-right-content {
-            display: none !important;
+            display: block !important;
         }
 
         /* Mobil ekranlar uchun (768px yoki kichikroq) */

@@ -43,9 +43,9 @@
                 <!-- Icon Buttons -->
                 <button class="border-0 ">
                     <button class="btn btn-outline-light  ml-5">
-                          <a href="/" class="logo-area">
-                    <img src="{{ asset('logo.png') }}" alt="Logo" style="max-width: 150px;">
-                </a>
+                        <a href="/" class="logo-area">
+                            <img src="{{ asset('logo.png') }}" alt="Logo" style="max-width: 150px;">
+                        </a>
                     </button>
                 </button>
                 <button class="border-0 ">
@@ -54,8 +54,6 @@
                 </button>
 
                 <!-- Submit Button -->
-
-
 
 
             </div>
@@ -137,21 +135,22 @@
 
 
             <div class="d-flex align-items-center">
-                <ul class="nav container">
-                    <li class="nav-item dropdown">
-                        <button class="my-nav-link">Оставить заявку</button>
-                    </li>
-                </ul>
+{{--                <ul class="nav container">--}}
+{{--                    <li class="nav-item dropdown">--}}
+{{--                        <button class="my-nav-link">Оставить заявку</button>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
                 {{--                <button class="btn btn-outline-light menu m-1"> <a class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>--}}
 
                 <div class="header-right-area-one ">
                     <div class="header-right-content">
                         <div class="menu-bar" id="menu-btn">
-                          <i class="fa fa-list fa-2x"></i>
-
+                            <i class="fa fa-list fa-2x"></i>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
         </nav>
