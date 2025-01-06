@@ -28,11 +28,7 @@
             </div>
         </div>
     </div>
-    {{--    <div class="container">--}}
     <div class="row ">
-    {{--            <div class="col-lg-12">--}}
-    {{--                <div class="header-one-wrapper">--}}
-
 
     <!-- Navbar -->
         <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
@@ -120,28 +116,12 @@
                         @endforeach
                     </ul>
 
-                    {{--                <li class="nav-item dropdown">--}}
-                    {{--                    <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>--}}
-                    {{--                    <ul class="dropdown-menu">--}}
-                    {{--                        <li><a href="#" class="dropdown-item">Web Design</a></li>--}}
-                    {{--                        <li><a href="#" class="dropdown-item">SEO Optimization</a></li>--}}
-                    {{--                        <li><a href="#" class="dropdown-item">App Development</a></li>--}}
-                    {{--                    </ul>--}}
-                    {{--                </li>--}}
-
                 </li>
 
             </ul>
 
 
             <div class="d-flex align-items-center">
-{{--                <ul class="nav container">--}}
-{{--                    <li class="nav-item dropdown">--}}
-{{--                        <button class="my-nav-link">Оставить заявку</button>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-                {{--                <button class="btn btn-outline-light menu m-1"> <a class="logo-area"><img src="{{ asset('logo.png') }}" alt="logo" ></a></button>--}}
-
                 <div class="header-right-area-one ">
                     <div class="header-right-content">
                         <div class="menu-bar" id="menu-btn">
@@ -156,8 +136,6 @@
         </nav>
 
 
-        {{--                </div>--}}
     </div>
-    {{--        </div>--}}
-    {{--    </div>--}}
+
 </header>
