@@ -1,4 +1,4 @@
-<header id="rt-header" class="header-one header--sticky">
+<header id="rt-header" class="header-one p-0 header--sticky">
     <div class="header-top-one-wrapper rt-primary-bg">
         <div class="container">
             <div class="row">
