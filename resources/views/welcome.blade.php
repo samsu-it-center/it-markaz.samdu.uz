@@ -210,11 +210,11 @@
                                                 {{ Str::words($course['description_'.session('locale')] ?? 'Default Offline Course', 20) }}
                                             </p>
 
-                                            <p class="text-primary fw-bold">Free <span
-                                                    class="text-secondary">({{ $course->type ?? 'Default Offline Course' }})</span>
-                                            </p>
+{{--                                            <p class="text-primary fw-bold">Free <span--}}
+{{--                                                    class="text-secondary">({{ $course->type ?? 'Default Offline Course' }})</span>--}}
+{{--                                            </p>--}}
                                             <a href="{{ route('course.show', $course->id) }}"
-                                               class="btn btn-primary">
+                                               class="btn p-3" style="background-color: #004a9f;color: #fff;">
                                                 <i class="fa fa-arrow-alt-right "></i>
                                             </a>
                                         </div>

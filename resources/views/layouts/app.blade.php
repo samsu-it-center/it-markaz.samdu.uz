@@ -134,32 +134,30 @@
             color: #004a9f;
         }
 
-        /* Show dropdown on hover */
+      
         .custom-navbar .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        /* Desktop yoki katta ekranlar uchun */
         #myDiv {
             margin-right: 450px !important;
         }
 
         .menu {
-            display: flex; /* Tugmalar ko‘rinadi */
+            display: flex;
         }
 
         .header-right-content {
             display: block !important;
         }
 
-        /* Mobil ekranlar uchun (768px yoki kichikroq) */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             #myDiv {
                 margin-right: 0 !important;
             }
 
             .menu {
-                display: none; /* Menyu butunlay yashiriladi */
+                display: none;
             }
 
             .nav {
@@ -172,7 +170,6 @@
 
             .menu-bar {
                 color: #fff;
-                /*border-radius: 3px;*/
             }
 
             .custom-navbar .dropdown-menu {
@@ -186,18 +183,18 @@
                 display: block;
             }
 
-            /* Logotipni faqat mobilda ko'rsatish va chapga hizalash */
+
             .logo-area {
-                display: block; /* Mobilda logotipni ko'rsatish */
-                margin-left: 0; /* Chap tomonga hizalanadi */
+                display: block;
+                margin-left: 0;
                 margin-right: auto;
             }
+        }
 
-            /* Desktopda logotipni yashirish */
-            @media (min-width: 769px) {
-                .logo-area {
-                    display: block; /* Desktop uchun logotipni yashirish */
-                }
+
+        @media (min-width: 1025px) {
+            .logo-area {
+                display: block;
             }
         }
 
@@ -498,14 +495,17 @@
             border-radius: 15px;
             overflow: hidden;
         }
+
         .course-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
         .card-img-top {
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
+
         h1 {
             border-bottom: 3px solid #007bff;
             padding-bottom: 10px;
