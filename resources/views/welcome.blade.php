@@ -205,9 +205,9 @@
 
 
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $course['title_'.session('locale')] ?? 'Default Offline Course' }}</h5>
+                                            <h5 class="card-title">{!! $course['title_'.session('locale')] ?? 'Default Offline Course'  !!}</h5>
                                             <p class="card-text">
-                                                {{ Str::words($course['description_'.session('locale')] ?? 'Default Offline Course', 20) }}
+                                                {!!  Str::words($course['description_'.session('locale')] ?? 'Default Offline Course', 20)  !!}
                                             </p>
 
 {{--                                            <p class="text-primary fw-bold">Free <span--}}
