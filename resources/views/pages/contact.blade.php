@@ -13,35 +13,7 @@
         $lang = App::getLocale();
     @endphp
 
-    <!-- Animation Section -->
-    <section class="animate-section">
-        <h2>Bizning maqsadimiz</h2>
-        {{--            <p>Delivering excellence in everything we do, with a focus on the future.</p>--}}
 
-        <div class="animate-cols" style="display: flex; justify-content: space-around; margin-top: 40px;">
-            <div class="animate-col"
-                 style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Sifat</h3>
-                <p class="text-white">Biz amalga oshirgan har bir ishda eng yuqori standartlarga rioya qilamiz.</p>
-            </div>
-            <div class="animate-col"
-                 style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Innovatsiya</h3>
-                <p class="text-white">Yangi g'oyalar va ilg'or texnologiyalar bilan ilhomlantirilgan.</p>
-            </div>
-            <div class="animate-col"
-                 style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Qo'llab-quvvatlash</h3>
-                <p class="text-white">Sizning muvaffaqiyatingiz bizning ustuvorligimizdir, doimiy qo'llab-quvvatlash
-                    bilan.</p>
-            </div>
-            <div class="animate-col"
-                 style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Ishonch</h3>
-                <p class="text-white"> O'zaro ishonch va halollik asosida munosabatlar o'rnatish.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Information Section -->
     <section class="contact-section"

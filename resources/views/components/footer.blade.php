@@ -9,14 +9,14 @@
                             <a href="/" class="d-block rts-footer-logo mb--40">
                                 <img src="{{ asset('logo.png') }}" alt="itcenter">
                             </a>
-                            <p>
+                            <p class="text-muted">
                                 {{ $about['official_name_'.session('locale')] ?? 'Birlamchi rasmiy ism' }}
                             </p>
-                            <div class="rts-contact-link">
-                                <a href="mailto:contact@reacthemes.com"><i
-                                        class="fa-sharp  fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
+                            <div class="">
+                                <a href="mailto:contact@reacthemes.com" class="text-muted"><i
+                                        class="fa-sharp  fa-location-dot text-muted"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
-                                <a href="callto:+998 93 728 68 67"><i class="fa-thin fa-phone"></i> +998 93 728 68
+                                <a href="callto:+998 93 728 68 67" class="text-muted"><i class="fa-thin fa-phone"></i> +998 93 728 68
                                     67</a>
                             </div>
                         </div>
@@ -27,13 +27,13 @@
                             <div class="rts-footer-menu">
                                 <ul>
                                     <li>
-                                        <a class="nav-link" href="{{ route('about') }}">@lang('crud.menu.about')</a>
+                                        <a class="nav-link text-muted" href="{{ route('about') }}">@lang('crud.menu.about')</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="{{ route('news') }}">@lang('crud.menu.news')</a>
+                                        <a class="nav-link text-muted" href="{{ route('news') }}">@lang('crud.menu.news')</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link"
+                                        <a class="nav-link text-muted"
                                            href="{{ route('startup') }}">@lang('crud.menu.start_up')</a>
                                     </li>
                                 </ul>
@@ -45,17 +45,17 @@
                             <div class="rts-footer-menu">
                                 <ul>
                                     <li>
-                                        <a class="nav-link"
+                                        <a class="nav-link text-muted"
                                            href="{{ route('software') }}">@lang('crud.menu.software')</a>
                                     </li>
 
 
                                     <li>
-                                        <a class="nav-link" href="{{ route('course') }}">@lang('crud.menu.course')</a>
+                                        <a class="nav-link text-muted" href="{{ route('course') }}">@lang('crud.menu.course')</a>
                                     </li>
 
                                     <li>
-                                        <a class="nav-link"
+                                        <a class="nav-link text-muted"
                                            href="{{ route('document') }}">@lang('crud.menu.document')</a>
                                     </li>
                                 </ul>
@@ -109,9 +109,10 @@
             </div>
         </div>
     </div>
+
     <!-- mobile menu area start -->
     <div class="mobile-menu-main">
-        <nav class="nav-main mainmenu-nav mt--30">
+        <nav class="nav-main mainmenu-nav mt--0">
             <ul class="mainmenu metismenu" id="mobile-menu-active">
                 <li>
                     <a class="nav-link" href="{{ route('about') }}">@lang('crud.menu.about')</a>
@@ -139,30 +140,7 @@
             </ul>
         </nav>
 
-        <div class="rts-social-style-one pl--20 mt--100">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+
     </div>
     <!-- mobile menu area end -->
 </div>

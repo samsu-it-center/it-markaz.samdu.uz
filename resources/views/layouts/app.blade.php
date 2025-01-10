@@ -134,7 +134,7 @@
             color: #004a9f;
         }
 
-      
+
         .custom-navbar .dropdown:hover .dropdown-menu {
             display: block;
         }
@@ -195,6 +195,18 @@
         @media (min-width: 1025px) {
             .logo-area {
                 display: block;
+            }
+        }
+
+        /* Desktop uchun margin-top */
+        #side-bar {
+            margin-top: 128px;
+        }
+
+        /* Mobile uchun margin-top 0 bo'lishi uchun */
+        @media (max-width: 768px) {
+            #side-bar {
+                margin-top: 105px;
             }
         }
 
@@ -511,6 +523,7 @@
             padding-bottom: 10px;
         }
     </style>
+
 </head>
 
 <body class="page">

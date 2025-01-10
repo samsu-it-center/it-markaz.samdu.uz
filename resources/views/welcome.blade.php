@@ -188,7 +188,7 @@
             </div>
 
             @if($courses->isNotEmpty())
-                <div class="semister-fee pb--120 pb__md--80">
+                <div class="semister-fee pb--0 pb__md--80">
                     <div class="container py-5">
 
                         <h3 class="d-flex justify-content-between align-items-center">
@@ -210,9 +210,6 @@
                                                 {!!  Str::words($course['description_'.session('locale')] ?? 'Default Offline Course', 20)  !!}
                                             </p>
 
-{{--                                            <p class="text-primary fw-bold">Free <span--}}
-{{--                                                    class="text-secondary">({{ $course->type ?? 'Default Offline Course' }})</span>--}}
-{{--                                            </p>--}}
                                             <a href="{{ route('course.show', $course->id) }}"
                                                class="btn p-3" style="background-color: #004a9f;color: #fff;">
                                                 <i class="fa fa-arrow-alt-right "></i>
@@ -226,78 +223,4 @@
                     </div>
                 @endif
 
-                <!-- FAQ Start -->
-                {{--            <section class="rts-faq-section rts-section-padding">--}}
-                {{--                <div class="container">--}}
-                {{--                    <h2>@lang('crud.faq')</h2>--}}
-                {{--                </div>--}}
-                {{--                <div class="container">--}}
-                {{--                    <div class="row">--}}
-                {{--                        <div class="col-lg-12">--}}
-                {{--                            <div class="faq-wrapper">--}}
-                {{--                                <div class="accordion" id="faqExample">--}}
-                {{--                                    @foreach($faqs as $faq)--}}
-                {{--                                        <div class="accordion-item">--}}
-                {{--                                            <h2 class="accordion-header" id="faqHeading{{ $faq->id }}">--}}
-                {{--                                                <button class="accordion-button" type="button" style="font-size: 17px;"--}}
-                {{--                                                        data-bs-toggle="collapse"--}}
-                {{--                                                        data-bs-target="#faqCollapse{{ $faq->id }}" aria-expanded="true"--}}
-                {{--                                                        aria-controls="faqCollapse{{ $faq->id }}">--}}
-                {{--                                                    {{ $faq['question'] ?? 'Default Question' }}--}}
-                {{--                                                </button>--}}
-                {{--                                            </h2>--}}
-                {{--                                            <div id="faqCollapse{{ $faq->id }}" class="accordion-collapse collapse"--}}
-                {{--                                                 aria-labelledby="faqHeading{{ $faq->id }}"--}}
-                {{--                                                 data-bs-parent="#faqExample">--}}
-                {{--                                                <div class="accordion-body">--}}
-                {{--                                                    {{ $faq['answer'] ?? 'Default Answer' }}--}}
-                {{--                                                </div>--}}
-                {{--                                            </div>--}}
-                {{--                                        </div>--}}
-                {{--                                    @endforeach--}}
-                {{--                                </div>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--            </section>--}}
-                <!-- FAQ End -->
-
-    {{--     <div id="side-bar" class="side-bar">--}}
-    {{--        <button class="close-icon-menu"><i class="far fa-times"></i></button>--}}
-    {{--        <!-- inner menu area desktop start -->--}}
-    {{--        <div class="inner-main-wrapper-desk">--}}
-    {{--            <div class="thumbnail">--}}
-    {{--                <img src="assets/images/logo/logo-default.svg" alt="studyhub-university">--}}
-    {{--            </div>--}}
-    {{--            <div class="inner-content">--}}
-    {{--                <p class="disc">--}}
-    {{--                    A modern HTML template for education, offering intuitive design & essential features for seamless learning experiences.--}}
-    {{--                </p>--}}
-    {{--                <!-- offcanvase banner -->--}}
-    {{--                <div class="offcanvase__banner mt--50">--}}
-    {{--                    <div class="offcanvase__banner--content">--}}
-    {{--                        <img src="assets/images/offcanvase.jpg" alt="offcanvase">--}}
-    {{--                        <a href="admission.html" class="rts-theme-btn">Apply Now</a>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-    {{--                <div class="offcanvase__info">--}}
-    {{--                    <div class="offcanvase__info--content">--}}
-    {{--                        <a href="callto:+61485826710"><span><i class="fa-sharp fa-light fa-phone"></i></span>+(61) 485-826-710</a>--}}
-    {{--                        <a href="#"><span><i class="fa-sharp fa-light fa-location-dot"></i></span>Yarra Park, Melbourne, Australia</a>--}}
-    {{--                        <div class="offcanvase__info--content--social">--}}
-    {{--                            <p class="title">Follow Us:</p>--}}
-    {{--                            <div class="social__links">--}}
-    {{--                                <a href="#"><i class="fa-brands fa-facebook"></i></a>--}}
-    {{--                                <a href="#"><i class="fa-brands fa-instagram"></i></a>--}}
-    {{--                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>--}}
-    {{--                                <a href="#"><i class="fa-brands fa-youtube"></i></a>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-
-
-    {{--            </div>--}}
-    {{--        </div>--}}
 @endsection
