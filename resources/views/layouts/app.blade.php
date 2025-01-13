@@ -148,7 +148,7 @@
         }
 
         .header-right-content {
-            display: block !important;
+            display: none !important;
         }
 
         @media (max-width: 1024px) {
@@ -171,6 +171,7 @@
             .menu-bar {
                 color: #fff;
             }
+
 
             .custom-navbar .dropdown-menu {
                 position: relative;
@@ -204,9 +205,9 @@
         }
 
         /* Mobile uchun margin-top 0 bo'lishi uchun */
-        @media (max-width: 768px) {
+        @media (max-width: 1025px) {
             #side-bar {
-                margin-top: 105px;
+                margin-top: 75px;
             }
         }
 
@@ -522,6 +523,149 @@
             border-bottom: 3px solid #007bff;
             padding-bottom: 10px;
         }
+
+        /* Zamonaviy bog'lanish tugmasi */
+        .contact-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: #004a9f; /* Tugma fon rangi */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 0 12px rgba(0, 74, 159, 0.8), 0 0 25px rgba(0, 74, 159, 0.5);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            z-index: 1000;
+            animation: pulse-animation 1s infinite; /* Animatsiya qo'shildi */
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 12px rgba(0, 74, 159, 0.8), 0 0 25px rgba(0, 74, 159, 0.5);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(0, 74, 159, 1), 0 0 40px rgba(0, 74, 159, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 12px rgba(0, 74, 159, 0.8), 0 0 25px rgba(0, 74, 159, 0.5);
+            }
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 74, 159, 1), 0 0 40px rgba(0, 74, 159, 1);
+        }
+
+        .contact-btn i {
+            transition: color 0.3s ease;
+        }
+
+        .contact-btn:hover i {
+            color: #00e6e6; /* Ikonkani hover holatida o'zgartirish */
+        }
+
+
+        /* Sidebar default style */
+        #side-bar-apply {
+            position: absolute;
+            overflow: hidden;
+            top: 0px;
+            right: -100%;
+            width: 380px;
+            padding: 40px 35px;
+            padding-top: 50px;
+            height: 100%;
+            display: block;
+            background-color: white;
+            backdrop-filter: blur(7px);
+            z-index: 1900;
+            transition: all 600ms ease;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow: visible;
+        }
+
+        /* Sidebar visible state */
+        #side-bar-apply.active {
+            left: 0; /* Sidebarni ko'rsatish uchun chapdan ko'rsatiladi */
+        }
+
+
+
+        /* Close button style */
+        /*#side-bar-apply .close-icon-menu {*/
+        /*    position: absolute;*/
+        /*    top: 5px; !* Tugmachani pastroqqa tushirish *!*/
+        /*    right: 10px;*/
+        /*    width: 45px; !* Kenglik *!*/
+        /*    height: 45px; !* Balandlik *!*/
+        /*    background: #09a24f;*/
+        /*    color: #fff;*/
+        /*    border: none;*/
+        /*    font-size: 20px; !* Ikonani o'lchamini belgilash *!*/
+        /*    cursor: pointer;*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*}*/
+
+
+        /* Sidebar content style */
+        #side-bar-apply .inner-content {
+            overflow-y: auto; /* Scroll qo'shish */
+            padding: 20px;
+            height: calc(100vh - 120px); /* Paddingsiz 100% bo'lib chiqmasin */
+        }
+
+        /* Sidebar form container */
+        #side-bar-apply .form-container {
+            padding: 50px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        /* Input and Textarea styling */
+        #side-bar-apply input,
+        #side-bar-apply textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #004a9f;
+        }
+
+        /* Button styling */
+        #button-modal-contact {
+            background-color: #004a9f;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /*!* Responsive adjustments for mobile *!*/
+        /*@media (max-width: 768px) {*/
+        /*    #side-bar-apply {*/
+        /*        width: 100%;*/
+        /*        top: 100px !important;*/
+        /*    }*/
+        /*}*/
+
+
     </style>
 
 </head>
@@ -610,6 +754,47 @@
 
     // Auto-slide functionality
     setInterval(nextSlide, 3000);
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sideBar = document.getElementById("side-bar-apply");
+        const closeBtn = document.querySelector(".close-icon-menu");
+        const openBtn = document.getElementById("contact-btn"); // Open button to show sidebar
+
+        // Show sidebar when open button is clicked
+        openBtn.addEventListener("click", function () {
+            sideBar.classList.add("active"); // Add 'active' class to show sidebar
+            sideBar.classList.remove("hidden"); // Remove 'hidden' class
+        });
+
+        // Close sidebar when "X" button is clicked
+        closeBtn.addEventListener("click", function () {
+            sideBar.classList.remove("active"); // Remove 'active' class to hide sidebar
+            setTimeout(() => sideBar.classList.add("hidden"), 300); // Add 'hidden' class after transition
+        });
+    });
+
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const contactBtn = document.getElementById("contact-btn");
+    //     const sideBar = document.getElementById("side-bar-apply");
+    //     const closeBtn = document.getElementById("close-btn");
+    //
+    //     // Contact button click - show sidebar
+    //     contactBtn.addEventListener("click", function () {
+    //         sideBar.classList.add("active");
+    //         sideBar.classList.remove("hidden");
+    //     });
+    //
+    //     // Close button click - hide sidebar
+    //     closeBtn.addEventListener("click", function () {
+    //         sideBar.classList.remove("active");
+    //         setTimeout(() => sideBar.classList.add("hidden"), 300); // Delay for smooth transition
+    //     });
+    // });
+
+
 </script>
 
 </body>

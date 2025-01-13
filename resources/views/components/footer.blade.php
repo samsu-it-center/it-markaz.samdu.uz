@@ -1,4 +1,4 @@
-    <footer class="rts-blog v_1 pt--100 pb--80">
+<footer class="rts-blog v_1 pt--100 pb--80">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-12 col-md-11">
@@ -16,7 +16,8 @@
                                 <a href="mailto:contact@reacthemes.com" class="text-muted"><i
                                         class="fa-sharp  fa-location-dot text-muted"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
-                                <a href="callto:+998 93 728 68 67" class="text-muted"><i class="fa-thin fa-phone"></i> +998 93 728 68
+                                <a href="callto:+998 93 728 68 67" class="text-muted"><i class="fa-thin fa-phone"></i>
+                                    +998 93 728 68
                                     67</a>
                             </div>
                         </div>
@@ -27,10 +28,12 @@
                             <div class="rts-footer-menu">
                                 <ul>
                                     <li>
-                                        <a class="nav-link text-muted" href="{{ route('about') }}">@lang('crud.menu.about')</a>
+                                        <a class="nav-link text-muted"
+                                           href="{{ route('about') }}">@lang('crud.menu.about')</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link text-muted" href="{{ route('news') }}">@lang('crud.menu.news')</a>
+                                        <a class="nav-link text-muted"
+                                           href="{{ route('news') }}">@lang('crud.menu.news')</a>
                                     </li>
                                     <li>
                                         <a class="nav-link text-muted"
@@ -51,7 +54,8 @@
 
 
                                     <li>
-                                        <a class="nav-link text-muted" href="{{ route('course') }}">@lang('crud.menu.course')</a>
+                                        <a class="nav-link text-muted"
+                                           href="{{ route('course') }}">@lang('crud.menu.course')</a>
                                     </li>
 
                                     <li>
@@ -85,31 +89,37 @@
     </div>
 </div>
 
+
+<div id="side-bar-apply" class="side-bar">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+
+    <div class="contact-form"
+         style="flex: 1 1 48%; max-width: 600px; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border: #004a9f; margin-top: 80px;">
+        <h5 style="color: #004a9f;">Dasturiy mahsulot yo startup g'oyangiz bormi?Biz bilan bog'laning</h5>
+
+        <form action="{{ route('contact.apply') }}" method="POST"
+              style="padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
+            @csrf
+            <input type="text" name="name" placeholder="Ismingiz:" required
+                   style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
+            <input type="text" name="phone" placeholder="Telefon raqamingiz:" required
+                   style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
+            <textarea name="message" placeholder="Xabaringiz:" required
+                      style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;"></textarea>
+            <button type="submit"
+                    style="background-color: #004a9f; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; margin: 15px; position: relative; z-index: 1;">
+                Jo'natish
+            </button>
+        </form>
+
+    </div>
+    {{--        </div>--}}
+    {{--    </div>--}}
+</div>
+
+
 <div id="side-bar" class="side-bar">
     <button class="close-icon-menu"><i class="far fa-times"></i></button>
-    <!-- inner menu area desktop start -->
-    <div class="inner-main-wrapper-desk">
-        <div class="thumbnail">
-            <img src="{{ asset('logo.png') }}" alt="studyhub-university">
-        </div>
-        <div class="inner-content">
-            <p class="disc">
-                {{ $about['official_name_'.session('locale')] ?? 'Default Official Name' }}
-            </p>
-
-            <div class="offcanvase__info">
-                <div class="offcanvase__info--content">
-                    <a href="callto:+998937286867"><span><i class="fa-sharp fa-light fa-phone"></i></span>+998 93 728 68
-                        67</a>
-                    <a href="#"><span><i
-                                class="fa-sharp fa-light fa-location-dot"></i></span>
-                        {{ $about['address_'.session('locale')] ?? 'Default Address' }}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- mobile menu area start -->
     <div class="mobile-menu-main">
         <nav class="nav-main mainmenu-nav mt--0">

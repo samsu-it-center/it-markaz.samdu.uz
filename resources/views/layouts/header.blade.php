@@ -1,6 +1,6 @@
 <header id="rt-header" class="header-one p-0 header--sticky">
     <div class="header-top-one-wrapper rt-primary-bg">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="header-top-one">
@@ -30,32 +30,29 @@
     </div>
     <div class="row ">
 
-    <!-- Navbar -->
+        <!-- Navbar -->
         <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
             <!-- Left: Logo -->
             <!-- Right: Icons and Button -->
 
-            <div class="d-flex align-items-center">
-                <!-- Icon Buttons -->
-                <button class="border-0 ">
-                    <button class="btn btn-outline-light  ml-5">
-                        <a href="/" class="logo-area">
-                            <img src="{{ asset('logo.png') }}" alt="Logo" style="max-width: 150px;">
-                        </a>
-                    </button>
-                </button>
-                <button class="border-0 ">
-                </button>
-                <button class="border-0 ">
-                </button>
-
-                <!-- Submit Button -->
-
-
-            </div>
-
 
             <ul class="nav container">
+
+                    <div class="d-flex align-items-center m-1">
+                        <!-- Icon Buttons -->
+                        <button class="border-0 ">
+                            <button class="btn btn-outline-light ml-3">
+                                <a href="/" class="logo-area">
+                                    <img src="{{ asset('logo.png') }}" alt="Logo" style="max-width: 150px; max-height: 100px">
+                                </a>
+                            </button>
+                        </button>
+
+
+                        <!-- Submit Button -->
+
+                    </div>
+
                 <li class="nav-item">
                     <a class="my-nav-link {{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
                         @lang('crud.menu.about')
@@ -121,16 +118,15 @@
             </ul>
 
 
+            <!-- Menu Bar -->
             <div class="d-flex align-items-center">
-                <div class="header-right-area-one ">
+                <div class="header-right-area-one">
                     <div class="header-right-content">
                         <div class="menu-bar" id="menu-btn">
                             <i class="fa fa-list fa-2x"></i>
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
         </nav>

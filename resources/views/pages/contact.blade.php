@@ -4,7 +4,7 @@
     @if (session('success'))
         <div
             style="background-color: darkgreen ; color: #fff; padding: 10px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 15px;">
-           <h5 class="text-center text-white">Xabaringiz muvaffaqiyatli yuborildi.</h5>
+            <h5 class="text-center text-white">Xabaringiz muvaffaqiyatli yuborildi.</h5>
         </div>
     @endif
 
@@ -83,19 +83,19 @@
              style="display: flex; justify-content: space-between; align-items: flex-start; color: white; flex-wrap: wrap;">
             <!-- Shior Section (Left Column) -->
             <div class="contact-shior" style="flex: 1 1 48%; margin-right: 20px;">
-  <h2 class="text-white">Sizning Maqsadlaringiz, Bizning Mas'uliyatimiz</h2>
+                <h2 class="text-white">Sizning Maqsadlaringiz, Bizning Mas'uliyatimiz</h2>
 
-  <div style="width: 100%; height: 480px; margin-top: 20px;">
-    <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9320.458032388887!2d66.9694552!3d39.6383979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f8bc8499255%3A0x7d89646ab179a0fe!2sSamarqand%20Davlat%20Universiteti%20IT%20Markazi!5e0!3m2!1sen!2s!4v1662635733627!5m2!1sen!2s"
-    width="100%"
-      height="100%"
-      style="border:0;border-radius: 15px"
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
-  </div>
-</div>
+                <div style="width: 100%; height: 480px; margin-top: 20px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9320.458032388887!2d66.9694552!3d39.6383979!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f8bc8499255%3A0x7d89646ab179a0fe!2sSamarqand%20Davlat%20Universiteti%20IT%20Markazi!5e0!3m2!1sen!2s!4v1662635733627!5m2!1sen!2s"
+                        width="100%"
+                        height="100%"
+                        style="border:0;border-radius: 15px"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
 
 
             <!-- Contact Form Section (Right Column) -->
