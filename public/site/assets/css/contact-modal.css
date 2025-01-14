@@ -63,7 +63,7 @@
     overflow: hidden;
     top: 0px;
     left: -100%;  /* Menyu chapdan chiqish uchun o'zgartirildi */
-    width: 600px;
+    width: 450px;
     padding: 40px 35px;
     padding-top: 50px;
     max-height: 900px;
@@ -96,7 +96,7 @@
 /* Mobil uchun o'lchamda menyu o'lchamini o'zgartirish */
 @media only screen and (max-width: 575px) {
     .side-bar-apply {
-        width: 315px;
+        width: 450px;
     }
 }
 
