@@ -90,7 +90,7 @@
 </div>
 
 
-<div id="side-bar-apply" class="side-bar">
+<div id="side-bar-apply" class="side-bar-apply">
     <button class="close-icon-menu"><i class="far fa-times"></i></button>
 
     <div class="contact-form"
@@ -113,8 +113,6 @@
         </form>
 
     </div>
-    {{--        </div>--}}
-    {{--    </div>--}}
 </div>
 
 
@@ -149,8 +147,8 @@
                 </li>
             </ul>
         </nav>
-
-
     </div>
-    <!-- mobile menu area end -->
+
+
+
 </div>

@@ -21,6 +21,6 @@ class ContactController extends Controller
 
         ContactMessage::create($validated);
 
-        return redirect()->back()->with('success', 'Application submitted successfully!');
+        return redirect()->back()->with('success', 'Arizangiz muvaffaqiyatli qabul qilindi');
     }
 }
