@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategorySoftware;
 use App\Models\SoftwareProduct;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,10 @@ class SoftWareController extends Controller
     public function show(string $id)
     {
         $software = SoftwareProduct::find($id);
-        return view('software.show', compact('software'));
+
+        $categories = CategorySoftware::all();
+
+        return view('software.show', compact('software','categories'));
     }
 
     /**

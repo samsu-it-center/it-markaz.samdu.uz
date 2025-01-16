@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Category;
+use App\Models\CategorySoftware;
 use App\Models\Course;
 use App\Models\News;
 use App\Models\NormativeDocument;
@@ -35,28 +37,64 @@ class LayoutsController extends Controller
         $projects = StartUp::where('type', 1)
             ->orderBy('id', 'desc')->paginate(4);
 
-        return view('pages.start_up', compact('start_ups', 'projects'));
+//        $types = StartUp::select('type')->distinct()->get();
+//
+//        $tabs = [];
+//        foreach ($types as $type) {
+//            $tabs[$type->type] = StartUp::where('type', $type->type)->paginate(4);
+//        }
+//
+//        return view('pages.start_up', compact('start_ups', 'projects','tabs','types'));
+
+
+
+        $categories = Category::all();
+
+
+        $tabs = [];
+        foreach ($categories as $category) {
+            $tabs[$category->id] = StartUp::where('type', $category->id)
+                ->paginate(5, ['*'], $category->id . '_page');
+        }
+
+        return view('pages.start_up ', compact('categories', 'tabs'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
 
-      $aiSoftwares = SoftwareProduct::where('type', 1)
-        ->orderBy('id', 'desc')->paginate(4, ['*'], 'ai_page');
+        $aiSoftwares = SoftwareProduct::where('type', 1)
+            ->orderBy('id', 'desc')->paginate(4, ['*'], 'ai_page');
 
-    $educationalSoftwares = SoftwareProduct::where('type', 2)
-        ->orderBy('id', 'desc')->paginate(4, ['*'], 'educational_page');
+        $educationalSoftwares = SoftwareProduct::where('type', 2)
+            ->orderBy('id', 'desc')->paginate(4, ['*'], 'educational_page');
 
-    $commericalSoftwares = SoftwareProduct::where('type', 3)
-        ->orderBy('id', 'desc')->paginate(4, ['*'], 'commerical_page');
+        $commericalSoftwares = SoftwareProduct::where('type', 3)
+            ->orderBy('id', 'desc')->paginate(4, ['*'], 'commerical_page');
 
-    $buisaSoftwares = SoftwareProduct::where('type', 4)
-        ->orderBy('id', 'desc')->paginate(4, ['*'], 'buisa_page');
+        $buisaSoftwares = SoftwareProduct::where('type', 4)
+            ->orderBy('id', 'desc')->paginate(4, ['*'], 'buisa_page');
 
-    $publicSoftwares = SoftwareProduct::where('type', 5)
-        ->orderBy('id', 'desc')->paginate(4, ['*'], 'public_page');
+        $publicSoftwares = SoftwareProduct::where('type', 5)
+            ->orderBy('id', 'desc')->paginate(4, ['*'], 'public_page');
 
-        return view('pages.software', compact('aiSoftwares','educationalSoftwares','commericalSoftwares','buisaSoftwares','publicSoftwares'));
+        $categories = CategorySoftware::all();
+
+
+        $cid = $categories->pluck('id');
+
+
+        $softwares = SoftwareProduct::paginate(10);
+
+
+        $types = SoftwareProduct::select('type')->distinct()->get();
+
+        $tabs = [];
+        foreach ($types as $type) {
+            $tabs[$type->type] = SoftwareProduct::where('type', $type->type)->paginate(4);
+        }
+
+        return view('pages.software', compact('tabs', 'types', 'aiSoftwares', 'educationalSoftwares', 'commericalSoftwares', 'buisaSoftwares', 'publicSoftwares', 'categories', 'softwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -88,7 +126,7 @@ class LayoutsController extends Controller
         $offline = Course::where('type', 'offline')->get();
         $courses = Course::orderBy('id', 'desc')->get();
         $news = News::orderBy('id', 'desc')->skip(0)->take(4)->get();
-        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs','courses'));
+        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs', 'courses'));
     }
 
     public function lang($lang)

@@ -22,8 +22,13 @@ class SoftwareProduct extends Model
         'type',
     ];
 
-    public function softwarecategory()
+//    public function softwarecategory()
+//    {
+//        return $this->belongsTo(Category::class);
+//    }
+
+    public function softwareCategory()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(CategorySoftware::class);
     }
 }

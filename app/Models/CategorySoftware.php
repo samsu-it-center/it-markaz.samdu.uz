@@ -13,7 +13,10 @@ class CategorySoftware extends Model
 
     protected $fillable = ['name']; // faqat 'name' maydonini qo'shdik
 
-
+    public function softwares()
+    {
+        return $this->hasMany(Software::class);
+    }
 
 
 }

@@ -169,7 +169,7 @@
                 <!-- Contact Button -->
                     <div class="header-right-area-one">
                         <button class="contact-btn border-0" id="contact-btn">
-                            <i class="fa-brands fa-telegram"></i>
+                            <i >Ariza qoldirish</i>
                         </button>
                     </div>
 @endsection
