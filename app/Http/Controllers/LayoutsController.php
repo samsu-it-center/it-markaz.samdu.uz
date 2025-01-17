@@ -54,7 +54,7 @@ class LayoutsController extends Controller
         $tabs = [];
         foreach ($categories as $category) {
             $tabs[$category->id] = StartUp::where('type', $category->id)
-                ->paginate(5, ['*'], $category->id . '_page');
+                ->paginate(4, ['*'], $category->id . '_page');
         }
 
         return view('pages.start_up ', compact('categories', 'tabs'));
@@ -84,7 +84,7 @@ class LayoutsController extends Controller
         $cid = $categories->pluck('id');
 
 
-        $softwares = SoftwareProduct::paginate(10);
+        $softwares = SoftwareProduct::paginate(4);
 
 
         $types = SoftwareProduct::select('type')->distinct()->get();
