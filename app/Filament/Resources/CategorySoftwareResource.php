@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategorySoftwareResource\Pages;
@@ -17,16 +18,21 @@ class CategorySoftwareResource extends Resource
 
     protected static ?string $navigationLabel = 'Category Software'; // Menudagi nom
 
-    // Resursni navigatsiyada ko'rsatish uchun
     protected static ?int $navigationSort = 1; // Menuda tartibni belgilash (ixtiyoriy)
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name_uz')
                     ->required()
                     ->label('Category Name'),
+                Forms\Components\TextInput::make('name_en')
+                    ->nullable()
+                    ->label('Category Name (EN)'),
+                Forms\Components\TextInput::make('name_ru')
+                    ->nullable()
+                    ->label('Category Name (RU)'),
             ]);
     }
 
@@ -34,10 +40,18 @@ class CategorySoftwareResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('name_uz')
                     ->sortable()
                     ->searchable()
-                    ->label('Category Name'),
+                    ->label('Kategoriya nomi(uz)'),
+                Tables\Columns\TextColumn::make('name_en')
+                    ->sortable()
+                    ->searchable()
+                    ->label('Kategoriya nomi(en)'),
+                Tables\Columns\TextColumn::make('name_ru')
+                    ->sortable()
+                    ->searchable()
+                    ->label('Kategoriya nomi(ru)'),
             ])
             ->filters([
                 // Qo'shimcha filterni qo'shish (ixtiyoriy)

@@ -11,7 +11,11 @@ class CategorySoftware extends Model
 
     protected $table = 'category_softwears';
 
-    protected $fillable = ['name']; // faqat 'name' maydonini qo'shdik
+    protected $fillable = [
+        'name_en',
+        'name_ru',
+        'name_uz',
+    ]; // faqat 'name' maydonini qo'shdik
 
     public function softwares()
     {

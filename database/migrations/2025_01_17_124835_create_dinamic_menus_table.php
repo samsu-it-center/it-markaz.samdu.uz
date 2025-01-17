@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('dinamic_menus', function (Blueprint $table) {
             $table->id();
             $table->string('name_uz');
+            $table->string('name_en');
+            $table->string('name_ru');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('dinamic_menus');
     }
 };

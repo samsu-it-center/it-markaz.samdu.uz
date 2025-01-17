@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class DinamicMenu extends Model
 {
-    protected $table = "categories";
+    use HasFactory;
+
+     protected $table = 'dinamic_menus';
+
     protected $fillable = [
         'name_en',
         'name_ru',
         'name_uz',
     ];
-
-
-    public function startups()
-    {
-        return $this->hasMany(Startup::class);
-    }
 }
