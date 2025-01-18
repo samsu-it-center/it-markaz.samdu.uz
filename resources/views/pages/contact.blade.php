@@ -135,6 +135,11 @@
            style="font-size: 2rem; color: #004a9f; margin: 0 15px; transition: transform 0.5s ease;"></i>
     </div>
 
-
+  <!-- Contact Button -->
+                    <div class="header-right-area-one">
+                        <button class="contact-btn border-0" id="contact-btn">
+                            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
+                        </button>
+                    </div>
 
 @endsection

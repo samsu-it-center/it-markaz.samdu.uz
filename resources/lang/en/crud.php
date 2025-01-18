@@ -11,6 +11,7 @@ return [
         "document" => "Regulatory Documents"
     ],
 
+
     "about" => [
         "abouts" => "About the IT Center",
         "name" => "Official Name of the Center",
@@ -43,30 +44,30 @@ return [
     ],
 
     "course" => [
-        "name"      => "Courses",
-        "about"     => "About the Course",
-        "views"     => "Details",
-        "contact"   => "Enroll in the Course",
-        "form"      => [
-            'title'         => "Please fill out the required information",
-            "first_name"    => "First Name",
-            "last_name"     => "Last Name",
-            "email"         => "Email",
-            "Phone"         => "Phone Number",
-            "course"        => "Course",
-            "msg"           => "Message",
-            "apply_now"     => "Enroll Now"
+        "name" => "Courses",
+        "about" => "About the Course",
+        "views" => "Details",
+        "contact" => "Enroll in the Course",
+        "form" => [
+            'title' => "Please fill out the required information",
+            "first_name" => "First Name",
+            "last_name" => "Last Name",
+            "email" => "Email",
+            "Phone" => "Phone Number",
+            "course" => "Course",
+            "msg" => "Message",
+            "apply_now" => "Enroll Now"
         ],
-        "online"    => "Online Courses",
-        "offline"   => "Offline Courses"
+        "online" => "Online Courses",
+        "offline" => "Offline Courses"
     ],
 
     "document" => [
         "document" => "IT Center Regulatory Documents",
         "rules" => "General Rules of the IT Center",
         "tasks" => "Tasks of the IT Center Expert Council",
-        "no_description"    => "No information about the regulatory document",
-        "no_files"          => "No files available"
+        "no_description" => "No information about the regulatory document",
+        "no_files" => "No files available"
     ],
 
     "overview" => "Overview",
@@ -75,8 +76,31 @@ return [
         "more" => "More News"
     ],
 
-    "faq"       => "Frequently Asked Questions",
-    "topics"    => "Topics",
-    "contact"   => "Contact Us",
-    'send'      => "Send"
+
+    "faq" => "Frequently Asked Questions",
+    "topics" => "Topics",
+    "contact" => "Contact Us",
+    'send' => "Send",
+
+    "motto" => [
+        "name" => "Our values",
+        "title_1" => "Quality",
+        "body_1" => "We adhere to the highest standards in every project we undertake.",
+        "title_2" => "Innovation",
+        "body_2" => "Inspired by new ideas and advanced technologies.",
+        "title_3" => "Support",
+        "body_3" => "Your success is our priority, with ongoing support.",
+        "title_4" => "Trust",
+        "body_4" => "Building relationships based on mutual trust and honesty.",
+
+    ],
+
+    "about_card" => [
+        "title_1" => "SCIENTIFIC PROJECTS.",
+        "title_2" => "STARTUPS",
+        "title_3" => "COURSES",
+        "title_4" => "SOFTWARE PRODUCTS",
+    ],
+
+
 ];

@@ -5,80 +5,51 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\DinamicMenuResource\Pages;
 use App\Models\DinamicMenu;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
 
 class DinamicMenuResource extends Resource
 {
-    // Modelni belgilash
     protected static ?string $model = DinamicMenu::class;
 
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Menyular';
 
-    // Menudagi nom
-    protected static ?string $navigationLabel = 'Menular';
-
-    // Menudagi tartibni belgilash
-    protected static ?int $navigationSort = 1;
-
-    // Formani yaratish
-    public static function form(Form $form): Form
+    public static function form(Forms\Form $form): Forms\Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name_uz')
                     ->required()
-                    ->label("Menyu nomi (uz)"),
+                    ->label('Name (UZ)'),
                 Forms\Components\TextInput::make('name_en')
-                    ->nullable()
-                    ->label('Menyu nomi (en)'),
+                    ->label('Name (EN)'),
                 Forms\Components\TextInput::make('name_ru')
-                    ->nullable()
-                    ->label('Menyu nomi (ru)'),
+                    ->label('Name (RU)'),
+                Forms\Components\TextInput::make('route')
+                    ->required()
+                    ->label('Route'),
             ]);
     }
 
-    // Jadvalni ko'rsatish
-    public static function table(Table $table): Table
+    public static function table(Tables\Table $table): Tables\Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name_uz')
-                    ->sortable()
-                    ->searchable()
-                    ->label("Menyu nomi (uz)"),
-                Tables\Columns\TextColumn::make('name_en')
-                    ->sortable()
-                    ->searchable()
-                    ->label('Menyu nomi (en)'),
-                Tables\Columns\TextColumn::make('name_ru')
-                    ->sortable()
-                    ->searchable()
-                    ->label('Menyu nomi (ru)'),
+                Tables\Columns\TextColumn::make('name_uz')->label('Name (UZ)')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name_en')->label('Name (EN)')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name_ru')->label('Name (RU)')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('route')->label('Route')->sortable()->searchable(),
             ])
-            ->filters([
-                // Qo'shimcha filterni qo'shish (ixtiyoriy)
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
-    // Aloqalar (relations) qo'shish
-    public static function getRelations(): array
-    {
-        return [
-            // Qo'shimcha aloqalar (relations) qo'shish
-        ];
-    }
-
-    // Sahifalar (Pages)
     public static function getPages(): array
     {
         return [

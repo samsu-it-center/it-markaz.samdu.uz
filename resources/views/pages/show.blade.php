@@ -36,4 +36,11 @@
             </div>
         </div>
     </div>
+
+      <!-- Contact Button -->
+                    <div class="header-right-area-one">
+                        <button class="contact-btn border-0" id="contact-btn">
+                            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
+                        </button>
+                    </div>@endsection
 @endsection

@@ -53,6 +53,46 @@
                 </li>
             @endforeach
 
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">--}}
+            {{--                    @lang('crud.menu.about')--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('news') ? 'active' : '' }}" href="{{ route('news') }}">--}}
+            {{--                    @lang('crud.menu.news')--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('startup') ? 'active' : '' }}"--}}
+            {{--                   href="{{ route('startup') }}">--}}
+            {{--                    @lang('crud.menu.start_up')--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('software') ? 'active' : '' }}"--}}
+            {{--                   href="{{ route('software') }}">--}}
+            {{--                    @lang('crud.menu.software')--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('course') ? 'active' : '' }}"--}}
+            {{--                   href="{{ route('course') }}">--}}
+            {{--                    @lang('crud.menu.course')--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="my-nav-link {{ Request::routeIs('contact') ? 'active' : '' }}"--}}
+            {{--                   href="{{ route('contact') }}">--}}
+            {{--                    Kontakt--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+
             <li class="nav-item dropdown">
                 <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""

@@ -15,5 +15,6 @@ class DinamicMenu extends Model
         'name_en',
         'name_ru',
         'name_uz',
+        'route',
     ];
 }

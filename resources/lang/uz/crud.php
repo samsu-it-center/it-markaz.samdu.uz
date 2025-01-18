@@ -79,10 +79,30 @@ return [
 
     ],
 
-    "faq"       => "Ko'p beriladigan savollar",
-    "topics"    => "Mavzular",
-    "contact"   => "Biz bilan bog'lanish",
-    'send'      => "Jo'natish",
+    "faq" => "Ko'p beriladigan savollar",
+    "topics" => "Mavzular",
+    "contact" => "Biz bilan bog'lanish",
+    'send' => "Jo'natish",
+
+    "motto" => [
+        "name" => "Bizning maqsadimiz",
+        "title_1" => "Sifat",
+        "body_1" => "Biz amalga oshirgan har bir ishda eng yuqori standartlarga rioya qilamiz.",
+        "title_2" => "Innovatsiya",
+        "body_2" => "Yangi g'oyalar va ilg'or texnologiyalar bilan ilhomlantirilgan.",
+        "title_3" => "Qo'llab-quvvatlash",
+        "body_3" => "Sizning muvaffaqiyatingiz bizning ustuvorligimizdir, doimiy qo'llab-quvvatlash bilan.",
+        "title_4" => "Ishonch",
+        "body_4" => "O'zaro ishonch va halollik asosida munosabatlar o'rnatish.",
+
+    ],
+
+    "about_card" => [
+        "title_1" => "ILMIY LOYIHALAR.",
+        "title_2" => "STARTUPLAR",
+        "title_3" => "O'QUV KURSLARI",
+        "title_4" => "DASTURIY MAHSULOTLAR",
+    ]
 
 
 ];

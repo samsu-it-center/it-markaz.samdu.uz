@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Category;
 use App\Models\CategorySoftware;
 use App\Models\Course;
+use App\Models\DinamicMenu;
 use App\Models\News;
 use App\Models\NormativeDocument;
 use App\Models\Question;
@@ -20,13 +21,15 @@ class LayoutsController extends Controller
     public function about(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $about = About::first();
-        return view('pages.about', compact('about'));
+        $menus = DinamicMenu::all();
+        return view('pages.about', compact('about','menus'));
     }
 
     public function news(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $news = News::orderBy('id', 'desc')->paginate(6);
-        return view('pages.news', compact('news'));
+        $menus = DinamicMenu::all();
+        return view('pages.news', compact('news','menus'));
     }
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -37,14 +40,6 @@ class LayoutsController extends Controller
         $projects = StartUp::where('type', 1)
             ->orderBy('id', 'desc')->paginate(4);
 
-//        $types = StartUp::select('type')->distinct()->get();
-//
-//        $tabs = [];
-//        foreach ($types as $type) {
-//            $tabs[$type->type] = StartUp::where('type', $type->type)->paginate(4);
-//        }
-//
-//        return view('pages.start_up', compact('start_ups', 'projects','tabs','types'));
 
 
 
@@ -56,8 +51,9 @@ class LayoutsController extends Controller
             $tabs[$category->id] = StartUp::where('type', $category->id)
                 ->paginate(4, ['*'], $category->id . '_page');
         }
+        $menus = DinamicMenu::all();
 
-        return view('pages.start_up ', compact('categories', 'tabs'));
+        return view('pages.start_up ', compact('menus','categories', 'tabs'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -94,26 +90,31 @@ class LayoutsController extends Controller
             $tabs[$type->type] = SoftwareProduct::where('type', $type->type)->paginate(4);
         }
 
-        return view('pages.software', compact('tabs', 'types', 'aiSoftwares', 'educationalSoftwares', 'commericalSoftwares', 'buisaSoftwares', 'publicSoftwares', 'categories', 'softwares'));
+        $menus = DinamicMenu::all();
+
+        return view('pages.software', compact('menus','tabs', 'types', 'aiSoftwares', 'educationalSoftwares', 'commericalSoftwares', 'buisaSoftwares', 'publicSoftwares', 'categories', 'softwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $courses = Course::orderBy('id', 'desc')->get();
-        return view('pages.course', compact('courses'));
+        $menus = DinamicMenu::all();
+        return view('pages.course', compact('courses','menus'));
     }
 
     public function document(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $document = NormativeDocument::first();
-        return view('pages.document', compact('document'));
+        $menus = DinamicMenu::all();
+        return view('pages.document', compact('document','menus'));
     }
 
     public function contact(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $document = NormativeDocument::first();
+        $menus = DinamicMenu::all();
 
-        return view('pages.contact', compact('document'));
+        return view('pages.contact', compact('document','menus'));
     }
 
 
@@ -126,7 +127,10 @@ class LayoutsController extends Controller
         $offline = Course::where('type', 'offline')->get();
         $courses = Course::orderBy('id', 'desc')->get();
         $news = News::orderBy('id', 'desc')->skip(0)->take(4)->get();
-        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs', 'courses'));
+
+        $menus = DinamicMenu::all();
+
+        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs', 'courses','menus'));
     }
 
     public function lang($lang)

@@ -59,7 +59,7 @@
 
             <!-- First Card -->
             <div class="card-about">
-                <div class="title">ILMIY LOYIHALAR.</div>
+                <div class="title">@lang('crud.about_card.title_1')</div>
                 <div class="image">
                     <img src="{{ asset('step/image5.png') }}" alt="">
                 </div>
@@ -74,7 +74,7 @@
 
             <!-- First Card -->
             <div class="card-about">
-                <div class="title">STARTUPLAR</div>
+                <div class="title">@lang('crud.about_card.title_2')</div>
                 <div class="image">
                     <img src="{{ asset('step/image2.png') }}" alt="">
                 </div>
@@ -89,7 +89,7 @@
 
             <!-- First Card -->
             <div class="card-about">
-                <div class="title">O'QUV KURSLARI</div>
+                <div class="title">@lang('crud.about_card.title_3')</div>
                 <div class="image">
                     <img src="{{ asset('step/image3.png') }}" alt="">
                 </div>
@@ -104,7 +104,7 @@
 
             <!-- First Card -->
             <div class="card-about">
-                <div class="title">DASTURIY MAHSULOTLAR</div>
+                <div class="title">@lang('crud.about_card.title_4')</div>
                 <div class="image">
                     <img src="{{ asset('step/image4.png') }}" alt="">
                 </div>
@@ -119,35 +119,41 @@
 
         <!-- Animation Section -->
     <section class="animate-section">
-        <h2>Bizning maqsadimiz</h2>
+        <h2> @lang('crud.motto.name')</h2>
         {{--            <p>Delivering excellence in everything we do, with a focus on the future.</p>--}}
 
         <div class="animate-cols" style="display: flex; justify-content: space-around; margin-top: 40px;">
             <div class="animate-col"
                  style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Sifat</h3>
-                <p class="text-white">Biz amalga oshirgan har bir ishda eng yuqori standartlarga rioya qilamiz.</p>
+                <h3 class="text-white">@lang('crud.motto.title_1')</h3>
+                <p class="text-white">@lang('crud.motto.body_1')</p>
             </div>
             <div class="animate-col"
                  style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Innovatsiya</h3>
-                <p class="text-white">Yangi g'oyalar va ilg'or texnologiyalar bilan ilhomlantirilgan.</p>
+                <h3 class="text-white">@lang('crud.motto.title_2')</h3>
+                <p class="text-white">@lang('crud.motto.body_2')</p>
             </div>
             <div class="animate-col"
                  style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Qo'llab-quvvatlash</h3>
-                <p class="text-white">Sizning muvaffaqiyatingiz bizning ustuvorligimizdir, doimiy qo'llab-quvvatlash
-                    bilan.</p>
+                <h3 class="text-white">@lang('crud.motto.title_3')</h3>
+                <p class="text-white">@lang('crud.motto.body_3')</p>
             </div>
             <div class="animate-col"
                  style="flex: 1; padding: 20px; background-color: #004a9f; border-radius: 10px; margin: 0 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
-                <h3 class="text-white">Ishonch</h3>
-                <p class="text-white"> O'zaro ishonch va halollik asosida munosabatlar o'rnatish.</p>
+                <h3 class="text-white">@lang('crud.motto.title_4')</h3>
+                <p class="text-white"> @lang('crud.motto.body_4')</p>
             </div>
         </div>
     </section>
         </div>
     </section>
     <!-- Mission Section End -->
+
+      <!-- Contact Button -->
+                    <div class="header-right-area-one">
+                        <button class="contact-btn border-0" id="contact-btn">
+                            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
+                        </button>
+                    </div>
 
 @endsection

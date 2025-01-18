@@ -713,6 +713,18 @@ h1 {
         }
     }
 
+.nav-item.dropdown {
+    position: relative;
+    z-index: 1050; /* Slider yoki boshqa elementlardan yuqori qiymat bering */
+}
+
+.nav-item.dropdown {
+    position: relative;
+    z-index: 1050; /* Slider yoki boshqa elementlardan yuqori qiymat bering */
+}
+
+
+
 
 
 

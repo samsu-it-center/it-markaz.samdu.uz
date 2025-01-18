@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request('tab') == $category->id || (request('tab') == null && $loop->first) ? 'active' : '' }} p-3 m-2 border-5 software-link-border"
                        href="?tab={{ $category->id }}&{{ $category->id }}_page={{ request($category->id . '_page', 1) }}">
-                        {{ $category->name }}
+                        {{ $category['name_' . session('locale')] }}
                     </a>
                 </li>
             @endforeach
@@ -58,5 +58,12 @@
             </div>
         </div>
     </div>
+
+      <!-- Contact Button -->
+                    <div class="header-right-area-one">
+                        <button class="contact-btn border-0" id="contact-btn">
+                            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
+                        </button>
+                    </div>
 
 @endsection
