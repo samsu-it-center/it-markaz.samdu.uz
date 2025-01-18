@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategorySoftware;
+use App\Models\DinamicMenu;
 use App\Models\SoftwareProduct;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,9 @@ class SoftWareController extends Controller
 
         $categories = CategorySoftware::all();
 
-        return view('software.show', compact('software','categories'));
+        $menus = DinamicMenu::all();
+
+        return view('software.show', compact('software','categories','menus'));
     }
 
     /**

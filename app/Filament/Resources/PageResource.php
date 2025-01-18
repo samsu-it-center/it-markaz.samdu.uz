@@ -12,6 +12,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -54,10 +55,33 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('slug')
+                    ->label('Slug')
+                    ->sortable()
+                    ->searchable(),
+
+                TextColumn::make('content_uz')
+                    ->label('Content (uz)')
+                    ->limit(50)
+                    ->html(),
+
+                TextColumn::make('content_en')
+                    ->label('Content (en)')
+                    ->limit(50)
+                    ->html(),
+
+
+                TextColumn::make('content_ru')
+                    ->label('Content (ru)')
+                    ->limit(50)
+                    ->html(),
+
+                TextColumn::make('created_at')
+                    ->label('Yaratilgan vaqti')
+                    ->dateTime('d.m.Y H:i'),
             ])
             ->filters([
-                //
+                // Agar filtrlar kerak bo'lsa, bu yerga qo'shishingiz mumkin
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -72,7 +96,7 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            // Qo'shimcha aloqalar (relations) qo'shish mumkin
         ];
     }
 
@@ -80,7 +104,6 @@ class PageResource extends Resource
     {
         return [
             'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
             'edit' => Pages\EditPage::route('/{record}/edit'),
         ];
     }

@@ -102,5 +102,11 @@ return [
         "title_4" => "SOFTWARE PRODUCTS",
     ],
 
+    "course_menus" => [
+    'menu_1' => 'Course List',
+    'menu_2' => 'Course Graduates',
+    'menu_3' => 'Gifted Students',
+]
+
 
 ];

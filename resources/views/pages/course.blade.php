@@ -4,6 +4,34 @@
     <!-- Courses Section -->
     <div class="rts-blog v_3 rts-section-padding">
         <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                    <ul class="nav nav-pills justify-content-center" id="horizontalNavbar" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request('tab', 'home') == 'home' ? 'active' : '' }} p-3  border-5 software-link-border "
+                               href="?tab=home&home_page={{ request('home_page', 1) }}">
+                                 @lang('crud.course_menus.menu_1')
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request('tab') == 'profile' ? 'active' : '' }} p-3  border-1 software-link-border "
+                               href="?tab=profile&profile_page={{ request('profile_page', 1) }}">
+                                 @lang('crud.course_menus.menu_2')
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request('tab') == 'courses' ? 'active' : '' }} p-3  border-1 software-link-border "
+                               href="?tab=courses">
+                                @lang('crud.course_menus.menu_3')
+                            </a>
+                        </li>
+                    </ul>
+                     <hr>
+                </div>
+            </div>
+
+
             <div class="row justify-content-md-start justify-content-sm-center g-5">
                 @foreach($courses as $course)
                     <div class="col-sm-10 col-md-6 col-lg-6 col-xl-4">
@@ -59,18 +87,22 @@
                                 @csrf
                                 <div class="rts-input rt-flex">
                                     <div class="single-input">
-                                        <input type="text" name="fname" id="fname" placeholder="@lang('crud.course.form.first_name')" required>
+                                        <input type="text" name="fname" id="fname"
+                                               placeholder="@lang('crud.course.form.first_name')" required>
                                     </div>
                                     <div class="single-input">
-                                        <input type="text" name="lname" id="lname" placeholder="@lang('crud.course.form.last_name')" required>
+                                        <input type="text" name="lname" id="lname"
+                                               placeholder="@lang('crud.course.form.last_name')" required>
                                     </div>
                                 </div>
                                 <div class="rts-input rt-flex">
                                     <div class="single-input">
-                                        <input type="email" name="email" id="email2" placeholder="@lang('crud.course.form.email')" required>
+                                        <input type="email" name="email" id="email2"
+                                               placeholder="@lang('crud.course.form.email')" required>
                                     </div>
                                     <div class="single-input">
-                                        <input type="number" name="Phone" id="Phone" placeholder="@lang('crud.course.form.Phone')" required>
+                                        <input type="number" name="Phone" id="Phone"
+                                               placeholder="@lang('crud.course.form.Phone')" required>
                                     </div>
                                 </div>
                                 <div class="rts-input w-full search-filter">
@@ -78,36 +110,45 @@
                                         <select name="cat-search" id="cat-filter">
                                             <option value="">@lang('crud.course.form.course')</option>
                                             @foreach($courses as $course)
-                                                <option value="{{ $course->id }}">{{ $course['title_'.session('locale')] }}</option>
+                                                <option
+                                                    value="{{ $course->id }}">{{ $course['title_'.session('locale')] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="rts-input w-full">
                                     <div class="single-input">
-                                        <textarea name="msg" id="msg" placeholder="@lang('crud.course.form.msg')"></textarea>
+                                        <textarea name="msg" id="msg"
+                                                  placeholder="@lang('crud.course.form.msg')"></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" class="rts-theme-btn rts-nbg-btn btn-arrow v2 full-btn">@lang('crud.course.form.apply_now') <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
+                                <button type="submit"
+                                        class="rts-theme-btn rts-nbg-btn btn-arrow v2 full-btn">@lang('crud.course.form.apply_now')
+                                    <span><i class="fa-sharp fa-regular fa-arrow-right"></i></span></button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="rt-shape">
-                <img src="{{ asset('site/assets/images/feature/shape/01.svg') }}" data-speed="0.04" alt="shape" class="rt-shape__1">
-                <img src="{{ asset('site/assets/images/feature/shape/02.svg') }}" data-speed="0.04" alt="shape" class="shape rt-shape__2">
-                <img src="{{ asset('site/assets/images/feature/shape/03.svg') }}" data-speed="0.04" alt="shape" class="shape rt-shape__3">
-                <img src="{{ asset('site/assets/images/feature/shape/04.svg') }}" data-speed="0.04" alt="shape" class="shape rt-shape__4">
-                <img src="{{ asset('site/assets/images/feature/shape/05.svg') }}" data-speed="0.04" alt="shape" class="shape rt-shape__5">
+                <img src="{{ asset('site/assets/images/feature/shape/01.svg') }}" data-speed="0.04" alt="shape"
+                     class="rt-shape__1">
+                <img src="{{ asset('site/assets/images/feature/shape/02.svg') }}" data-speed="0.04" alt="shape"
+                     class="shape rt-shape__2">
+                <img src="{{ asset('site/assets/images/feature/shape/03.svg') }}" data-speed="0.04" alt="shape"
+                     class="shape rt-shape__3">
+                <img src="{{ asset('site/assets/images/feature/shape/04.svg') }}" data-speed="0.04" alt="shape"
+                     class="shape rt-shape__4">
+                <img src="{{ asset('site/assets/images/feature/shape/05.svg') }}" data-speed="0.04" alt="shape"
+                     class="shape rt-shape__5">
             </div>
         </div>
     </section>
 
-      <!-- Contact Button -->
-                    <div class="header-right-area-one">
-                        <button class="contact-btn border-0" id="contact-btn">
-                            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
-                        </button>
-                    </div>
+    <!-- Contact Button -->
+    <div class="header-right-area-one">
+        <button class="contact-btn border-0" id="contact-btn">
+            <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
+        </button>
+    </div>
 @endsection

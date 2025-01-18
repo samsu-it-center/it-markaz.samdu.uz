@@ -13,8 +13,8 @@
                                 {{ $about['official_name_'.session('locale')] ?? 'Birlamchi rasmiy ism' }}
                             </p>
                             <div class="">
-                                <a href="mailto:contact@reacthemes.com" class="text-muted"><i
-                                        class="fa-sharp  fa-location-dot text-muted"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
+                                <a href="mailto:contact@reacthemes.com" class="text-muted">
+                                   <i class="fa-solid fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
                                 <a href="callto:+998 93 728 68 67" class="text-muted"><i class="fa-thin fa-phone"></i>
                                     +998 93 728 68

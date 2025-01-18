@@ -102,7 +102,13 @@ return [
         "title_2" => "STARTUPLAR",
         "title_3" => "O'QUV KURSLARI",
         "title_4" => "DASTURIY MAHSULOTLAR",
-    ]
+    ],
+
+    "course_menus" => [
+        'menu_1' => 'Kurslar ro\'yxati ',
+        'menu_2' => 'Kurs bituruvchilari',
+        'menu_3' => 'Iqtidorli talabalar',
+    ],
 
 
 ];

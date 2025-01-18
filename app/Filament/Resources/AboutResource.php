@@ -8,6 +8,7 @@ use App\Models\About;
 use AymanAlhattami\FilamentDateScopesFilter\DateScopeFilter;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -31,23 +32,87 @@ class AboutResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('contact_it_center_en')->label('Contact IT Center (English)')->required(),
-                    TextInput::make('contact_it_center_ru')->label('Contact IT Center (Russian)')->required(),
-                    TextInput::make('contact_it_center_uz')->label('Contact IT Center (Uzbek)')->required(),
-                    Textarea::make('about_center_en')->label('About the Center (English)')->required(),
-                    Textarea::make('about_center_ru')->label('About the Center (Russian)')->required(),
-                    Textarea::make('about_center_uz')->label('About the Center (Uzbek)')->required(),
-                    TextInput::make('official_name_en')->label('Official Name (English)')->required(),
-                    TextInput::make('official_name_ru')->label('Official Name (Russian)')->required(),
-                    TextInput::make('official_name_uz')->label('Official Name (Uzbek)')->required(),
-                    TextInput::make('location_en')->label('Location (English)')->required(),
-                    TextInput::make('location_ru')->label('Location (Russian)')->required(),
-                    TextInput::make('location_uz')->label('Location (Uzbek)')->required(),
-                    Textarea::make('address_en')->label('IT Center Address (English)')->required(),
-                    Textarea::make('address_ru')->label('IT Center Address (Russian)')->required(),
-                    Textarea::make('address_uz')->label('IT Center Address (Uzbek)')->required(),
+                    // TextInputlar
+                    TextInput::make('contact_it_center_en')
+                        ->label('Contact IT Center (English)')
+                        ->required()
+                        ->default(fn($record) => $record->contact_it_center_en),  // default ma'lumot
+
+                    TextInput::make('contact_it_center_ru')
+                        ->label('Contact IT Center (Russian)')
+                        ->required()
+                        ->default(fn($record) => $record->contact_it_center_ru),  // default ma'lumot
+
+                    TextInput::make('contact_it_center_uz')
+                        ->label('Contact IT Center (Uzbek)')
+                        ->required()
+                        ->default(fn($record) => $record->contact_it_center_uz),  // default ma'lumot
+
+                    // RichEditor komponentlari
+                    RichEditor::make('about_center_en')
+                        ->label('Content (English)')
+                        ->columnSpan('full')
+                        ->default(fn($record) => $record->content_en),  // default ma'lumot
+
+                    RichEditor::make('about_center_ru')
+                        ->label('Content (Russian)')
+                        ->columnSpan('full')
+                        ->default(fn($record) => $record->content_ru),  // default ma'lumot
+
+                    RichEditor::make('about_center_uz')
+                        ->label('Content (Uzbek)')
+                        ->columnSpan('full')
+                        ->default(fn($record) => $record->content_uz),  // default ma'lumot
+
+                    // Qolgan TextInputlar
+                    TextInput::make('official_name_en')
+                        ->label('Official Name (English)')
+                        ->required()
+                        ->default(fn($record) => $record->official_name_en),  // default ma'lumot
+
+                    TextInput::make('official_name_ru')
+                        ->label('Official Name (Russian)')
+                        ->required()
+                        ->default(fn($record) => $record->official_name_ru),  // default ma'lumot
+
+                    TextInput::make('official_name_uz')
+                        ->label('Official Name (Uzbek)')
+                        ->required()
+                        ->default(fn($record) => $record->official_name_uz),  // default ma'lumot
+
+                    // Boshqa komponentlar
+                    TextInput::make('location_en')
+                        ->label('Location (English)')
+                        ->required()
+                        ->default(fn($record) => $record->location_en),  // default ma'lumot
+
+                    TextInput::make('location_ru')
+                        ->label('Location (Russian)')
+                        ->required()
+                        ->default(fn($record) => $record->location_ru),  // default ma'lumot
+
+                    TextInput::make('location_uz')
+                        ->label('Location (Uzbek)')
+                        ->required()
+                        ->default(fn($record) => $record->location_uz),  // default ma'lumot
+
+                    Textarea::make('address_en')
+                        ->label('IT Center Address (English)')
+                        ->required()
+                        ->default(fn($record) => $record->address_en),  // default ma'lumot
+
+                    Textarea::make('address_ru')
+                        ->label('IT Center Address (Russian)')
+                        ->required()
+                        ->default(fn($record) => $record->address_ru),  // default ma'lumot
+
+                    Textarea::make('address_uz')
+                        ->label('IT Center Address (Uzbek)')
+                        ->required()
+                        ->default(fn($record) => $record->address_uz),  // default ma'lumot
                 ]),
             ]);
+
     }
 
     public static function table(Table $table): Table
