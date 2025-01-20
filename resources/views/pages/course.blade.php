@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Courses Section -->
-    <div class="rts-blog v_3 rts-section-padding">
+    <div class="rts-blog v_3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
@@ -10,19 +10,19 @@
                     <ul class="nav nav-pills justify-content-center" id="horizontalNavbar" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link {{ request('tab', 'home') == 'home' ? 'active' : '' }} p-3  border-5 software-link-border "
-                               href="?tab=home&home_page={{ request('home_page', 1) }}">
+                               href="{{ route('course') }}">
                                  @lang('crud.course_menus.menu_1')
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request('tab') == 'profile' ? 'active' : '' }} p-3  border-1 software-link-border "
-                               href="?tab=profile&profile_page={{ request('profile_page', 1) }}">
+                               href="{{ route('graduates.index') }}">
                                  @lang('crud.course_menus.menu_2')
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request('tab') == 'courses' ? 'active' : '' }} p-3  border-1 software-link-border "
-                               href="?tab=courses">
+                               href="{{ route('talantedstudents.index') }}">
                                 @lang('crud.course_menus.menu_3')
                             </a>
                         </li>

@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GraduatesController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SoftWareController;
 use App\Http\Controllers\StartUpController;
+use App\Http\Controllers\TalantedStudentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseApplicationController;
 
@@ -28,6 +30,8 @@ Route::get('/center/contact',[LayoutsController::class,'contact'])->name('contac
 Route::resource('start_up',StartUpController::class);
 Route::resource('course',CourseController::class);
 Route::resource('software',SoftWareController::class);
+Route::resource('graduates',GraduatesController::class);
+Route::resource('talantedstudents',TalantedStudentsController::class);
 Route::get('/', [LayoutsController::class,'welcome'])->name('welcome');
 
 Route::get('/lesson/{lesson}/{course}',[CourseController::class,'lesson'])->name('lesson.show');

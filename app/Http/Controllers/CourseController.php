@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\DinamicMenu;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
@@ -44,7 +45,9 @@ class CourseController extends Controller
             $lesson = Lesson::find($request->get('lesson_id'));
         }
 
-        return view('course.show', compact('lessons', 'course', 'lesson'));
+        $menus = DinamicMenu::all();
+
+        return view('course.show', compact('lessons', 'course', 'lesson','menus'));
     }
 
     /**
