@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SoftWareController;
 use App\Http\Controllers\StartUpController;
+use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\TalantedStudentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseApplicationController;
@@ -31,6 +32,7 @@ Route::resource('start_up',StartUpController::class);
 Route::resource('course',CourseController::class);
 Route::resource('software',SoftWareController::class);
 Route::resource('graduates',GraduatesController::class);
+Route::resource('statistics',StatisticsController::class);
 Route::resource('talantedstudents',TalantedStudentsController::class);
 Route::get('/', [LayoutsController::class,'welcome'])->name('welcome');
 

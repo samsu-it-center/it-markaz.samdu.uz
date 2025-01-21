@@ -44,11 +44,11 @@ class CategorySoftwareResource extends Resource
                         ->sortable()
                         ->searchable()
                         ->label('Kategoriya nomi(uz)'),
-                    Tables\Columns\TextColumn::make('name_uz')
+                    Tables\Columns\TextColumn::make('name_en')
                         ->sortable()
                         ->searchable()
                         ->label('Kategoriya nomi(en)'),
-                    Tables\Columns\TextColumn::make('name_uz')
+                    Tables\Columns\TextColumn::make('name_ru')
                         ->sortable()
                         ->searchable()
                         ->label('Kategoriya nomi(ru)'),
