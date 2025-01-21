@@ -15,11 +15,11 @@ class CategorySoftware extends Model
         'name_en',
         'name_ru',
         'name_uz',
-    ]; // faqat 'name' maydonini qo'shdik
+    ];
 
     public function softwares()
     {
-        return $this->hasMany(Software::class);
+        return $this->hasMany(SoftwareProduct::class);
     }
 
 
