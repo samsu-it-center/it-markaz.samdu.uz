@@ -108,6 +108,7 @@ return [
         'menu_1' => 'Kurslar ro\'yxati ',
         'menu_2' => 'Kurs bituruvchilari',
         'menu_3' => 'Iqtidorli talabalar',
+        'menu_4' => 'Statistik ma`lumotlar',
     ],
 
 

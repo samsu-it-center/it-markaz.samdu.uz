@@ -103,10 +103,12 @@ return [
     ],
 
     "course_menus" => [
-    'menu_1' => 'Course List',
-    'menu_2' => 'Course Graduates',
-    'menu_3' => 'Gifted Students',
-]
+        'menu_1' => 'Course List',
+        'menu_2' => 'Course Graduates',
+        'menu_3' => 'Gifted Students',
+        'menu_4' => 'Statistics',
+    ],
+
 
 
 ];

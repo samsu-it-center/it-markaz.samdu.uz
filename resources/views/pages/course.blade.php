@@ -20,10 +20,18 @@
                                  @lang('crud.course_menus.menu_2')
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link {{ request('tab') == 'courses' ? 'active' : '' }} p-3  border-1 software-link-border "
                                href="{{ route('talantedstudents.index') }}">
                                 @lang('crud.course_menus.menu_3')
+                            </a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link {{ request('tab') == 'statistics' ? 'active' : '' }} p-3  border-1 software-link-border "
+                               href="{{ route('statistics.index') }}">
+                                @lang('crud.course_menus.menu_4')
                             </a>
                         </li>
                     </ul>

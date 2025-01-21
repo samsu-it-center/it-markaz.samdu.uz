@@ -22,11 +22,20 @@
                                 @lang('crud.course_menus.menu_2')
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link p-3 border-1 software-link-border
             @if(request()->routeIs('talantedstudents.index')) active @endif"
                                href="{{ route('talantedstudents.index') }}">
                                 @lang('crud.course_menus.menu_3')
+                            </a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link p-3 border-1 software-link-border
+            @if(request()->routeIs('statistics.index')) active @endif"
+                               href="{{ route('statistics.index') }}">
+                                @lang('crud.course_menus.menu_4')
                             </a>
                         </li>
                     </ul>
@@ -43,7 +52,7 @@
                         <div class="single-blog">
                             <div class="blog single-blog__content">
                                 <div class="blog__thumb">
-                                    <img src="{{ asset('storage/'.$graduate->image) }}" alt="blog thumbnail" >
+                                    <img src="{{ asset('storage/'.$graduate->image) }}" alt="blog thumbnail">
                                 </div>
                                 <div class="blog__meta">
                                     <div class="blog__meta--da">
