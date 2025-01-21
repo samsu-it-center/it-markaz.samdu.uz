@@ -16,9 +16,9 @@ class CategorySoftwareResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Category Software'; // Menudagi nom
+    protected static ?string $navigationLabel = 'Category Software';
 
-    protected static ?int $navigationSort = 1; // Menuda tartibni belgilash (ixtiyoriy)
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -39,20 +39,20 @@ class CategorySoftwareResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name_uz')
-                    ->sortable()
-                    ->searchable()
-                    ->label('Kategoriya nomi(uz)'),
-                Tables\Columns\TextColumn::make('name_en')
-                    ->sortable()
-                    ->searchable()
-                    ->label('Kategoriya nomi(en)'),
-                Tables\Columns\TextColumn::make('name_ru')
-                    ->sortable()
-                    ->searchable()
-                    ->label('Kategoriya nomi(ru)'),
-            ])
+                ->columns([
+                    Tables\Columns\TextColumn::make('name_uz')
+                        ->sortable()
+                        ->searchable()
+                        ->label('Kategoriya nomi(uz)'),
+                    Tables\Columns\TextColumn::make('name_uz')
+                        ->sortable()
+                        ->searchable()
+                        ->label('Kategoriya nomi(en)'),
+                    Tables\Columns\TextColumn::make('name_uz')
+                        ->sortable()
+                        ->searchable()
+                        ->label('Kategoriya nomi(ru)'),
+                ])
             ->filters([
                 // Qo'shimcha filterni qo'shish (ixtiyoriy)
             ])
