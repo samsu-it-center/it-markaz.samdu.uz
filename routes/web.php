@@ -10,6 +10,7 @@ use App\Http\Controllers\SoftWareController;
 use App\Http\Controllers\StartUpController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\TalantedStudentsController;
+use App\Http\Controllers\TelegramBotController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseApplicationController;
 
@@ -19,6 +20,9 @@ Route::post('/contact/apply', [ContactController::class, 'store'])->name('contac
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::post('/news/{id}/like', [NewsController::class, 'like'])->name('news.like');
 Route::get('/page/{slug}', [PageController::class, 'show'])->name('page.show');
+
+Route::get('/send-test-message', [TelegramBotController::class, 'sendTestMessage']);
+
 
 //Pages
 Route::get('/center/about',[LayoutsController::class,'about'])->name('about');
