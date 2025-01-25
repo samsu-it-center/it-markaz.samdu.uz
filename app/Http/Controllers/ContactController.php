@@ -17,12 +17,11 @@ class ContactController extends Controller
 
     public function sendToTelegram($request)
     {
-        $url = "https://api.telegram.org/bot{$this->botToken}/sendMessage";
+        $url = "https://api.telegram.org/bot{7100216541:AAHsApQNgL3D-u8mpt23PBBMpK9LMbDMuEI}/sendMessage";
 
         $base_message = ContactMessage::find($request->id);
 
-        $chatIds = explode(',', env('TELEGRAM_CHAT_ID'));
-
+         $chatIds = [1070941466,6089135456,6044996862];
         if ($base_message->is_read == 0) {
             // Xabarni tayyorlash
             $message = "Yangi xabar:\n";
@@ -69,3 +68,4 @@ class ContactController extends Controller
         return redirect()->back()->with('success', 'Arizangiz muvaffaqiyatli qabul qilindi');
     }
 }
+
