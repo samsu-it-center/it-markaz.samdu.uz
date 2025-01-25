@@ -85,7 +85,7 @@ return [
     'send' => "Jo'natish",
 
     "motto" => [
-        "name" => "Bizning maqsadimiz",
+        "name" => "Bizning qadriyatlarimiz",
         "title_1" => "Sifat",
         "body_1" => "Biz amalga oshirgan har bir ishda eng yuqori standartlarga rioya qilamiz.",
         "title_2" => "Innovatsiya",
