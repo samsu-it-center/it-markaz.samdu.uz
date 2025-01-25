@@ -21,7 +21,10 @@ class ContactController extends Controller
 
         $base_message = ContactMessage::find($request->id);
 
+
+
         $chatIds = explode(',', env('TELEGRAM_CHAT_ID'));
+
 
         if ($base_message->is_read == 0) {
             // Xabarni tayyorlash
