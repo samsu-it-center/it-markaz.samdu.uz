@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hero Slider Start -->
-    <div class="rts-hero-slider v-1 rt-relative">
+    <div class="rts-hero-slider v-1 rt-relative mt--120">
         <div class="rts-hero-slider-active swiper swiper-data" data-swiper='{
             "slidesPerView":1,
             "effect": "fade",

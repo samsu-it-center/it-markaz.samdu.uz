@@ -18,10 +18,10 @@
         'ru' => ['name' => 'Русский', 'flag' => 'flag-ru.png'],
     ];
 @endphp
-<div class="row ">
-
+<div class="row">
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
     <!-- Navbar -->
-    <nav class="custom-navbar d-flex justify-content-between align-items-center mb-2">
+    <nav class="custom-navbar d-flex justify-content-between align-items-center mb-1">
         <!-- Left: Logo -->
         <!-- Right: Icons and Button -->
 

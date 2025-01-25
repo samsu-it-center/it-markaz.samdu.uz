@@ -59,11 +59,11 @@
 
 /* Side-bar-apply menyusining boshlang'ich holati */
 .side-bar-apply {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
-  top: 0px;
+  top: 90px;
   left: -100%; /* Menyu chapdan chiqish uchun o'zgartirildi */
-  width: 450px;
+  width: 60% !important;
   padding: 40px 35px;
   padding-top: 50px;
   max-height: 900px;
@@ -202,8 +202,9 @@
   margin-right: auto;
   margin-left: -55px;
   margin-top: 0;
-  position: absolute;
+  position: fixed;
   border: 0;
+    top: 150px;
 }
 
 .side-bar-apply button i {
