@@ -28,6 +28,7 @@ class ContactController extends Controller
             $message = "Yangi xabar:\n";
             $message .= "Ism: " . $request->name . "\n";
             $message .= "Email: " . $request->phone . "\n";
+            $message .= "Tashkilot nomi: " . $request->company_name . "\n";
             $message .= "Xabar: " . $request->message . "\n";
 
             foreach ($chatIds as $chatId) {
@@ -58,6 +59,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'required|max:255',
+            'company_name' => 'nullable|string',
             'message' => 'nullable|string',
         ]);
 

@@ -109,6 +109,14 @@ return [
         'menu_4' => 'Statistics',
     ],
 
+    "contact_message" => [
+        'title'        => 'Do you have a software product or startup idea?Contact us',
+        'name'          => 'Fullname',
+        'phone'         => 'Phone',
+        'company_name'  => 'Company name',
+        'message'       => 'Message',
+    ],
+
 
 
 ];

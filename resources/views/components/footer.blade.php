@@ -14,7 +14,7 @@
                             </p>
                             <div class="">
                                 <a href="mailto:contact@reacthemes.com" class="text-muted">
-                                   <i class="fa-solid fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
+                                    <i class="fa-solid fa-location-dot"></i> {{ $about['address_'.session('locale')] ?? 'Standart manzil' }}
                                 </a>
                                 <a href="callto:+998 93 728 68 67" class="text-muted"><i class="fa-thin fa-phone"></i>
                                     +998 93 728 68
@@ -93,18 +93,27 @@
 <div id="side-bar-apply" class="side-bar-apply">
     <button class="close-icon-menu"><i class="far fa-times"></i></button>
 
-    <div class="contact-form"
-         style="flex: 1 1 48%; max-width: 600px; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border: #004a9f; margin-top: 80px;">
-        <h5 style="color: #004a9f;">Dasturiy mahsulot yo startup g'oyangiz bormi?Biz bilan bog'laning</h5>
+    <div class="contact-form-apply">
+        <h5 style="color: #004a9f;" class="text-center">@lang('crud.contact_message.title')</h5>
 
         <form action="{{ route('contact.apply') }}" method="POST"
               style="padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
             @csrf
-            <input type="text" name="name" placeholder="Ismingiz:" required
+            <label for="name">@lang('crud.contact_message.name')</label>
+            <input type="text" name="name" required
+                   style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;"
+                   id="name">
+
+            <label for="name">@lang('crud.contact_message.phone')</label>
+            <input type="text" name="phone" required
                    style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
-            <input type="text" name="phone" placeholder="Telefon raqamingiz:" required
+
+            <label for="name">@lang('crud.contact_message.company_name')</label>
+            <input type="text" name="company_name" required
                    style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;">
-            <textarea name="message" placeholder="Xabaringiz:" required
+
+            <label for="name">@lang('crud.contact_message.message')</label>
+            <textarea name="message" required
                       style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #004a9f;"></textarea>
             <button type="submit"
                     style="background-color: #004a9f; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; margin: 15px; position: relative; z-index: 1;">
@@ -148,7 +157,6 @@
             </ul>
         </nav>
     </div>
-
 
 
 </div>

@@ -144,16 +144,40 @@
     });
 
 
+</script>
 
-function openSidebar() {
-  document.getElementById("sidebar").classList.add("show");
-  document.getElementById("overlay").classList.add("show");
-}
 
-function closeSidebar() {
-  document.getElementById("sidebar").classList.remove("show");
-  document.getElementById("overlay").classList.remove("show");
-}
+<script>
+
+// Sidebar va kerakli elementlarni olish
+const sidebar = document.querySelector('.side-bar-apply');
+const contactButton = document.getElementById('contactButton');
+const closeButton = document.querySelector('.close-icon-menu');
+
+// Xabar yuborish tugmasini bosganda sidebarni ko'rsatish
+contactButton.addEventListener('click', (e) => {
+  e.stopPropagation(); // eventni tarqatmaslik
+  sidebar.classList.add('show'); // Sidebarni ko'rsatish
+});
+
+// Yopish tugmasini bosganda sidebarni yopish
+closeButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+  sidebar.classList.remove('show'); // Sidebarni yashirish
+});
+
+// Istalgan joyga bosganda sidebarni yopish
+document.addEventListener('click', (e) => {
+  // Agar sidebar yoki contactButton tashqarisiga bosilgan bo'lsa, sidebarni yopish
+  if (!sidebar.contains(e.target) && !contactButton.contains(e.target)) {
+    sidebar.classList.remove('show');
+  }
+});
+
+// Sidebar ichida bosganda uni yopmaslik uchun eventni to'xtatish
+sidebar.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
 
 
 </script>
