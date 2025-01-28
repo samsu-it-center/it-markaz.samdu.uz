@@ -36,7 +36,6 @@ class ContactController extends Controller
 
 >>>>>>> 667eef6702917cbf551de71f002166070d06e780
         if ($base_message->is_read == 0) {
-            // Xabarni tayyorlash
             $message = "Yangi xabar:\n";
             $message .= "Ism: " . $request->name . "\n";
             $message .= "Email: " . $request->phone . "\n";
@@ -67,7 +66,6 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-//        dd($request);
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'required|max:255',
