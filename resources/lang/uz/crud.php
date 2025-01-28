@@ -111,5 +111,12 @@ return [
         'menu_4' => 'Statistik ma`lumotlar',
     ],
 
+    "contact_message" => [
+        'title'         =>'Dasturiy mahsulot yo startup g`oyangiz bormi?Biz bilan bog`laning',
+        'name'          => 'Fish',
+        'phone'         => 'Telefon raqam',
+        'company_name'  => 'Tashkilot yo korxona nomi',
+        'message'       => 'Xabaringiz',
+    ],
 
 ];

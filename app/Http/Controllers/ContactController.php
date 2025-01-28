@@ -22,6 +22,7 @@ class ContactController extends Controller
         $base_message = ContactMessage::find($request->id);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          $chatIds = [1070941466,6089135456,6044996862];
 =======
 
@@ -30,11 +31,16 @@ class ContactController extends Controller
 
 
 >>>>>>> fe779348d9a0b9795cff9dc6378c131a3b19d7c0
+=======
+        $chatIds = explode(',', env('TELEGRAM_CHAT_ID'));
+
+>>>>>>> 667eef6702917cbf551de71f002166070d06e780
         if ($base_message->is_read == 0) {
             // Xabarni tayyorlash
             $message = "Yangi xabar:\n";
             $message .= "Ism: " . $request->name . "\n";
             $message .= "Email: " . $request->phone . "\n";
+            $message .= "Tashkilot nomi: " . $request->company_name . "\n";
             $message .= "Xabar: " . $request->message . "\n";
 
             foreach ($chatIds as $chatId) {
@@ -65,6 +71,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'required|max:255',
+            'company_name' => 'nullable|string',
             'message' => 'nullable|string',
         ]);
 
