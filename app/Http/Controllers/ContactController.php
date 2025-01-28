@@ -21,20 +21,8 @@ class ContactController extends Controller
 
         $base_message = ContactMessage::find($request->id);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-         $chatIds = [1070941466,6089135456,6044996862];
-=======
-
-
         $chatIds = explode(',', env('TELEGRAM_CHAT_ID'));
 
-
->>>>>>> fe779348d9a0b9795cff9dc6378c131a3b19d7c0
-=======
-        $chatIds = explode(',', env('TELEGRAM_CHAT_ID'));
-
->>>>>>> 667eef6702917cbf551de71f002166070d06e780
         if ($base_message->is_read == 0) {
             $message = "Yangi xabar:\n";
             $message .= "Ism: " . $request->name . "\n";
