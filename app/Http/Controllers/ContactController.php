@@ -57,10 +57,9 @@ class ContactController extends Controller
                 'is_read' => 1,
             ]);
 
-            return response()->json(['status' => 'success', 'message' => 'Xabar muvaffaqiyatli yuborildi!']);
+//            return response()->json(['status' => 'success', 'message' => 'Xabar muvaffaqiyatli yuborildi!']);
         }
-
-        return response()->json(['status' => 'error', 'message' => 'Xabar allaqachon o\'qilgan!']);
+//        return response()->json(['status' => 'error', 'message' => 'Xabar allaqachon o\'qilgan!']);
     }
 
 
