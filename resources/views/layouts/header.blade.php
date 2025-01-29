@@ -5,7 +5,7 @@
     <script>
         setTimeout(function () {
             document.getElementById('success-alert').style.display = 'none';
-        }, 1500);
+        }, 6000);
     </script>
 @endif
 
@@ -19,9 +19,8 @@
     ];
 @endphp
 <div class="row">
-    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
     <!-- Navbar -->
-    <nav class="custom-navbar d-flex justify-content-between align-items-center mb-1">
+    <nav class="custom-navbar d-flex justify-content-between align-items-center">
         <!-- Left: Logo -->
         <!-- Right: Icons and Button -->
 
