@@ -90,7 +90,8 @@
 </div>
 
 
-<div id="side-bar-apply" class="side-bar-apply">
+<div id="side-bar-apply" class="side-bar-apply close">
+
     <button class="close-icon-menu"><i class="far fa-times"></i></button>
 
     <div class="contact-form-apply">
@@ -122,7 +123,11 @@
         </form>
 
     </div>
+
 </div>
+
+
+
 
 
 <div id="side-bar" class="side-bar">
@@ -157,6 +162,8 @@
             </ul>
         </nav>
     </div>
+
+
 
 
 </div>

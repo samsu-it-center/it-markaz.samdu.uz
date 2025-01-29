@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hero Slider Start -->
-    <div class="rts-hero-slider v-1 rt-relative mt--120">
+    <div class="rts-hero-slider v-1 rt-relative mt--120 " id="content">
         <div class="rts-hero-slider-active swiper swiper-data" data-swiper='{
             "slidesPerView":1,
             "effect": "fade",
@@ -165,11 +165,12 @@
                     </div>
                 @endif
 
-
-                <!-- Contact Button -->
                     <div class="header-right-area-one">
                         <button class="contact-btn border-0" id="contact-btn">
                             <i class="fa-brands fa-telegram mr--5"></i> Ariza qoldirish
                         </button>
                     </div>
+
+                    <div id="anywhere-home-apply"></div>
+
 @endsection
