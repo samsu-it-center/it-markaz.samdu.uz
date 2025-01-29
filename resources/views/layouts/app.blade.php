@@ -29,6 +29,31 @@
     <link rel="stylesheet" href="{{ asset('site/assets/css/my.css') }}">
     <link rel="stylesheet" href="{{ asset('site/assets/css/contact-modal.css') }}">
 
+    <style>
+        #anywhere-home-apply {
+            cursor: url("{{ asset('site/assets/images/banner/shape/close.svg') }}"), auto;
+            background: #0e1013;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 500ms ease-in-out;
+            pointer-events: none; /* Obyektga bosishni o'chirish */
+            z-index: 50;
+        }
+
+        #anywhere-home-apply.bgshow-apply {
+            background: #0e1013;
+            opacity: 0.7; /* 70% o'rniga to'g'ri yozilishi kerak */
+            visibility: visible;
+            pointer-events: auto; /* "visible" noto'g'ri, "auto" bo'lishi kerak */
+            z-index: 999;
+            top: 0;
+        }
+
+    </style>
+
 
 </head>
 
@@ -148,36 +173,23 @@
 
 
 <script>
+    $(document).ready(function () {
+        // Mobil menyuni faollashtirish
+        $('#side-bar-apply').metisMenu();
 
-// Sidebar va kerakli elementlarni olish
-const sidebar = document.querySelector('.side-bar-apply');
-const contactButton = document.getElementById('contactButton');
-const closeButton = document.querySelector('.close-icon-menu');
+        // Sidebar ochilganda "bgshow-apply" klassini qo'shish
+        $(document).on('click', '.contact-btn', function () {
+            $("#side-bar-apply").addClass("show");
+            $("#anywhere-home-apply").addClass("bgshow-apply");
+        });
 
-// Xabar yuborish tugmasini bosganda sidebarni ko'rsatish
-contactButton.addEventListener('click', (e) => {
-  e.stopPropagation(); // eventni tarqatmaslik
-  sidebar.classList.add('show'); // Sidebarni ko'rsatish
-});
+        // Sidebar yopilganda "bgshow-apply" klassini olib tashlash
+        $(document).on('click', '#close-btn, #anywhere-home-apply', function () {
+            $("#side-bar-apply").removeClass("show");
+            $("#anywhere-home-apply").removeClass("bgshow-apply");
+        });
+    });
 
-// Yopish tugmasini bosganda sidebarni yopish
-closeButton.addEventListener('click', (e) => {
-  e.stopPropagation();
-  sidebar.classList.remove('show'); // Sidebarni yashirish
-});
-
-// Istalgan joyga bosganda sidebarni yopish
-document.addEventListener('click', (e) => {
-  // Agar sidebar yoki contactButton tashqarisiga bosilgan bo'lsa, sidebarni yopish
-  if (!sidebar.contains(e.target) && !contactButton.contains(e.target)) {
-    sidebar.classList.remove('show');
-  }
-});
-
-// Sidebar ichida bosganda uni yopmaslik uchun eventni to'xtatish
-sidebar.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
 
 
 </script>
