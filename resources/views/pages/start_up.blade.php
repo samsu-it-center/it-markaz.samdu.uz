@@ -6,13 +6,14 @@
     <div class="col-md-10">
         <hr>
         <!-- Tablar -->
-        <ul class="nav nav-pills justify-content-center flex-wrap" id="horizontalNavbar" role="tablist">
+        <ul class="nav nav-pills justify-content-center flex-wrap mt--100" id="horizontalNavbar" role="tablist">
             @foreach($categories as $category)
                 <li class="nav-item">
                     <a class="nav-link {{ request('tab', $categories->first()->id) == $category->id ? 'active' : '' }} p-3 m-2 border-1 software-link-border"
                        href="?tab={{ $category->id }}&{{ $category->id }}_page={{ request($category->id . '_page', 1) }}">
 
-                       {{ $category['name_' . session('locale')] }}
+                        {{ $category->{'name_' . session('locale')} }}
+
 
 
                     </a>
