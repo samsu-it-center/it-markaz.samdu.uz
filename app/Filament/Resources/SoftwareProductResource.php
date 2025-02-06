@@ -85,7 +85,7 @@ class SoftwareProductResource extends Resource
                     ->label('Type (Turi)')
                     ->required()
                     ->options(
-                        \App\Models\CategorySoftware::pluck('name', 'id')->toArray()
+                        \App\Models\CategorySoftware::pluck('name_uz', 'id')->toArray()
                     )
                     ->searchable() // Kategoriyalar orasida qidirish uchun
                     ->columnSpan('full'),

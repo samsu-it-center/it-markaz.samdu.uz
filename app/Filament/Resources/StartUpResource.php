@@ -109,7 +109,7 @@ class StartUpResource extends Resource
                     ->label('Type (Turi)')
                     ->required()
                     ->options(
-                        \App\Models\Category::pluck('name', 'id')->toArray()
+                        \App\Models\Category::pluck('name_uz', 'id')->toArray()
                     )
                     ->searchable() // Kategoriyalar orasida qidirish uchun
                     ->columnSpan('full'),

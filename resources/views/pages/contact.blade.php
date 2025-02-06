@@ -16,7 +16,7 @@
 
 
     <!-- Contact Information Section -->
-    <section class="contact-section"
+    <section class="contact-section pt--100"
              style="background-color: #f4f4f4; padding: 50px 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
         <h2 style="text-align: center; color: #333; margin-bottom: 30px;">Bog'lanish</h2>
 
