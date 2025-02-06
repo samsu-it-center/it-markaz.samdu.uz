@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('talante_students', function (Blueprint $table) {
+        Schema::create('talanted_students', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
             $table->text('info_en');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('info_uz')->nullable();
             $table->string('image')->nullable();
             $table->integer('type')->nullable();
-              $table->timestamps();
+            $table->timestamps();
         });
     }
 
