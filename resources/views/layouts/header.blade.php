@@ -43,15 +43,16 @@
 
             </div>
 
-            @foreach($menus as $menu)
-                <li class="nav-item">
-                    <a class="my-nav-link {{ Request::routeIs($menu->route) ? 'active' : '' }}"
+	    @if(isset($menus))
+            	@foreach($menus as $menu)
+                	<li class="nav-item">
+                    		<a class="my-nav-link {{ Request::routeIs($menu->route) ? 'active' : '' }}"
                        href="{{ route($menu->route) }}">
-                        {{ $menu['name_'.session('locale')] }}
-                    </a>
-                </li>
-            @endforeach
-
+                        		{{ $menu['name_'.session('locale')] }}
+                    		</a>
+                	</li>
+            	@endforeach
+	    @endif
             <li class="nav-item dropdown">
                 <a href="#" class="my-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('flags/' . $languages[$currentLocale]['flag']) }}" alt=""
