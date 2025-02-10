@@ -2,14 +2,14 @@
 
 @section('content')
 
-<div class="row justify-content-center">
-    <div class="col-md-10">
+<div class="row justify-content-center ">
+    <div class="col-md-10 ">
         <hr>
 
         <!-- Tablar -->
-        <ul class="nav nav-pills justify-content-center flex-wrap mt-3" id="horizontalNavbar" role="tablist">
+        <ul class="nav nav-pills justify-content-center flex-wrap mt-3 " id="horizontalNavbar" role="tablist">
             @foreach($categories as $category)
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link {{ request('tab', $categories->first()->id) == $category->id ? 'active' : '' }} p-3 m-2 border-5 software-link-border"
                        href="?tab={{ $category->id }}&{{ $category->id }}_page={{ request($category->id . '_page', 1) }}">
                         {{ $category['name_' . session('locale')] }}

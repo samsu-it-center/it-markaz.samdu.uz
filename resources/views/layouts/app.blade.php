@@ -80,6 +80,17 @@
             z-index: 10;
         }
 
+        .tab-pane {
+            scroll-margin-top: 80px; /* Menyu balandligiga mos ravishda */
+        }
+
+
+        .tab-content {
+            position: relative;
+            z-index: 0; /* Navbar ostiga kirib ketish uchun */
+            margin-top: -40px; /* Navbar ostiga kira boshlashi uchun */
+        }
+
 
     </style>
 
@@ -222,6 +233,22 @@
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.tab-pane:not(.show)').forEach(el => {
             el.style.display = 'none';
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let fixedNavbarHeight = document.querySelector(".navbar").offsetHeight;
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                setTimeout(() => {
+                    let activeTab = document.querySelector(".tab-pane.show.active");
+                    if (activeTab) {
+                        let yOffset = activeTab.getBoundingClientRect().top + window.scrollY - fixedNavbarHeight - 10;
+                        window.scrollTo({top: yOffset, behavior: "smooth"});
+                    }
+                }, 200);
+            });
         });
     });
 
