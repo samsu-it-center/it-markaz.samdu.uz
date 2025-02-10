@@ -18,7 +18,6 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.5",
-        "stephenjude/filament-debugger": "^3.0",
         "tomatophp/filament-browser": "^1.0"
     },
     "require-dev": {
