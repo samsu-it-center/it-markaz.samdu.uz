@@ -52,6 +52,46 @@
             top: 0;
         }
 
+
+        /* Faqat faollashtirilgan tabni ko'rsatish */
+        .tab-pane {
+            display: none; /* Barcha tablarni yashiramiz */
+        }
+
+        .tab-pane.show.active {
+            display: block !important; /* Faqat tanlangan tab ko‘rinadi */
+        }
+
+        /* Matn ko‘rinishini ta’minlash */
+        .tab-pane {
+            color: black !important; /* Matn qora bo‘lsin */
+            opacity: 1 !important;
+            z-index: 1000 !important;
+        }
+
+        /* Agar element ekranda pastga tushib ketgan bo‘lsa */
+        .tab-content {
+            min-height: 200px; /* Bo‘sh joy qoldirish */
+        }
+
+        /* Agar element boshqa narsa ostida qolib ketayotgan bo‘lsa */
+        .tab-pane {
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab-pane {
+            scroll-margin-top: 80px; /* Menyu balandligiga mos ravishda */
+        }
+
+
+        .tab-content {
+            position: relative;
+            z-index: 0; /* Navbar ostiga kirib ketish uchun */
+            margin-top: -40px; /* Navbar ostiga kira boshlashi uchun */
+        }
+
+
     </style>
 
 
@@ -190,6 +230,27 @@
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.tab-pane:not(.show)').forEach(el => {
+            el.style.display = 'none';
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let fixedNavbarHeight = document.querySelector(".navbar").offsetHeight;
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                setTimeout(() => {
+                    let activeTab = document.querySelector(".tab-pane.show.active");
+                    if (activeTab) {
+                        let yOffset = activeTab.getBoundingClientRect().top + window.scrollY - fixedNavbarHeight - 10;
+                        window.scrollTo({top: yOffset, behavior: "smooth"});
+                    }
+                }, 200);
+            });
+        });
+    });
 
 
 </script>
