@@ -36,7 +36,7 @@
                                 <div class="card-software">
                                     <div class="card-software-section">
                                         <h2 class="title-software">{!! $item['title_' . session('locale')] !!}</h2>
-                                        <p class="description-software">{!! Str::limit($item['description_' . session('locale')], 170, '...') !!}</p>
+                                        <p class="description-software">{!! $item['description_' . session('locale')] !!}</p>
                                         <a href="{{ route('start_up.show', $item->id) }}"
                                            class="read-more-software">Batafsil</a>
                                     </div>

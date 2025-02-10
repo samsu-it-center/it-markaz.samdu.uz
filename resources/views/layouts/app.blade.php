@@ -52,6 +52,35 @@
             top: 0;
         }
 
+
+        /* Faqat faollashtirilgan tabni ko'rsatish */
+        .tab-pane {
+            display: none; /* Barcha tablarni yashiramiz */
+        }
+
+        .tab-pane.show.active {
+            display: block !important; /* Faqat tanlangan tab ko‘rinadi */
+        }
+
+        /* Matn ko‘rinishini ta’minlash */
+        .tab-pane {
+            color: black !important; /* Matn qora bo‘lsin */
+            opacity: 1 !important;
+            z-index: 1000 !important;
+        }
+
+        /* Agar element ekranda pastga tushib ketgan bo‘lsa */
+        .tab-content {
+            min-height: 200px; /* Bo‘sh joy qoldirish */
+        }
+
+        /* Agar element boshqa narsa ostida qolib ketayotgan bo‘lsa */
+        .tab-pane {
+            position: relative;
+            z-index: 10;
+        }
+
+
     </style>
 
 
@@ -190,6 +219,11 @@
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.tab-pane:not(.show)').forEach(el => {
+            el.style.display = 'none';
+        });
+    });
 
 
 </script>

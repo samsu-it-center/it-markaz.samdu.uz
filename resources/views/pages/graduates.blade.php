@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Courses Section -->
-    <div class="rts-blog v_3">
+    <div class="rts-blog v_3 mt--100">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
