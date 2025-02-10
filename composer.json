@@ -14,13 +14,10 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-<<<<<<< HEAD
         "livewire/livewire": "^3.5",
-        "tomatophp/filament-browser": "^1.0"
-=======
+        "tomatophp/filament-browser": "^1.0",
         "livewire/livewire": "^3.5"
->>>>>>> defbfe0d769f4b41be53956c4486d9d662a0f44c
-    },
+   },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
