@@ -119,4 +119,5 @@ return [
         'message'       => 'Xabaringiz',
     ],
 
+    "submit_app" => "Ariza qoldirish"
 ];

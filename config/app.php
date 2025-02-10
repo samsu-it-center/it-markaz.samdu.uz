@@ -169,7 +169,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
         //App\Providers\TelescopeServiceProvider::class,
+=======
+>>>>>>> defbfe0d769f4b41be53956c4486d9d662a0f44c
          App\Providers\FilamentServiceProvider::class,
     ])->toArray(),
 
