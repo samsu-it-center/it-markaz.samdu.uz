@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row justify-content-center mt--100">
-    <div class="col-md-10 ">
+    <div class="col-md-10 mb--50">
         <hr>
 
         <!-- Tablar -->
