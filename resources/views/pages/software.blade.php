@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="row justify-content-center ">
+<div class="row justify-content-center mt--100">
     <div class="col-md-10 ">
         <hr>
 
