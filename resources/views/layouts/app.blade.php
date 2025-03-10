@@ -1,259 +1,231 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP_NAME', "IT Markaz") }}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
-    <!-- animate css -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/animate.min.css') }}">
-    <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/fontawesome.min.css') }}">
-    <!-- bootstrap min css -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/vendor/bootstrap.min.css') }}">
-    <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/swiper.min.css') }}">
-    <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/vendor/magnific-popup.css') }}">
-    <!-- metismenu scss -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/vendor/metismenu.css') }}">
-    <!-- nice select js -->
-    <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/assets/css/plugins/jquery-ui.css') }}">
-    <!-- custom style css -->
+    <meta charset="utf-8"/>
+    <meta name="author" content="ShoyimObloqulov"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="stylesheet" href="{{ asset('site/assets/css/style.css') }}">
+    <title>{{ env('APP_NAME') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('site/assets/css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/assets/css/my.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/assets/css/contact-modal.css') }}">
+    <!-- Custom CSS -->
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
 
-    <style>
-        #anywhere-home-apply {
-            cursor: url("{{ asset('site/assets/images/banner/shape/close.svg') }}"), auto;
-            background: #0e1013;
-            position: fixed;
+    <!-- Custom Color Option -->
+    <link href="{{ asset('assets/css/colors.css') }}" rel="stylesheet">
+    <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+    <style type="text/css">
+        .splide__slide img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            position: relative;
+
+        }
+
+        .splide__slide h2 {
+            font-weight: bold;
+            position: absolute;
+
+            bottom: 40px;
+            margin-left: 8%;
+            margin-right: 8%;
+            width: 84%;
+            color: #fff;
+            background-color: rgb(41 86 135 / 42%);
+            border-radius: 5px;
+            padding: 10px;
+            /* text-shadow: 10px 5px 6px #000*/
+        }
+    </style>
+
+    @livewireStyles
+</head>
+
+<body class="red-skin">
+
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div id="preloader">
+    <div class="preloader"><span></span><span></span></div>
+</div>
+
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Top header  -->
+    <!-- ============================================================== -->
+    <!-- Start Navigation -->
+    <div class="header header-light">
+        <div class="container">
+            <nav id="navigation" class="navigation navigation-landscape">
+                <div class="nav-header">
+                    <a class="nav-brand" href="/">
+                        <img src="{{ asset('logo.png') }}" class="logo" alt=""/>
+                    </a>
+                    <div class="nav-toggle"></div>
+                </div>
+                <div class="nav-menus-wrapper" style="transition-property: none;">
+                    @livewire('dynamic-menu')
+
+                    @livewire('header-menu')
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- End Navigation -->
+    <div class="clearfix"></div>
+
+    @yield('content')
+
+    <a href="#" data-toggle="modal" data-target="#contact"
+       class="btn btn-primary d-flex align-items-center floating-button">
+        <i class="ti-email text-white fs-4 w-100"></i>
+        <span class="floating-text">&ensp; @lang('crud.contact_send')</span>
+    </a>
+
+
+    <!-- Log In Modal -->
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+            <div class="modal-content" id="contact">
+                <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+                <div class="modal-body">
+                    <h4 class="text-center">Dasturiy mahsulot yoki startup g`oyangiz bormi? <br> Biz bilan bog`laning</h4>
+                    <div class="login-form">
+                        <form method="POST" action="{{ route('contact.apply') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label>FISH</label>
+                                <input type="text" class="form-control" name="name" placeholder="Familya, Ism, Sharif">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Telefon raqam</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Telefon raqam">
+
+                            </div>
+                            <div class="form-group">
+                                <label>Tashkilot yo korxona nomi</label>
+                                <input type="text" class="form-control" placeholder="Tashkilot yo korxona nomi">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Xabaringiz</label>
+                                <textarea type="password" class="form-control" placeholder="Xabaringiz" name="message"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-md full-width pop-login">
+                                    Jo'natish
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Button Style -->
+    <style>
+        .floating-button {
+            position: fixed;
+            bottom: 60px;
+            right: 18px;
+            border-radius: 50px;
+            padding: 12px;
+            width: 50px; /* Faqat ikonka ko‘rinadi */
+            height: 50px;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            border: none;
+        }
+
+        .floating-button i {
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .floating-text {
             opacity: 0;
-            visibility: hidden;
-            transition: opacity 500ms ease-in-out;
-            pointer-events: none; /* Obyektga bosishni o'chirish */
-            z-index: 50;
+            white-space: nowrap;
+            max-width: 0;
+            transition: opacity 0.4s ease-in-out, max-width 0.4s ease-in-out;
         }
 
-        #anywhere-home-apply.bgshow-apply {
-            background: #0e1013;
-            opacity: 0.7; /* 70% o'rniga to'g'ri yozilishi kerak */
-            visibility: visible;
-            pointer-events: auto; /* "visible" noto'g'ri, "auto" bo'lishi kerak */
-            z-index: 999;
-            top: 0;
+        .floating-button:hover {
+            width: auto; /* Tugma kengayadi */
+            padding: 12px 20px;
         }
 
-
-        /* Faqat faollashtirilgan tabni ko'rsatish */
-        .tab-pane {
-            display: none; /* Barcha tablarni yashiramiz */
+        .floating-button:hover .floating-text {
+            opacity: 1;
+            max-width: 200px; /* Matn paydo bo‘lishi uchun */
         }
 
-        .tab-pane.show.active {
-            display: block !important; /* Faqat tanlangan tab ko‘rinadi */
+        /* Mobil qurilmalar uchun */
+        @media (max-width: 576px) {
+            .floating-button {
+                bottom: 55px;
+                right: 15px;
+            }
         }
-
-        /* Matn ko‘rinishini ta’minlash */
-        .tab-pane {
-            color: black !important; /* Matn qora bo‘lsin */
-            opacity: 1 !important;
-            z-index: 1000 !important;
-        }
-
-        /* Agar element ekranda pastga tushib ketgan bo‘lsa */
-        .tab-content {
-            min-height: 200px; /* Bo‘sh joy qoldirish */
-        }
-
-        /* Agar element boshqa narsa ostida qolib ketayotgan bo‘lsa */
-        .tab-pane {
-            position: relative;
-            z-index: 10;
-        }
-
-        .tab-pane {
-            scroll-margin-top: 80px; /* Menyu balandligiga mos ravishda */
-        }
-
-
-        .tab-content {
-            position: relative;
-            z-index: 0; /* Navbar ostiga kirib ketish uchun */
-            margin-top: -40px; /* Navbar ostiga kira boshlashi uchun */
-        }
-
-
     </style>
 
 
-</head>
+    <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 
-<body class="page">
-@include('layouts.header')
-
-@yield('content')
-
-{{--<x-gallery></x-gallery>--}}
-<!-- footer -->
-<x-footer></x-footer>
-
-<div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-              style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-    </svg>
+    @livewire('footer')
 </div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
 
-<div id="anywhere-home" class="">
-</div>
-
-<!-- scripts -->
-
-<!-- jquery js -->
-<script src="{{ asset('site/assets/js/vendor/jquery.min.js') }}"></script>
-<!-- bootstrap 5.0.2 -->
-<script src="{{ asset('site/assets/js/plugins/bootstrap.min.js') }}"></script>
-<!-- jquery ui js -->
-<script src="{{ asset('site/assets/js/vendor/jquery-ui.js') }}"></script>
-<!-- wow js -->
-<script src="{{ asset('site/assets/js/vendor/waw.js') }}"></script>
-<!-- mobile menu -->
-<script src="{{ asset('site/assets/js/vendor/metismenu.js') }}"></script>
-<!-- magnific popup -->
-<script src="{{ asset('site/assets/js/vendor/magnifying-popup.js') }}"></script>
-<!-- swiper JS 10.2.0 -->
-<script src="{{ asset('site/assets/js/plugins/swiper.js') }}"></script>
-<!-- counterup -->
-<script src="{{ asset('site/assets/js/plugins/counterup.js') }}"></script>
-<script src="{{ asset('site/assets/js/vendor/waypoint.js') }}"></script>
-<!-- isotop mesonary -->
-<script src="{{ asset('site/assets/js/plugins/isotop.js') }}"></script>
-<script src="{{ asset('site/assets/js/plugins/imagesloaded.pkgd.min.js') }}"></script>
-<!-- isotop mesonary end-->
-<script src="{{ asset('site/assets/js/plugins/resizer-sensor.js') }}"></script>
-<script src="{{ asset('site/assets/js/plugins/sticky-sidebar.js') }}"></script>
-<script src="{{ asset('site/assets/js/vendor/chroma.min.js') }}"></script>
-<script src="{{ asset('site/assets/js/plugins/twinmax.js') }}"></script>
-<!-- dymanic Contact Form -->
-<script src="{{ asset('site/assets/js/plugins/contact.form.js') }}"></script>
-<script src="{{ asset('site/assets/js/plugins/nice-select.min.js') }}"></script>
-<!-- main Js -->
-<!-- Bootstrap Icons (Optional) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<script src="{{ asset('site/assets/js/main.js') }}"></script>
-
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="{{ asset('assets/js/slick.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('assets/js/counterup.min.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+<!-- ============================================================== -->
+<!-- This page plugins -->
+<!-- ============================================================== -->
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
 <script>
-    const slides = document.querySelector('.slides');
-    const slideCount = document.querySelectorAll('.slides > div').length;
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        showSlide(currentIndex);
-    }
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-
-    // Auto-slide functionality
-    setInterval(nextSlide, 3000);
+    var splide = new Splide('.splide', {
+        type: 'slide',
+        rewind: true,
+        height: '70vh',
+        autoplay: 'true',
+        interval: 5000,
+        pagination: false
+    });
+    splide.mount();
 </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Kontakt tugmasini bosganda menyuni ochish
-        document.getElementById('contact-btn').addEventListener('click', function () {
-            document.querySelector('.side-bar-apply').classList.add('show');  // Menyu ko'rsatish
-            document.body.style.overflow = 'hidden';  // Sahifani aylantirishni to'xtatish
-        });
-
-        // Yopish tugmasini bosganda menyuni yopish
-        document.querySelector('.side-bar-apply .close-icon-menu').addEventListener('click', function () {
-            document.querySelector('.side-bar-apply').classList.remove('show');  // Menyu yashirish
-            document.body.style.overflow = 'auto';  // Sahifani yana aylantirishga ruxsat berish
-        });
-
-        // Menyu ortidagi fonni bosganda menyuni yopish
-        document.querySelector('#anywhere-home').addEventListener('click', function () {
-            document.querySelector('.side-bar-apply').classList.remove('show');
-            document.body.style.overflow = 'auto';
-        });
-    });
-
-
-</script>
-
-
-<script>
-    $(document).ready(function () {
-        // Mobil menyuni faollashtirish
-        $('#side-bar-apply').metisMenu();
-
-        // Sidebar ochilganda "bgshow-apply" klassini qo'shish
-        $(document).on('click', '.contact-btn', function () {
-            $("#side-bar-apply").addClass("show");
-            $("#anywhere-home-apply").addClass("bgshow-apply");
-        });
-
-        // Sidebar yopilganda "bgshow-apply" klassini olib tashlash
-        $(document).on('click', '#close-btn, #anywhere-home-apply', function () {
-            $("#side-bar-apply").removeClass("show");
-            $("#anywhere-home-apply").removeClass("bgshow-apply");
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.tab-pane:not(.show)').forEach(el => {
-            el.style.display = 'none';
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        let fixedNavbarHeight = document.querySelector(".navbar").offsetHeight;
-
-        document.querySelectorAll(".nav-link").forEach(link => {
-            link.addEventListener("click", function (e) {
-                setTimeout(() => {
-                    let activeTab = document.querySelector(".tab-pane.show.active");
-                    if (activeTab) {
-                        let yOffset = activeTab.getBoundingClientRect().top + window.scrollY - fixedNavbarHeight - 10;
-                        window.scrollTo({top: yOffset, behavior: "smooth"});
-                    }
-                }, 200);
-            });
-        });
-    });
-
-
-</script>
-
+@livewireScripts
 </body>
+
 </html>

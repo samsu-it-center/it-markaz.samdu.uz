@@ -23,7 +23,7 @@ class NewsController extends Controller
         if (!$course) {
             $course = null;
         }
-        return view('pages.show', compact('news', 'course'));
+        return view('news.show', compact('news', 'course'));
     }
 
 

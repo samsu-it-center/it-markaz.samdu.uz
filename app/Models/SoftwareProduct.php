@@ -29,6 +29,6 @@ class SoftwareProduct extends Model
 
     public function softwareCategory()
     {
-        return $this->belongsTo(CategorySoftware::class);
+        return $this->belongsTo(CategorySoftware::class,'type');
     }
 }

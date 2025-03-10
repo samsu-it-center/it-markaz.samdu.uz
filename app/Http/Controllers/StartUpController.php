@@ -14,6 +14,6 @@ class StartUpController extends Controller
 
         $menus = DinamicMenu::all();
 
-        return view('start_up.show', compact('start_up','menus'));
+        return view('startup.show', compact('start_up','menus'));
     }
 }

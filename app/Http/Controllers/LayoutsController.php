@@ -22,14 +22,14 @@ class LayoutsController extends Controller
     {
         $about = About::first();
         $menus = DinamicMenu::all();
-        return view('pages.about', compact('about','menus'));
+        return view('pages.about', compact('about', 'menus'));
     }
 
     public function news(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $news = News::orderBy('id', 'desc')->paginate(6);
         $menus = DinamicMenu::all();
-        return view('pages.news', compact('news','menus'));
+        return view('news.index', compact('news', 'menus'));
     }
 
     public function start_up(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -39,8 +39,6 @@ class LayoutsController extends Controller
 
         $projects = StartUp::where('type', 1)
             ->orderBy('id', 'desc')->paginate(4);
-
-
 
 
         $categories = Category::all();
@@ -53,12 +51,11 @@ class LayoutsController extends Controller
         }
         $menus = DinamicMenu::all();
 
-        return view('pages.start_up ', compact('menus','categories', 'tabs'));
+        return view('startup.index', compact('menus', 'categories', 'tabs'));
     }
 
     public function software(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-
         $aiSoftwares = SoftwareProduct::where('type', 1)
             ->orderBy('id', 'desc')->paginate(4, ['*'], 'ai_page');
 
@@ -92,21 +89,21 @@ class LayoutsController extends Controller
 
         $menus = DinamicMenu::all();
 
-        return view('pages.software', compact('menus','tabs', 'types', 'aiSoftwares', 'educationalSoftwares', 'commericalSoftwares', 'buisaSoftwares', 'publicSoftwares', 'categories', 'softwares'));
+        return view('software.index', compact('menus', 'tabs', 'types', 'aiSoftwares', 'educationalSoftwares', 'commericalSoftwares', 'buisaSoftwares', 'publicSoftwares', 'categories', 'softwares'));
     }
 
     public function course(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $courses = Course::orderBy('id', 'desc')->get();
         $menus = DinamicMenu::all();
-        return view('pages.course', compact('courses','menus'));
+        return view('course.index', compact('courses', 'menus'));
     }
 
     public function document(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $document = NormativeDocument::first();
         $menus = DinamicMenu::all();
-        return view('pages.document', compact('document','menus'));
+        return view('pages.document', compact('document', 'menus'));
     }
 
     public function contact(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -114,7 +111,7 @@ class LayoutsController extends Controller
         $document = NormativeDocument::first();
         $menus = DinamicMenu::all();
 
-        return view('pages.contact', compact('document','menus'));
+        return view('pages.contact', compact('document', 'menus'));
     }
 
 
@@ -130,7 +127,7 @@ class LayoutsController extends Controller
 
         $menus = DinamicMenu::all();
 
-        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs', 'courses','menus'));
+        return view('welcome', compact('sliders', 'about', 'news', 'online', 'offline', 'faqs', 'courses', 'menus'));
     }
 
     public function lang($lang)
