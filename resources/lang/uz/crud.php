@@ -68,6 +68,8 @@ return [
         "about" => "Kurs haqida",
         "views" => "Batafsil",
         "contact" => "Kursga yozilish",
+        "more" => "Ko'proq kurslar",
+
         "form" => [
             'title' => "Iltimos, kerakli ma'lumotlarni to'ldiring",
             "first_name" => "Ism",
@@ -113,7 +115,6 @@ return [
         "body_3" => "Sizning muvaffaqiyatingiz biz uchun muhim, doimiy yordam ko'rsatamiz.",
         "title_4" => "Ishonch",
         "body_4" => "O'zaro ishonch va halollikka asoslangan munosabatlarni shakllantiramiz.",
-
     ],
 
     "about_card" => [

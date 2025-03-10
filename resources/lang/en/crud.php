@@ -68,6 +68,8 @@ return [
         "about" => "About the Course",
         "views" => "Read More",
         "contact" => "Enroll in Course",
+        "more" => "Courses more",
+
         "form" => [
             'title' => "Please fill in the required information",
             "first_name" => "First Name",
