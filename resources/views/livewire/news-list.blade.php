@@ -60,37 +60,6 @@
                 </div>
             @endif
         </div>
-    </section>
-    <!-- ========================== Articles Section End =============================== -->
-
+    </section><!-- ========================== Articles Section End =============================== -->
 </div>
-<style>
-    .card-text {
-        max-height: 4.5em; /* Taxminiy 3 qator */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-</style>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let elements = document.querySelectorAll('.card-text');
-        let maxLines = 3;
-        let lineHeight = 20; // px, matn hajmiga qarab moslang
 
-        elements.forEach(el => {
-            let maxHeight = maxLines * lineHeight;
-            if (el.scrollHeight > maxHeight) {
-                el.style.maxHeight = maxHeight + "px";
-                el.style.overflow = "hidden";
-                el.style.textOverflow = "ellipsis";
-                el.style.display = "-webkit-box";
-                el.style.webkitLineClamp = maxLines;
-                el.style.webkitBoxOrient = "vertical";
-            }
-        });
-    });
-
-</script>
