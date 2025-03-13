@@ -32,9 +32,6 @@
                                 <div>
                                     <h4 class="card-title fw-bold">{{ $project->{'title_'.session('locale') ?? 'uz'} }}</h4>
                                     <p class="card-text text-muted">{!! $project->{'description_'.session('locale') ?? 'uz'} !!}</p>
-                                    <p class="card-text text-muted">{!! Str::limit($project->{'project_objective_' . session('locale')}, 200, '...') !!}</p>
-                                    <p class="card-text text-muted">{!! $project->{'budget_'.session('locale') ?? 'uz'} !!}</p>
-
                                     <a href="{{ route('start-up.show', $project->id) }}"
                                        class="btn btn-primary">
                                         @lang('crud.software.views') <i class="ti-arrow-right"></i>
