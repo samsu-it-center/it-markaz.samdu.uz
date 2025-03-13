@@ -11,6 +11,9 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+    <meta name="title" content="@yield('meta_title', 'Default Description')">
+
+    <meta name="description" content="@yield('meta_description', 'Default Description')">
 
     <!-- Custom Color Option -->
     <link href="{{ asset('assets/css/colors.css') }}" rel="stylesheet">
@@ -100,7 +103,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             <div class="modal-content" id="contact">
                 <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
                 <div class="modal-body">
-                    <h4 class="text-center">Dasturiy mahsulot yoki startup g`oyangiz bormi? <br> Biz bilan bog`laning</h4>
+                    <h4 class="text-center">Dasturiy mahsulot yoki startup g`oyangiz bormi? <br> Biz bilan bog`laning
+                    </h4>
                     <div class="login-form">
                         <form method="POST" action="{{ route('contact.apply') }}">
                             @csrf
@@ -122,7 +126,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
                             <div class="form-group">
                                 <label>Xabaringiz</label>
-                                <textarea type="password" class="form-control" placeholder="Xabaringiz" name="message"></textarea>
+                                <textarea type="password" class="form-control" placeholder="Xabaringiz"
+                                          name="message"></textarea>
                             </div>
 
                             <div class="form-group">
