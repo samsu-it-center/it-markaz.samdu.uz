@@ -83,7 +83,8 @@ return [
         "found_courses" => "topilgan kurslar",
         "all_courses" => "Barchasi",
         "online" => "Online Kurslar",
-        "offline" => "Offline Kurslar"
+        "offline" => "Offline Kurslar",
+        "lessons" => "Darslar"
     ],
 
     "document" => [
