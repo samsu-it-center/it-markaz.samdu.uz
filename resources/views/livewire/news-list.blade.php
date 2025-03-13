@@ -33,7 +33,7 @@
                                 </a>
                             </div>
                             <div class="articles_grid_caption">
-                                <h4>{{ $item->{'title_' . session('locale')} }}</h4>
+                                <a href="{{ route('news.show', $item->id) }}">{{ $item->{'title_' . session('locale')} }}</a>
 
                                 <p>{!! Str::limit($item->{'content_' . session('locale')}, 200, '...') !!}</p>
                                 <div class="articles_grid_author">
